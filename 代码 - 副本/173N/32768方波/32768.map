@@ -1,0 +1,141 @@
+*************************************
+------------- Call Depth ------------
+ Depth  Interrupt    Function
+-------------------------------------
+    0        N         ProgramStart
+    1        Y           _interrupt_l
+    1        Y           _interrupt
+    0        N         _main
+-------------------------------------
+Stack Depth: 1
+****************************************
+------------- Free ROM Size ------------
+Start=0X1    , End=0X7    , Size=7
+Start=0X3A   , End=0X3FF  , Size=966
+----------------------------------------
+EM78P173N       |        ROM Size        
+----------------+-----------------------
+Total           |  1024 x 13 bits(100.0%)
+Used            |    51 x 13 bits(  5.0%)
+Free            |   973 x 13 bits( 95.0%)
+----------------------------------------
+*************************************
+-------------- Data Map -------------
+d -- Uninitialized data
+D -- Initialized data
+b -- Uninitialized bit data
+B -- Initialized bit data
+C -- C Register
+-------------- RAM Data -------------
+0x00  - - - - - - - - - - - - - - - - 
+0x10  - - - - - - - - - - - - - - - - 
+0x20  B d - - - - - - - - - - - - - - 
+0x30  - - - - - - - - - - - - - - - - 
+----------- Register Data -----------
+0x00  d d d b d b b - - - - - - - b b 
+0x10  d C - - - - - - - - - - - - - - 
+0x20  - - - - - b b - - - - - - - b b 
+-------------- IO Data --------------
+0x00  - - - - - d d - - - - d d d d d 
+****************************************
+--------------- ROM Code ---------------
+    0x0000 :  JMP   0x00B       
+    0x0001 :  ADD   A, @0xFF    
+    0x0002 :  ADD   A, @0xFF    
+    0x0003 :  ADD   A, @0xFF    
+    0x0004 :  ADD   A, @0xFF    
+    0x0005 :  ADD   A, @0xFF    
+    0x0006 :  ADD   A, @0xFF    
+    0x0007 :  ADD   A, @0xFF    
+    0x0008 :  BC    0x03, 5     
+    0x0009 :  BC    0x03, 6     
+    0x000A :  JMP   0x031       
+C:\Users\daminger\Desktop\Á·Ï°\173N\32768·½²¨\32768.c (line 25)
+  ;WDTC();
+    0x000B :  BANK  @0x0        
+    0x000C :  MOV   A, @0x00    
+    0x000D :  MOV   0x20, A     
+    0x000E :  WDTC              
+C:\Users\daminger\Desktop\Á·Ï°\173N\32768·½²¨\32768.c (line 26)
+  ;DISI();
+    0x000F :  DISI              
+C:\Users\daminger\Desktop\Á·Ï°\173N\32768·½²¨\32768.c (line 28)
+  ;WDTCR=0;				//½ûÖ¹WDT
+    0x0010 :  MOV   A, @0x00    
+    0x0011 :  IOW   0xE         
+C:\Users\daminger\Desktop\Á·Ï°\173N\32768·½²¨\32768.c (line 29)
+  ;P6CR=0xFE;					//P60ÉèÎªÊä³ö
+    0x0012 :  MOV   A, @0xFE    
+    0x0013 :  IOW   0x6         
+C:\Users\daminger\Desktop\Á·Ï°\173N\32768·½²¨\32768.c (line 30)
+  ;PORT6=0;				//PORT6Êä³öµÍ
+    0x0014 :  BANK  @0x0        
+    0x0015 :  CLR   0x06        
+C:\Users\daminger\Desktop\Á·Ï°\173N\32768·½²¨\32768.c (line 32)
+  ;mov	a,@0x07
+    0x0016 :  MOV   A, @0x07    
+C:\Users\daminger\Desktop\Á·Ï°\173N\32768·½²¨\32768.c (line 33)
+  ;contw				//TCC·ÖÆµ±ÈÉèÎª1£º256
+    0x0017 :  CONTW             
+C:\Users\daminger\Desktop\Á·Ï°\173N\32768·½²¨\32768.c (line 35)
+  ;TCC=0;					//timer=1/4*(256-0)*256*2=32.768ms
+    0x0018 :  CLR   0x01        
+C:\Users\daminger\Desktop\Á·Ï°\173N\32768·½²¨\32768.c (line 36)
+  ;ISR=0;
+    0x0019 :  CLR   0x0F        
+C:\Users\daminger\Desktop\Á·Ï°\173N\32768·½²¨\32768.c (line 37)
+  ;IMR=1;
+    0x001A :  MOV   A, @0x01    
+    0x001B :  IOW   0xF         
+C:\Users\daminger\Desktop\Á·Ï°\173N\32768·½²¨\32768.c (line 38)
+  ;ENI();
+    0x001C :  ENI               
+    0x001D :  JMP   0x02F       
+C:\Users\daminger\Desktop\Á·Ï°\173N\32768·½²¨\32768.c (line 41)
+  ;if(Timer_interrupt_flag)
+    0x001E :  BANK  @0x0        
+    0x001F :  JBS   0x20, 0     
+    0x0020 :  JMP   0x02F       
+C:\Users\daminger\Desktop\Á·Ï°\173N\32768·½²¨\32768.c (line 43)
+  ;Timer_interrupt_flag=0;
+    0x0021 :  BC    0x20, 0     
+C:\Users\daminger\Desktop\Á·Ï°\173N\32768·½²¨\32768.c (line 44)
+  ;P60=!P60;
+    0x0022 :  JBC   0x06, 0     
+    0x0023 :  JMP   0x027       
+    0x0024 :  MOV   A, @0x01    
+    0x0025 :  MOV   0x21, A     
+    0x0026 :  JMP   0x029       
+    0x0027 :  BANK  @0x0        
+    0x0028 :  CLR   0x21        
+    0x0029 :  BANK  @0x0        
+    0x002A :  MOV   A, 0x21     
+    0x002B :  MOV   0x11, A     
+    0x002C :  BC    0x06, 0     
+    0x002D :  JBC   0x11, 0     
+    0x002E :  BS    0x06, 0     
+C:\Users\daminger\Desktop\Á·Ï°\173N\32768·½²¨\32768.c (line 39)
+  ;while(1)
+    0x002F :  JMP   0x01E       
+C:\Users\daminger\Desktop\Á·Ï°\173N\32768·½²¨\32768.c (line 47)
+  ;}
+    0x0030 :  RET               
+C:\Users\daminger\Desktop\Á·Ï°\173N\32768·½²¨\32768.c (line 53)
+  ;if	(TCIF==1)
+    0x0031 :  MOV   0x10, A     
+    0x0032 :  BANK  @0x0        
+    0x0033 :  JBS   0x0F, 0     
+    0x0034 :  JMP   0x039       
+C:\Users\daminger\Desktop\Á·Ï°\173N\32768·½²¨\32768.c (line 56)
+  ;ISR&=0XFE;				//ÇåTCCÖÐ¶Ï±êÖ¾Î»
+    0x0035 :  MOV   A, @0xFE    
+    0x0036 :  AND   0x0F, A     
+C:\Users\daminger\Desktop\Á·Ï°\173N\32768·½²¨\32768.c (line 57)
+  ;TCC=0;					//TCC¸³³õÖµ
+    0x0037 :  CLR   0x01        
+C:\Users\daminger\Desktop\Á·Ï°\173N\32768·½²¨\32768.c (line 59)
+  ;Timer_interrupt_flag = 1;
+    0x0038 :  BS    0x20, 0     
+C:\Users\daminger\Desktop\Á·Ï°\173N\32768·½²¨\32768.c (line 61)
+  ;}
+    0x0039 :  RETI              

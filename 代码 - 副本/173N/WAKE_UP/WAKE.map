@@ -1,0 +1,162 @@
+*************************************
+------------- Call Depth ------------
+ Depth  Interrupt    Function
+-------------------------------------
+    0        N         ProgramStart
+    0        N         _main
+C   1        N           _DELAY
+-------------------------------------
+Stack Depth: 1
+****************************************
+------------- Free ROM Size ------------
+Start=0X3D   , End=0X3FF  , Size=963
+----------------------------------------
+EM78P173N       |        ROM Size        
+----------------+-----------------------
+Total           |  1024 x 13 bits(100.0%)
+Used            |    61 x 13 bits(  6.0%)
+Free            |   963 x 13 bits( 94.0%)
+----------------------------------------
+*************************************
+-------------- Data Map -------------
+d -- Uninitialized data
+D -- Initialized data
+b -- Uninitialized bit data
+B -- Initialized bit data
+C -- C Register
+-------------- RAM Data -------------
+0x00  - - - - - - - - - - - - - - - - 
+0x10  - - - - - - - - - - - - - - - - 
+0x20  d d d - - - - - - - - - - - - - 
+0x30  - - - - - - - - - - - - - - - - 
+----------- Register Data -----------
+0x00  d d d b d b b - - - - - - - b b 
+0x10  - - - - - - - - - - - - - - - - 
+0x20  - - - - - b b - - - - - - - b b 
+-------------- IO Data --------------
+0x00  - - - - - d d - - - - d d d d d 
+****************************************
+--------------- ROM Code ---------------
+    0x0000 :  JMP   0x001       
+C:\Users\daminger\Desktop\Á·Ï°\173N\WAKE_UP\WAKE.c (line 23)
+  ;P5CR=0;
+    0x0001 :  MOV   A, @0x00    
+    0x0002 :  IOW   0x5         
+C:\Users\daminger\Desktop\Á·Ï°\173N\WAKE_UP\WAKE.c (line 24)
+  ;PORT5=0;
+    0x0003 :  BANK  @0x0        
+    0x0004 :  CLR   0x05        
+C:\Users\daminger\Desktop\Á·Ï°\173N\WAKE_UP\WAKE.c (line 25)
+  ;P6CR=0Xfd;				//P61Êä³ö,ÆäËûÊäÈë
+    0x0005 :  MOV   A, @0xFD    
+    0x0006 :  IOW   0x6         
+C:\Users\daminger\Desktop\Á·Ï°\173N\WAKE_UP\WAKE.c (line 26)
+  ;PHCR=0X0A;				//³ýP61ÉÏÀ­
+    0x0007 :  MOV   A, @0x0A    
+    0x0008 :  IOW   0xD         
+C:\Users\daminger\Desktop\Á·Ï°\173N\WAKE_UP\WAKE.c (line 27)
+  ;PORT6=0;
+    0x0009 :  CLR   0x06        
+C:\Users\daminger\Desktop\Á·Ï°\173N\WAKE_UP\WAKE.c (line 29)
+  ;mov		a,@0x0f
+    0x000A :  MOV   A, @0x0F    
+C:\Users\daminger\Desktop\Á·Ï°\173N\WAKE_UP\WAKE.c (line 30)
+  ;contw
+    0x000B :  CONTW             
+C:\Users\daminger\Desktop\Á·Ï°\173N\WAKE_UP\WAKE.c (line 31)
+  ;WDTC	                //½ûÖ¹ WDT
+    0x000C :  WDTC              
+C:\Users\daminger\Desktop\Á·Ï°\173N\WAKE_UP\WAKE.c (line 32)
+  ;MOV		0X6,0X6			//¶ÁÈ¡PORT6×´Ì¬
+    0x000D :  MOV   0x06, 0x06  
+C:\Users\daminger\Desktop\Á·Ï°\173N\WAKE_UP\WAKE.c (line 34)
+  ;DISI();					//½ûÖ¹È«¾ÖÖÐ¶Ï
+    0x000E :  DISI              
+C:\Users\daminger\Desktop\Á·Ï°\173N\WAKE_UP\WAKE.c (line 35)
+  ;SCR=0X23;				//IRC 4MHz IDLE=0
+    0x000F :  MOV   A, @0x23    
+    0x0010 :  BANK  @0x1        
+    0x0011 :  MOV   0x0F, A     
+C:\Users\daminger\Desktop\Á·Ï°\173N\WAKE_UP\WAKE.c (line 36)
+  ;IMR=0X02;				//Ê¹ÄÜPort6×´Ì¬¸Ä±ä»½ÐÑ
+    0x0012 :  MOV   A, @0x02    
+    0x0013 :  IOW   0xF         
+C:\Users\daminger\Desktop\Á·Ï°\173N\WAKE_UP\WAKE.c (line 37)
+  ;SLEP();					//½øÈëË¯ÃßÄ£Ê½
+    0x0014 :  SLEP              
+C:\Users\daminger\Desktop\Á·Ï°\173N\WAKE_UP\WAKE.c (line 38)
+  ;NOP();
+    0x0015 :  NOP               
+C:\Users\daminger\Desktop\Á·Ï°\173N\WAKE_UP\WAKE.c (line 39)
+  ;NOP();
+    0x0016 :  NOP               
+C:\Users\daminger\Desktop\Á·Ï°\173N\WAKE_UP\WAKE.c (line 40)
+  ;WDTC();					//ÇåWDT
+    0x0017 :  WDTC              
+C:\Users\daminger\Desktop\Á·Ï°\173N\WAKE_UP\WAKE.c (line 41)
+  ;WDTCR=0;				//½ûÖ¹WDT   ´ËÇ°ÊÇÅÐ¶ÏÊÇ·ñÓÐport6×´Ì¬¸Ä±ä,Ã»¸Ä±ä,ÔòÐÝÃß,¸Ä±ä,ÍùÏÂÖ´ÐÐ,Èç¹ûÓÐÖÐ¶Ï¾Í½øÈëÖÐ¶Ï
+    0x0018 :  MOV   A, @0x00    
+    0x0019 :  IOW   0xE         
+C:\Users\daminger\Desktop\Á·Ï°\173N\WAKE_UP\WAKE.c (line 42)
+  ;P61=1;					//P61Êä³ö¸ß
+    0x001A :  BANK  @0x0        
+    0x001B :  BS    0x06, 1     
+C:\Users\daminger\Desktop\Á·Ï°\173N\WAKE_UP\WAKE.c (line 43)
+  ;DELAY();
+    0x001C :  CALL  0x01F       
+C:\Users\daminger\Desktop\Á·Ï°\173N\WAKE_UP\WAKE.c (line 44)
+  ;}while(1);
+    0x001D :  JMP   0x001       
+C:\Users\daminger\Desktop\Á·Ï°\173N\WAKE_UP\WAKE.c (line 46)
+  ;}
+    0x001E :  RET               
+C:\Users\daminger\Desktop\Á·Ï°\173N\WAKE_UP\WAKE.c (line 53)
+  ;for(COUNTER2=0;COUNTER2<7;COUNTER2++)
+    0x001F :  BANK  @0x0        
+    0x0020 :  CLR   0x20        
+    0x0021 :  JMP   0x037       
+C:\Users\daminger\Desktop\Á·Ï°\173N\WAKE_UP\WAKE.c (line 55)
+  ;for(COUNTER1=0;COUNTER1<200;COUNTER1++)
+    0x0022 :  BANK  @0x0        
+    0x0023 :  CLR   0x21        
+    0x0024 :  JMP   0x031       
+C:\Users\daminger\Desktop\Á·Ï°\173N\WAKE_UP\WAKE.c (line 57)
+  ;for(COUNTER0=0;COUNTER0<200;COUNTER0++)
+    0x0025 :  BANK  @0x0        
+    0x0026 :  CLR   0x22        
+    0x0027 :  JMP   0x02B       
+C:\Users\daminger\Desktop\Á·Ï°\173N\WAKE_UP\WAKE.c (line 59)
+  ;NOP();
+    0x0028 :  NOP               
+C:\Users\daminger\Desktop\Á·Ï°\173N\WAKE_UP\WAKE.c (line 61)
+  ;}
+    0x0029 :  BANK  @0x0        
+    0x002A :  INC   0x22        
+C:\Users\daminger\Desktop\Á·Ï°\173N\WAKE_UP\WAKE.c (line 57)
+  ;for(COUNTER0=0;COUNTER0<200;COUNTER0++)
+    0x002B :  MOV   A, @0xC8    
+    0x002C :  BANK  @0x0        
+    0x002D :  SUB   A, 0x22     
+    0x002E :  JBS   0x03, 0     
+    0x002F :  JMP   0x028       
+C:\Users\daminger\Desktop\Á·Ï°\173N\WAKE_UP\WAKE.c (line 62)
+  ;}
+    0x0030 :  INC   0x21        
+C:\Users\daminger\Desktop\Á·Ï°\173N\WAKE_UP\WAKE.c (line 55)
+  ;for(COUNTER1=0;COUNTER1<200;COUNTER1++)
+    0x0031 :  MOV   A, @0xC8    
+    0x0032 :  BANK  @0x0        
+    0x0033 :  SUB   A, 0x21     
+    0x0034 :  JBS   0x03, 0     
+    0x0035 :  JMP   0x025       
+C:\Users\daminger\Desktop\Á·Ï°\173N\WAKE_UP\WAKE.c (line 63)
+  ;}
+    0x0036 :  INC   0x20        
+C:\Users\daminger\Desktop\Á·Ï°\173N\WAKE_UP\WAKE.c (line 53)
+  ;for(COUNTER2=0;COUNTER2<7;COUNTER2++)
+    0x0037 :  MOV   A, @0x07    
+    0x0038 :  BANK  @0x0        
+    0x0039 :  SUB   A, 0x20     
+    0x003A :  JBS   0x03, 0     
+    0x003B :  JMP   0x022       
+    0x003C :  RET               

@@ -1,0 +1,123 @@
+  JMP   0x001           ;'0x000000'
+;C:\Users\daminger\Desktop\Á·Ï°\173N\WAKE_UP\WAKE.c (line 23)
+;P5CR=0;
+  MOV   A, @0x00        ;'0x000001'
+  IOW   0x5             ;'0x000002'
+;C:\Users\daminger\Desktop\Á·Ï°\173N\WAKE_UP\WAKE.c (line 24)
+;PORT5=0;
+  BANK  @0x0            ;'0x000003'
+  CLR   0x05            ;'0x000004'
+;C:\Users\daminger\Desktop\Á·Ï°\173N\WAKE_UP\WAKE.c (line 25)
+;P6CR=0Xfd;				//P61Êä³ö,ÆäËûÊäÈë
+  MOV   A, @0xFD        ;'0x000005'
+  IOW   0x6             ;'0x000006'
+;C:\Users\daminger\Desktop\Á·Ï°\173N\WAKE_UP\WAKE.c (line 26)
+;PHCR=0X0A;				//³ýP61ÉÏÀ­
+  MOV   A, @0x0A        ;'0x000007'
+  IOW   0xD             ;'0x000008'
+;C:\Users\daminger\Desktop\Á·Ï°\173N\WAKE_UP\WAKE.c (line 27)
+;PORT6=0;
+  CLR   0x06            ;'0x000009'
+;C:\Users\daminger\Desktop\Á·Ï°\173N\WAKE_UP\WAKE.c (line 29)
+;mov		a,@0x0f
+  MOV   A, @0x0F        ;'0x00000A'
+;C:\Users\daminger\Desktop\Á·Ï°\173N\WAKE_UP\WAKE.c (line 30)
+;contw
+  CONTW                 ;'0x00000B'
+;C:\Users\daminger\Desktop\Á·Ï°\173N\WAKE_UP\WAKE.c (line 31)
+;WDTC	                //½ûÖ¹ WDT
+  WDTC                  ;'0x00000C'
+;C:\Users\daminger\Desktop\Á·Ï°\173N\WAKE_UP\WAKE.c (line 32)
+;MOV		0X6,0X6			//¶ÁÈ¡PORT6×´Ì¬
+  MOV   0x06, 0x06      ;'0x00000D'
+;C:\Users\daminger\Desktop\Á·Ï°\173N\WAKE_UP\WAKE.c (line 34)
+;DISI();					//½ûÖ¹È«¾ÖÖÐ¶Ï
+  DISI                  ;'0x00000E'
+;C:\Users\daminger\Desktop\Á·Ï°\173N\WAKE_UP\WAKE.c (line 35)
+;SCR=0X23;				//IRC 4MHz IDLE=0
+  MOV   A, @0x23        ;'0x00000F'
+  BANK  @0x1            ;'0x000010'
+  MOV   0x0F, A         ;'0x000011'
+;C:\Users\daminger\Desktop\Á·Ï°\173N\WAKE_UP\WAKE.c (line 36)
+;IMR=0X02;				//Ê¹ÄÜPort6×´Ì¬¸Ä±ä»½ÐÑ
+  MOV   A, @0x02        ;'0x000012'
+  IOW   0xF             ;'0x000013'
+;C:\Users\daminger\Desktop\Á·Ï°\173N\WAKE_UP\WAKE.c (line 37)
+;SLEP();					//½øÈëË¯ÃßÄ£Ê½
+  SLEP                  ;'0x000014'
+;C:\Users\daminger\Desktop\Á·Ï°\173N\WAKE_UP\WAKE.c (line 38)
+;NOP();
+  NOP                   ;'0x000015'
+;C:\Users\daminger\Desktop\Á·Ï°\173N\WAKE_UP\WAKE.c (line 39)
+;NOP();
+  NOP                   ;'0x000016'
+;C:\Users\daminger\Desktop\Á·Ï°\173N\WAKE_UP\WAKE.c (line 40)
+;WDTC();					//ÇåWDT
+  WDTC                  ;'0x000017'
+;C:\Users\daminger\Desktop\Á·Ï°\173N\WAKE_UP\WAKE.c (line 41)
+;WDTCR=0;				//½ûÖ¹WDT   ´ËÇ°ÊÇÅÐ¶ÏÊÇ·ñÓÐport6×´Ì¬¸Ä±ä,Ã»¸Ä±ä,ÔòÐÝÃß,¸Ä±ä,ÍùÏÂÖ´ÐÐ,Èç¹ûÓÐÖÐ¶Ï¾Í½øÈëÖÐ¶Ï
+  MOV   A, @0x00        ;'0x000018'
+  IOW   0xE             ;'0x000019'
+;C:\Users\daminger\Desktop\Á·Ï°\173N\WAKE_UP\WAKE.c (line 42)
+;P61=1;					//P61Êä³ö¸ß
+  BANK  @0x0            ;'0x00001A'
+  BS    0x06, 1         ;'0x00001B'
+;C:\Users\daminger\Desktop\Á·Ï°\173N\WAKE_UP\WAKE.c (line 43)
+;DELAY();
+  CALL  0x01F           ;'0x00001C'
+;C:\Users\daminger\Desktop\Á·Ï°\173N\WAKE_UP\WAKE.c (line 44)
+;}while(1);
+  JMP   0x001           ;'0x00001D'
+;C:\Users\daminger\Desktop\Á·Ï°\173N\WAKE_UP\WAKE.c (line 46)
+;}
+  RET                   ;'0x00001E'
+;C:\Users\daminger\Desktop\Á·Ï°\173N\WAKE_UP\WAKE.c (line 53)
+;for(COUNTER2=0;COUNTER2<7;COUNTER2++)
+  BANK  @0x0            ;'0x00001F'
+  CLR   0x20            ;'0x000020'
+  JMP   0x037           ;'0x000021'
+;C:\Users\daminger\Desktop\Á·Ï°\173N\WAKE_UP\WAKE.c (line 55)
+;for(COUNTER1=0;COUNTER1<200;COUNTER1++)
+  BANK  @0x0            ;'0x000022'
+  CLR   0x21            ;'0x000023'
+  JMP   0x031           ;'0x000024'
+;C:\Users\daminger\Desktop\Á·Ï°\173N\WAKE_UP\WAKE.c (line 57)
+;for(COUNTER0=0;COUNTER0<200;COUNTER0++)
+  BANK  @0x0            ;'0x000025'
+  CLR   0x22            ;'0x000026'
+  JMP   0x02B           ;'0x000027'
+;C:\Users\daminger\Desktop\Á·Ï°\173N\WAKE_UP\WAKE.c (line 59)
+;NOP();
+  NOP                   ;'0x000028'
+;C:\Users\daminger\Desktop\Á·Ï°\173N\WAKE_UP\WAKE.c (line 61)
+;}
+  BANK  @0x0            ;'0x000029'
+  INC   0x22            ;'0x00002A'
+;C:\Users\daminger\Desktop\Á·Ï°\173N\WAKE_UP\WAKE.c (line 57)
+;for(COUNTER0=0;COUNTER0<200;COUNTER0++)
+  MOV   A, @0xC8        ;'0x00002B'
+  BANK  @0x0            ;'0x00002C'
+  SUB   A, 0x22         ;'0x00002D'
+  JBS   0x03, 0         ;'0x00002E'
+  JMP   0x028           ;'0x00002F'
+;C:\Users\daminger\Desktop\Á·Ï°\173N\WAKE_UP\WAKE.c (line 62)
+;}
+  INC   0x21            ;'0x000030'
+;C:\Users\daminger\Desktop\Á·Ï°\173N\WAKE_UP\WAKE.c (line 55)
+;for(COUNTER1=0;COUNTER1<200;COUNTER1++)
+  MOV   A, @0xC8        ;'0x000031'
+  BANK  @0x0            ;'0x000032'
+  SUB   A, 0x21         ;'0x000033'
+  JBS   0x03, 0         ;'0x000034'
+  JMP   0x025           ;'0x000035'
+;C:\Users\daminger\Desktop\Á·Ï°\173N\WAKE_UP\WAKE.c (line 63)
+;}
+  INC   0x20            ;'0x000036'
+;C:\Users\daminger\Desktop\Á·Ï°\173N\WAKE_UP\WAKE.c (line 53)
+;for(COUNTER2=0;COUNTER2<7;COUNTER2++)
+  MOV   A, @0x07        ;'0x000037'
+  BANK  @0x0            ;'0x000038'
+  SUB   A, 0x20         ;'0x000039'
+  JBS   0x03, 0         ;'0x00003A'
+  JMP   0x022           ;'0x00003B'
+  RET                   ;'0x00003C'
