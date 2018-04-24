@@ -197,3 +197,7 @@ Size#1=2
 Size#2=0
 [ICEVOLTAGE SETTING]
 Voltage=1
+[$\light.c]
+Rectangle=0026 0026 1341 0299
+Iconized=0
+Maximized=0
