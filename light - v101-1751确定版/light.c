@@ -1,6 +1,6 @@
 //MCU: EM78P173N
 //Oscillator: IRC 4MHz
-//Clock: 2
+//Clock: 2 
 //WDT: Enable
 //工作电压: 5V              
 //编译软件: eUIDE 1.03.00
