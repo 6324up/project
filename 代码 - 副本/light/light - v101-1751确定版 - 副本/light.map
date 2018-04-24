@@ -59,7 +59,7 @@ C -- C Register
     0x0008 :  BC    0x03, 5     
     0x0009 :  BC    0x03, 6     
     0x000A :  JMP   0x066       
-C:\Users\daminger\OneDrive\代码\light - v101\light.c (line 288)
+C:\Users\daminger\OneDrive\github\project\代码 - 副本\light\light - v101-1751确定版 - 副本\light.c (line 288)
   ;WDTC();
     0x000B :  BANK  @0x0        
     0x000C :  MOV   A, @0x0E    
@@ -77,64 +77,64 @@ C:\Users\daminger\OneDrive\代码\light - v101\light.c (line 288)
     0x0018 :  MOV   A, @0x02    
     0x0019 :  MOV   0x28, A     
     0x001A :  WDTC              
-C:\Users\daminger\OneDrive\代码\light - v101\light.c (line 289)
+C:\Users\daminger\OneDrive\github\project\代码 - 副本\light\light - v101-1751确定版 - 副本\light.c (line 289)
   ;DISI();
     0x001B :  DISI              
-C:\Users\daminger\OneDrive\代码\light - v101\light.c (line 290)
+C:\Users\daminger\OneDrive\github\project\代码 - 副本\light\light - v101-1751确定版 - 副本\light.c (line 290)
   ;WDTCR=0;				//禁止WDT
     0x001C :  MOV   A, @0x00    
     0x001D :  IOW   0xE         
-C:\Users\daminger\OneDrive\代码\light - v101\light.c (line 291)
+C:\Users\daminger\OneDrive\github\project\代码 - 副本\light\light - v101-1751确定版 - 副本\light.c (line 291)
   ;P6CR=0x38;				//P63,P64,P65设为输入,其他输出
     0x001E :  MOV   A, @0x38    
     0x001F :  IOW   0x6         
-C:\Users\daminger\OneDrive\代码\light - v101\light.c (line 292)
+C:\Users\daminger\OneDrive\github\project\代码 - 副本\light\light - v101-1751确定版 - 副本\light.c (line 292)
   ;P5CR=0;
     0x0020 :  MOV   A, @0x00    
     0x0021 :  IOW   0x5         
-C:\Users\daminger\OneDrive\代码\light - v101\light.c (line 293)
+C:\Users\daminger\OneDrive\github\project\代码 - 副本\light\light - v101-1751确定版 - 副本\light.c (line 293)
   ;PORT5=0;
     0x0022 :  BANK  @0x0        
     0x0023 :  CLR   0x05        
-C:\Users\daminger\OneDrive\代码\light - v101\light.c (line 294)
+C:\Users\daminger\OneDrive\github\project\代码 - 副本\light\light - v101-1751确定版 - 副本\light.c (line 294)
   ;PHCR=0b11001111;		//0使能上拉,1关闭上拉
     0x0024 :  MOV   A, @0xCF    
     0x0025 :  IOW   0xD         
-C:\Users\daminger\OneDrive\代码\light - v101\light.c (line 295)
+C:\Users\daminger\OneDrive\github\project\代码 - 副本\light\light - v101-1751确定版 - 副本\light.c (line 295)
   ;PORT6=0;				//PORT6输出低
     0x0026 :  CLR   0x06        
-C:\Users\daminger\OneDrive\代码\light - v101\light.c (line 297)
+C:\Users\daminger\OneDrive\github\project\代码 - 副本\light\light - v101-1751确定版 - 副本\light.c (line 297)
   ;mov	a,@0x07
     0x0027 :  MOV   A, @0x07    
-C:\Users\daminger\OneDrive\代码\light - v101\light.c (line 298)
+C:\Users\daminger\OneDrive\github\project\代码 - 副本\light\light - v101-1751确定版 - 副本\light.c (line 298)
   ;contw				//TCC分频比设为1：256
     0x0028 :  CONTW             
-C:\Users\daminger\OneDrive\代码\light - v101\light.c (line 300)
+C:\Users\daminger\OneDrive\github\project\代码 - 副本\light\light - v101-1751确定版 - 副本\light.c (line 300)
   ;TCC=0;					//timer=1/4*(256-0)*256*2=32.768ms
     0x0029 :  CLR   0x01        
-C:\Users\daminger\OneDrive\代码\light - v101\light.c (line 301)
+C:\Users\daminger\OneDrive\github\project\代码 - 副本\light\light - v101-1751确定版 - 副本\light.c (line 301)
   ;ISR=0;
     0x002A :  CLR   0x0F        
-C:\Users\daminger\OneDrive\代码\light - v101\light.c (line 302)
+C:\Users\daminger\OneDrive\github\project\代码 - 副本\light\light - v101-1751确定版 - 副本\light.c (line 302)
   ;ENI();
     0x002B :  ENI               
-C:\Users\daminger\OneDrive\代码\light - v101\light.c (line 303)
+C:\Users\daminger\OneDrive\github\project\代码 - 副本\light\light - v101-1751确定版 - 副本\light.c (line 303)
   ;IMR=0X03;
     0x002C :  MOV   A, @0x03    
     0x002D :  IOW   0xF         
     0x002E :  JMP   0x064       
-C:\Users\daminger\OneDrive\代码\light - v101\light.c (line 306)
+C:\Users\daminger\OneDrive\github\project\代码 - 副本\light\light - v101-1751确定版 - 副本\light.c (line 306)
   ;keyscan(); 	 		//键盘扫描
     0x002F :  CALL  0x06F       
-C:\Users\daminger\OneDrive\代码\light - v101\light.c (line 308)
+C:\Users\daminger\OneDrive\github\project\代码 - 副本\light\light - v101-1751确定版 - 副本\light.c (line 308)
   ;if(Timer_interrupt_flag)
     0x0030 :  BANK  @0x0        
     0x0031 :  JBS   0x20, 0     
     0x0032 :  JMP   0x064       
-C:\Users\daminger\OneDrive\代码\light - v101\light.c (line 310)
+C:\Users\daminger\OneDrive\github\project\代码 - 副本\light\light - v101-1751确定版 - 副本\light.c (line 310)
   ;Timer_interrupt_flag=0;
     0x0033 :  BC    0x20, 0     
-C:\Users\daminger\OneDrive\代码\light - v101\light.c (line 312)
+C:\Users\daminger\OneDrive\github\project\代码 - 副本\light\light - v101-1751确定版 - 副本\light.c (line 312)
   ;switch(mode_count)
     0x0034 :  MOV   A, 0x21     
     0x0035 :  MOV   0x11, A     
@@ -150,38 +150,38 @@ C:\Users\daminger\OneDrive\代码\light - v101\light.c (line 312)
     0x003F :  JBC   0x03, 2     
     0x0040 :  JMP   0x04B       
     0x0041 :  JMP   0x04E       
-C:\Users\daminger\OneDrive\代码\light - v101\light.c (line 314)
+C:\Users\daminger\OneDrive\github\project\代码 - 副本\light\light - v101-1751确定版 - 副本\light.c (line 314)
   ;case 0: if(S1_sleep_flag==0)mode0();break;
     0x0042 :  BANK  @0x0        
     0x0043 :  JBC   0x20, 6     
     0x0044 :  JMP   0x04E       
-C:\Users\daminger\OneDrive\代码\light - v101\light.c (line 314)
+C:\Users\daminger\OneDrive\github\project\代码 - 副本\light\light - v101-1751确定版 - 副本\light.c (line 314)
   ;case 0: if(S1_sleep_flag==0)mode0();break;
     0x0045 :  CALL  0x0AD       
     0x0046 :  JMP   0x04E       
-C:\Users\daminger\OneDrive\代码\light - v101\light.c (line 315)
+C:\Users\daminger\OneDrive\github\project\代码 - 副本\light\light - v101-1751确定版 - 副本\light.c (line 315)
   ;case 1: S1_sleep_flag=0; mode1();break;
     0x0047 :  BANK  @0x0        
     0x0048 :  BC    0x20, 6     
     0x0049 :  CALL  0x0D7       
-C:\Users\daminger\OneDrive\代码\light - v101\light.c (line 315)
+C:\Users\daminger\OneDrive\github\project\代码 - 副本\light\light - v101-1751确定版 - 副本\light.c (line 315)
   ;case 1: S1_sleep_flag=0; mode1();break;
     0x004A :  JMP   0x04E       
-C:\Users\daminger\OneDrive\代码\light - v101\light.c (line 316)
+C:\Users\daminger\OneDrive\github\project\代码 - 副本\light\light - v101-1751确定版 - 副本\light.c (line 316)
   ;case 2: S1_sleep_flag=0; mode2();break;
     0x004B :  BANK  @0x0        
     0x004C :  BC    0x20, 6     
     0x004D :  CALL  0x12A       
-C:\Users\daminger\OneDrive\代码\light - v101\light.c (line 320)
+C:\Users\daminger\OneDrive\github\project\代码 - 副本\light\light - v101-1751确定版 - 副本\light.c (line 320)
   ;if(S1_sleep_flag==1)
     0x004E :  BANK  @0x0        
     0x004F :  JBS   0x20, 6     
     0x0050 :  JMP   0x064       
-C:\Users\daminger\OneDrive\代码\light - v101\light.c (line 322)
+C:\Users\daminger\OneDrive\github\project\代码 - 副本\light\light - v101-1751确定版 - 副本\light.c (line 322)
   ;if(S1_flag)
     0x0051 :  JBS   0x20, 4     
     0x0052 :  JMP   0x064       
-C:\Users\daminger\OneDrive\代码\light - v101\light.c (line 324)
+C:\Users\daminger\OneDrive\github\project\代码 - 副本\light\light - v101-1751确定版 - 副本\light.c (line 324)
   ;white=!white;
     0x0053 :  JBC   0x06, 0     
     0x0054 :  JMP   0x058       
@@ -196,134 +196,134 @@ C:\Users\daminger\OneDrive\代码\light - v101\light.c (line 324)
     0x005D :  BC    0x06, 0     
     0x005E :  JBC   0x11, 0     
     0x005F :  BS    0x06, 0     
-C:\Users\daminger\OneDrive\代码\light - v101\light.c (line 325)
+C:\Users\daminger\OneDrive\github\project\代码 - 副本\light\light - v101-1751确定版 - 副本\light.c (line 325)
   ;S1_flag=0;
     0x0060 :  BC    0x20, 4     
-C:\Users\daminger\OneDrive\代码\light - v101\light.c (line 326)
+C:\Users\daminger\OneDrive\github\project\代码 - 副本\light\light - v101-1751确定版 - 副本\light.c (line 326)
   ;if(white==0)
     0x0061 :  JBC   0x06, 0     
     0x0062 :  JMP   0x064       
-C:\Users\daminger\OneDrive\代码\light - v101\light.c (line 328)
+C:\Users\daminger\OneDrive\github\project\代码 - 副本\light\light - v101-1751确定版 - 副本\light.c (line 328)
   ;S1_sleep_flag=0;
     0x0063 :  BC    0x20, 6     
-C:\Users\daminger\OneDrive\代码\light - v101\light.c (line 304)
+C:\Users\daminger\OneDrive\github\project\代码 - 副本\light\light - v101-1751确定版 - 副本\light.c (line 304)
   ;while(1)
     0x0064 :  JMP   0x02F       
-C:\Users\daminger\OneDrive\代码\light - v101\light.c (line 334)
+C:\Users\daminger\OneDrive\github\project\代码 - 副本\light\light - v101-1751确定版 - 副本\light.c (line 334)
   ;}
     0x0065 :  RET               
-C:\Users\daminger\OneDrive\代码\light - v101\light.c (line 340)
+C:\Users\daminger\OneDrive\github\project\代码 - 副本\light\light - v101-1751确定版 - 副本\light.c (line 340)
   ;if	(TCIF==1)
     0x0066 :  MOV   0x10, A     
     0x0067 :  BANK  @0x0        
     0x0068 :  JBS   0x0F, 0     
     0x0069 :  JMP   0x06E       
-C:\Users\daminger\OneDrive\代码\light - v101\light.c (line 343)
+C:\Users\daminger\OneDrive\github\project\代码 - 副本\light\light - v101-1751确定版 - 副本\light.c (line 343)
   ;ISR&=0XFE;				//清TCC中断标志位
     0x006A :  MOV   A, @0xFE    
     0x006B :  AND   0x0F, A     
-C:\Users\daminger\OneDrive\代码\light - v101\light.c (line 344)
+C:\Users\daminger\OneDrive\github\project\代码 - 副本\light\light - v101-1751确定版 - 副本\light.c (line 344)
   ;TCC=0;					//TCC赋初值
     0x006C :  CLR   0x01        
-C:\Users\daminger\OneDrive\代码\light - v101\light.c (line 346)
+C:\Users\daminger\OneDrive\github\project\代码 - 副本\light\light - v101-1751确定版 - 副本\light.c (line 346)
   ;Timer_interrupt_flag = 1;
     0x006D :  BS    0x20, 0     
-C:\Users\daminger\OneDrive\代码\light - v101\light.c (line 348)
+C:\Users\daminger\OneDrive\github\project\代码 - 副本\light\light - v101-1751确定版 - 副本\light.c (line 348)
   ;}
     0x006E :  RETI              
-C:\Users\daminger\OneDrive\代码\light - v101\light.c (line 256)
+C:\Users\daminger\OneDrive\github\project\代码 - 副本\light\light - v101-1751确定版 - 副本\light.c (line 256)
   ;if(!S1)					//S1按下
     0x006F :  BANK  @0x0        
     0x0070 :  JBC   0x06, 5     
     0x0071 :  JMP   0x082       
-C:\Users\daminger\OneDrive\代码\light - v101\light.c (line 258)
+C:\Users\daminger\OneDrive\github\project\代码 - 副本\light\light - v101-1751确定版 - 副本\light.c (line 258)
   ;delayms(10);
     0x0072 :  MOV   A, @0x0A    
     0x0073 :  MOV   0x2C, A     
     0x0074 :  CALL  0x099       
-C:\Users\daminger\OneDrive\代码\light - v101\light.c (line 259)
+C:\Users\daminger\OneDrive\github\project\代码 - 副本\light\light - v101-1751确定版 - 副本\light.c (line 259)
   ;if(!S1)
     0x0075 :  BANK  @0x0        
     0x0076 :  JBC   0x06, 5     
     0x0077 :  JMP   0x082       
-C:\Users\daminger\OneDrive\代码\light - v101\light.c (line 261)
+C:\Users\daminger\OneDrive\github\project\代码 - 副本\light\light - v101-1751确定版 - 副本\light.c (line 261)
   ;S1_flag=1;
     0x0078 :  BS    0x20, 4     
-C:\Users\daminger\OneDrive\代码\light - v101\light.c (line 262)
+C:\Users\daminger\OneDrive\github\project\代码 - 副本\light\light - v101-1751确定版 - 副本\light.c (line 262)
   ;white_status++;
     0x0079 :  INC   0x28        
-C:\Users\daminger\OneDrive\代码\light - v101\light.c (line 263)
+C:\Users\daminger\OneDrive\github\project\代码 - 副本\light\light - v101-1751确定版 - 副本\light.c (line 263)
   ;if(white_status>=3)
     0x007A :  MOV   A, @0x03    
     0x007B :  SUB   A, 0x28     
     0x007C :  JBS   0x03, 0     
     0x007D :  JMP   0x07F       
-C:\Users\daminger\OneDrive\代码\light - v101\light.c (line 264)
+C:\Users\daminger\OneDrive\github\project\代码 - 副本\light\light - v101-1751确定版 - 副本\light.c (line 264)
   ;white_status=0;
     0x007E :  CLR   0x28        
-C:\Users\daminger\OneDrive\代码\light - v101\light.c (line 265)
+C:\Users\daminger\OneDrive\github\project\代码 - 副本\light\light - v101-1751确定版 - 副本\light.c (line 265)
   ;while(!S1);		//等待按键释放
     0x007F :  BANK  @0x0        
     0x0080 :  JBS   0x06, 5     
     0x0081 :  JMP   0x07F       
-C:\Users\daminger\OneDrive\代码\light - v101\light.c (line 268)
+C:\Users\daminger\OneDrive\github\project\代码 - 副本\light\light - v101-1751确定版 - 副本\light.c (line 268)
   ;if(!S2)					//S2按下
     0x0082 :  BANK  @0x0        
     0x0083 :  JBC   0x06, 4     
     0x0084 :  JMP   0x098       
-C:\Users\daminger\OneDrive\代码\light - v101\light.c (line 270)
+C:\Users\daminger\OneDrive\github\project\代码 - 副本\light\light - v101-1751确定版 - 副本\light.c (line 270)
   ;delayms(10);
     0x0085 :  MOV   A, @0x0A    
     0x0086 :  MOV   0x2C, A     
     0x0087 :  CALL  0x099       
-C:\Users\daminger\OneDrive\代码\light - v101\light.c (line 271)
+C:\Users\daminger\OneDrive\github\project\代码 - 副本\light\light - v101-1751确定版 - 副本\light.c (line 271)
   ;if(!S2)
     0x0088 :  BANK  @0x0        
     0x0089 :  JBC   0x06, 4     
     0x008A :  JMP   0x098       
-C:\Users\daminger\OneDrive\代码\light - v101\light.c (line 273)
+C:\Users\daminger\OneDrive\github\project\代码 - 副本\light\light - v101-1751确定版 - 副本\light.c (line 273)
   ;S2_flag=1;
     0x008B :  BS    0x20, 5     
-C:\Users\daminger\OneDrive\代码\light - v101\light.c (line 274)
+C:\Users\daminger\OneDrive\github\project\代码 - 副本\light\light - v101-1751确定版 - 副本\light.c (line 274)
   ;white_status=2;
     0x008C :  MOV   A, @0x02    
     0x008D :  MOV   0x28, A     
-C:\Users\daminger\OneDrive\代码\light - v101\light.c (line 275)
+C:\Users\daminger\OneDrive\github\project\代码 - 副本\light\light - v101-1751确定版 - 副本\light.c (line 275)
   ;mode_count++;
     0x008E :  INC   0x21        
-C:\Users\daminger\OneDrive\代码\light - v101\light.c (line 276)
+C:\Users\daminger\OneDrive\github\project\代码 - 副本\light\light - v101-1751确定版 - 副本\light.c (line 276)
   ;if(mode_count>=3)
     0x008F :  MOV   A, @0x03    
     0x0090 :  SUB   A, 0x21     
     0x0091 :  JBS   0x03, 0     
     0x0092 :  JMP   0x095       
-C:\Users\daminger\OneDrive\代码\light - v101\light.c (line 277)
+C:\Users\daminger\OneDrive\github\project\代码 - 副本\light\light - v101-1751确定版 - 副本\light.c (line 277)
   ;{mode_count=0;
     0x0093 :  CLR   0x21        
-C:\Users\daminger\OneDrive\代码\light - v101\light.c (line 278)
+C:\Users\daminger\OneDrive\github\project\代码 - 副本\light\light - v101-1751确定版 - 副本\light.c (line 278)
   ;S1_sleep_flag=0;}
     0x0094 :  BC    0x20, 6     
-C:\Users\daminger\OneDrive\代码\light - v101\light.c (line 278)
+C:\Users\daminger\OneDrive\github\project\代码 - 副本\light\light - v101-1751确定版 - 副本\light.c (line 278)
   ;S1_sleep_flag=0;}
     0x0095 :  BANK  @0x0        
     0x0096 :  JBS   0x06, 4     
     0x0097 :  JMP   0x095       
-C:\Users\daminger\OneDrive\代码\light - v101\light.c (line 283)
+C:\Users\daminger\OneDrive\github\project\代码 - 副本\light\light - v101-1751确定版 - 副本\light.c (line 283)
   ;}
     0x0098 :  RET               
-C:\Users\daminger\OneDrive\代码\light - v101\light.c (line 251)
+C:\Users\daminger\OneDrive\github\project\代码 - 副本\light\light - v101-1751确定版 - 副本\light.c (line 251)
   ;for(i=xms;i>0;i--)
     0x0099 :  BANK  @0x0        
     0x009A :  MOV   A, 0x2C     
     0x009B :  MOV   0x2A, A     
     0x009C :  JMP   0x0A8       
-C:\Users\daminger\OneDrive\代码\light - v101\light.c (line 252)
+C:\Users\daminger\OneDrive\github\project\代码 - 副本\light\light - v101-1751确定版 - 副本\light.c (line 252)
   ;for(j=200;j>0;j--);
     0x009D :  MOV   A, @0xC8    
     0x009E :  BANK  @0x0        
     0x009F :  MOV   0x2B, A     
     0x00A0 :  JMP   0x0A3       
-C:\Users\daminger\OneDrive\代码\light - v101\light.c (line 252)
+C:\Users\daminger\OneDrive\github\project\代码 - 副本\light\light - v101-1751确定版 - 副本\light.c (line 252)
   ;for(j=200;j>0;j--);
     0x00A1 :  BANK  @0x0        
     0x00A2 :  DEC   0x2B        
@@ -331,126 +331,126 @@ C:\Users\daminger\OneDrive\代码\light - v101\light.c (line 252)
     0x00A4 :  MOV   0x2B, 0x2B  
     0x00A5 :  JBS   0x03, 2     
     0x00A6 :  JMP   0x0A1       
-C:\Users\daminger\OneDrive\代码\light - v101\light.c (line 251)
+C:\Users\daminger\OneDrive\github\project\代码 - 副本\light\light - v101-1751确定版 - 副本\light.c (line 251)
   ;for(i=xms;i>0;i--)
     0x00A7 :  DEC   0x2A        
     0x00A8 :  BANK  @0x0        
     0x00A9 :  MOV   0x2A, 0x2A  
     0x00AA :  JBS   0x03, 2     
     0x00AB :  JMP   0x09D       
-C:\Users\daminger\OneDrive\代码\light - v101\light.c (line 253)
+C:\Users\daminger\OneDrive\github\project\代码 - 副本\light\light - v101-1751确定版 - 副本\light.c (line 253)
   ;}
     0x00AC :  RET               
-C:\Users\daminger\OneDrive\代码\light - v101\light.c (line 44)
+C:\Users\daminger\OneDrive\github\project\代码 - 副本\light\light - v101-1751确定版 - 副本\light.c (line 44)
   ;white=0;red1=0;red2=0;
     0x00AD :  BANK  @0x0        
     0x00AE :  BC    0x06, 0     
-C:\Users\daminger\OneDrive\代码\light - v101\light.c (line 44)
+C:\Users\daminger\OneDrive\github\project\代码 - 副本\light\light - v101-1751确定版 - 副本\light.c (line 44)
   ;white=0;red1=0;red2=0;
     0x00AF :  BC    0x06, 1     
     0x00B0 :  BC    0x06, 2     
-C:\Users\daminger\OneDrive\代码\light - v101\light.c (line 46)
+C:\Users\daminger\OneDrive\github\project\代码 - 副本\light\light - v101-1751确定版 - 副本\light.c (line 46)
   ;mov		a,@0x0f
     0x00B1 :  MOV   A, @0x0F    
-C:\Users\daminger\OneDrive\代码\light - v101\light.c (line 47)
+C:\Users\daminger\OneDrive\github\project\代码 - 副本\light\light - v101-1751确定版 - 副本\light.c (line 47)
   ;contw
     0x00B2 :  CONTW             
-C:\Users\daminger\OneDrive\代码\light - v101\light.c (line 48)
+C:\Users\daminger\OneDrive\github\project\代码 - 副本\light\light - v101-1751确定版 - 副本\light.c (line 48)
   ;WDTC	                //禁止 WDT
     0x00B3 :  WDTC              
-C:\Users\daminger\OneDrive\代码\light - v101\light.c (line 49)
+C:\Users\daminger\OneDrive\github\project\代码 - 副本\light\light - v101-1751确定版 - 副本\light.c (line 49)
   ;MOV		0X6,0X6			//读取PORT6状态
     0x00B4 :  MOV   0x06, 0x06  
-C:\Users\daminger\OneDrive\代码\light - v101\light.c (line 51)
+C:\Users\daminger\OneDrive\github\project\代码 - 副本\light\light - v101-1751确定版 - 副本\light.c (line 51)
   ;DISI();					//禁止全局中断
     0x00B5 :  DISI              
-C:\Users\daminger\OneDrive\代码\light - v101\light.c (line 52)
+C:\Users\daminger\OneDrive\github\project\代码 - 副本\light\light - v101-1751确定版 - 副本\light.c (line 52)
   ;SCR=0X23;				//IRC 4MHz IDLE=0 TCC时钟源:fs(副振荡器) cpu振荡源:fm(主振荡器)
     0x00B6 :  MOV   A, @0x23    
     0x00B7 :  BANK  @0x1        
     0x00B8 :  MOV   0x0F, A     
-C:\Users\daminger\OneDrive\代码\light - v101\light.c (line 53)
+C:\Users\daminger\OneDrive\github\project\代码 - 副本\light\light - v101-1751确定版 - 副本\light.c (line 53)
   ;IMR=0X02;				//使能Port6状态改变唤醒
     0x00B9 :  MOV   A, @0x02    
     0x00BA :  IOW   0xF         
-C:\Users\daminger\OneDrive\代码\light - v101\light.c (line 54)
+C:\Users\daminger\OneDrive\github\project\代码 - 副本\light\light - v101-1751确定版 - 副本\light.c (line 54)
   ;SLEP();					//进入睡眠模式 程序暂停在此不动
     0x00BB :  SLEP              
-C:\Users\daminger\OneDrive\代码\light - v101\light.c (line 55)
+C:\Users\daminger\OneDrive\github\project\代码 - 副本\light\light - v101-1751确定版 - 副本\light.c (line 55)
   ;NOP();
     0x00BC :  NOP               
-C:\Users\daminger\OneDrive\代码\light - v101\light.c (line 56)
+C:\Users\daminger\OneDrive\github\project\代码 - 副本\light\light - v101-1751确定版 - 副本\light.c (line 56)
   ;NOP();
     0x00BD :  NOP               
-C:\Users\daminger\OneDrive\代码\light - v101\light.c (line 57)
+C:\Users\daminger\OneDrive\github\project\代码 - 副本\light\light - v101-1751确定版 - 副本\light.c (line 57)
   ;WDTC();					//清WDT
     0x00BE :  WDTC              
-C:\Users\daminger\OneDrive\代码\light - v101\light.c (line 58)
+C:\Users\daminger\OneDrive\github\project\代码 - 副本\light\light - v101-1751确定版 - 副本\light.c (line 58)
   ;WDTCR=0;				//禁止WDT
     0x00BF :  MOV   A, @0x00    
     0x00C0 :  IOW   0xE         
-C:\Users\daminger\OneDrive\代码\light - v101\light.c (line 60)
+C:\Users\daminger\OneDrive\github\project\代码 - 副本\light\light - v101-1751确定版 - 副本\light.c (line 60)
   ;SCR=0X63;				////IRC 4MHz IDLE=0 TCC时钟源:fm(主振荡器) cpu振荡源:fm(主振荡器)
     0x00C1 :  MOV   A, @0x63    
     0x00C2 :  MOV   0x0F, A     
-C:\Users\daminger\OneDrive\代码\light - v101\light.c (line 61)
+C:\Users\daminger\OneDrive\github\project\代码 - 副本\light\light - v101-1751确定版 - 副本\light.c (line 61)
   ;keyscan();
     0x00C3 :  CALL  0x06F       
-C:\Users\daminger\OneDrive\代码\light - v101\light.c (line 62)
+C:\Users\daminger\OneDrive\github\project\代码 - 副本\light\light - v101-1751确定版 - 副本\light.c (line 62)
   ;if(S1_flag)
     0x00C4 :  BANK  @0x0        
     0x00C5 :  JBS   0x20, 4     
     0x00C6 :  JMP   0x0CA       
-C:\Users\daminger\OneDrive\代码\light - v101\light.c (line 64)
+C:\Users\daminger\OneDrive\github\project\代码 - 副本\light\light - v101-1751确定版 - 副本\light.c (line 64)
   ;S1_sleep_flag=1;
     0x00C7 :  BS    0x20, 6     
-C:\Users\daminger\OneDrive\代码\light - v101\light.c (line 65)
+C:\Users\daminger\OneDrive\github\project\代码 - 副本\light\light - v101-1751确定版 - 副本\light.c (line 65)
   ;white=1;
     0x00C8 :  BS    0x06, 0     
-C:\Users\daminger\OneDrive\代码\light - v101\light.c (line 66)
+C:\Users\daminger\OneDrive\github\project\代码 - 副本\light\light - v101-1751确定版 - 副本\light.c (line 66)
   ;S1_flag=0;
     0x00C9 :  BC    0x20, 4     
-C:\Users\daminger\OneDrive\代码\light - v101\light.c (line 67)
+C:\Users\daminger\OneDrive\github\project\代码 - 副本\light\light - v101-1751确定版 - 副本\light.c (line 67)
   ;}
     0x00CA :  WDTC              
-C:\Users\daminger\OneDrive\代码\light - v101\light.c (line 72)
+C:\Users\daminger\OneDrive\github\project\代码 - 副本\light\light - v101-1751确定版 - 副本\light.c (line 72)
   ;DISI();
     0x00CB :  DISI              
-C:\Users\daminger\OneDrive\代码\light - v101\light.c (line 73)
+C:\Users\daminger\OneDrive\github\project\代码 - 副本\light\light - v101-1751确定版 - 副本\light.c (line 73)
   ;WDTCR=0;				//禁止WDT
     0x00CC :  MOV   A, @0x00    
     0x00CD :  IOW   0xE         
-C:\Users\daminger\OneDrive\代码\light - v101\light.c (line 77)
+C:\Users\daminger\OneDrive\github\project\代码 - 副本\light\light - v101-1751确定版 - 副本\light.c (line 77)
   ;mov	a,@0x07
     0x00CE :  MOV   A, @0x07    
-C:\Users\daminger\OneDrive\代码\light - v101\light.c (line 78)
+C:\Users\daminger\OneDrive\github\project\代码 - 副本\light\light - v101-1751确定版 - 副本\light.c (line 78)
   ;contw				//TCC分频比设为1：256
     0x00CF :  CONTW             
-C:\Users\daminger\OneDrive\代码\light - v101\light.c (line 80)
+C:\Users\daminger\OneDrive\github\project\代码 - 副本\light\light - v101-1751确定版 - 副本\light.c (line 80)
   ;TCC=0;					//timer=1/4*(256-0)*256*2=32.768ms
     0x00D0 :  CLR   0x01        
-C:\Users\daminger\OneDrive\代码\light - v101\light.c (line 81)
+C:\Users\daminger\OneDrive\github\project\代码 - 副本\light\light - v101-1751确定版 - 副本\light.c (line 81)
   ;ISR=0;
     0x00D1 :  BANK  @0x0        
     0x00D2 :  CLR   0x0F        
-C:\Users\daminger\OneDrive\代码\light - v101\light.c (line 82)
+C:\Users\daminger\OneDrive\github\project\代码 - 副本\light\light - v101-1751确定版 - 副本\light.c (line 82)
   ;IMR=1;
     0x00D3 :  MOV   A, @0x01    
     0x00D4 :  IOW   0xF         
-C:\Users\daminger\OneDrive\代码\light - v101\light.c (line 83)
+C:\Users\daminger\OneDrive\github\project\代码 - 副本\light\light - v101-1751确定版 - 副本\light.c (line 83)
   ;ENI();
     0x00D5 :  ENI               
-C:\Users\daminger\OneDrive\代码\light - v101\light.c (line 86)
+C:\Users\daminger\OneDrive\github\project\代码 - 副本\light\light - v101-1751确定版 - 副本\light.c (line 86)
   ;}
     0x00D6 :  RET               
     0x00D7 :  MOV   A, 0x11     
     0x00D8 :  BANK  @0x0        
     0x00D9 :  MOV   0x29, A     
-C:\Users\daminger\OneDrive\代码\light - v101\light.c (line 90)
+C:\Users\daminger\OneDrive\github\project\代码 - 副本\light\light - v101-1751确定版 - 副本\light.c (line 90)
   ;if(mode1_light_flag)	 	//判断当前灯是否该亮
     0x00DA :  JBS   0x20, 1     
     0x00DB :  JMP   0x101       
-C:\Users\daminger\OneDrive\代码\light - v101\light.c (line 92)
+C:\Users\daminger\OneDrive\github\project\代码 - 副本\light\light - v101-1751确定版 - 副本\light.c (line 92)
   ;switch (white_status)	//白灯调节按钮
     0x00DC :  MOV   A, 0x28     
     0x00DD :  MOV   0x11, A     
@@ -466,52 +466,52 @@ C:\Users\daminger\OneDrive\代码\light - v101\light.c (line 92)
     0x00E7 :  JBC   0x03, 2     
     0x00E8 :  JMP   0x0F4       
     0x00E9 :  JMP   0x0F8       
-C:\Users\daminger\OneDrive\代码\light - v101\light.c (line 94)
+C:\Users\daminger\OneDrive\github\project\代码 - 副本\light\light - v101-1751确定版 - 副本\light.c (line 94)
   ;case 0: white=1;red1=1;red2=1;break;
     0x00EA :  BANK  @0x0        
     0x00EB :  BS    0x06, 0     
-C:\Users\daminger\OneDrive\代码\light - v101\light.c (line 94)
+C:\Users\daminger\OneDrive\github\project\代码 - 副本\light\light - v101-1751确定版 - 副本\light.c (line 94)
   ;case 0: white=1;red1=1;red2=1;break;
     0x00EC :  BS    0x06, 1     
     0x00ED :  BS    0x06, 2     
-C:\Users\daminger\OneDrive\代码\light - v101\light.c (line 94)
+C:\Users\daminger\OneDrive\github\project\代码 - 副本\light\light - v101-1751确定版 - 副本\light.c (line 94)
   ;case 0: white=1;red1=1;red2=1;break;
     0x00EE :  JMP   0x0F8       
-C:\Users\daminger\OneDrive\代码\light - v101\light.c (line 95)
+C:\Users\daminger\OneDrive\github\project\代码 - 副本\light\light - v101-1751确定版 - 副本\light.c (line 95)
   ;case 1: white=0;red1=1;red2=1;break;
     0x00EF :  BANK  @0x0        
     0x00F0 :  BC    0x06, 0     
     0x00F1 :  BS    0x06, 1     
-C:\Users\daminger\OneDrive\代码\light - v101\light.c (line 95)
+C:\Users\daminger\OneDrive\github\project\代码 - 副本\light\light - v101-1751确定版 - 副本\light.c (line 95)
   ;case 1: white=0;red1=1;red2=1;break;
     0x00F2 :  BS    0x06, 2     
     0x00F3 :  JMP   0x0F8       
-C:\Users\daminger\OneDrive\代码\light - v101\light.c (line 96)
+C:\Users\daminger\OneDrive\github\project\代码 - 副本\light\light - v101-1751确定版 - 副本\light.c (line 96)
   ;case 2: white=1;red1=1;red2=1;break;
     0x00F4 :  BANK  @0x0        
     0x00F5 :  BS    0x06, 0     
     0x00F6 :  BS    0x06, 1     
-C:\Users\daminger\OneDrive\代码\light - v101\light.c (line 96)
+C:\Users\daminger\OneDrive\github\project\代码 - 副本\light\light - v101-1751确定版 - 副本\light.c (line 96)
   ;case 2: white=1;red1=1;red2=1;break;
     0x00F7 :  BS    0x06, 2     
-C:\Users\daminger\OneDrive\代码\light - v101\light.c (line 99)
+C:\Users\daminger\OneDrive\github\project\代码 - 副本\light\light - v101-1751确定版 - 副本\light.c (line 99)
   ;mode1_count1++;			//灯亮1单位
     0x00F8 :  BANK  @0x0        
     0x00F9 :  INC   0x22        
-C:\Users\daminger\OneDrive\代码\light - v101\light.c (line 100)
+C:\Users\daminger\OneDrive\github\project\代码 - 副本\light\light - v101-1751确定版 - 副本\light.c (line 100)
   ;if(mode1_count1>=4)		//判断灯亮是否到4单位
     0x00FA :  MOV   A, @0x04    
     0x00FB :  SUB   A, 0x22     
     0x00FC :  JBS   0x03, 0     
     0x00FD :  JMP   0x126       
-C:\Users\daminger\OneDrive\代码\light - v101\light.c (line 102)
+C:\Users\daminger\OneDrive\github\project\代码 - 副本\light\light - v101-1751确定版 - 副本\light.c (line 102)
   ;mode1_count1=0;		//重置计数
     0x00FE :  CLR   0x22        
-C:\Users\daminger\OneDrive\代码\light - v101\light.c (line 103)
+C:\Users\daminger\OneDrive\github\project\代码 - 副本\light\light - v101-1751确定版 - 副本\light.c (line 103)
   ;mode1_light_flag=0;	//灯亮标志置零
     0x00FF :  BC    0x20, 1     
     0x0100 :  JMP   0x126       
-C:\Users\daminger\OneDrive\代码\light - v101\light.c (line 109)
+C:\Users\daminger\OneDrive\github\project\代码 - 副本\light\light - v101-1751确定版 - 副本\light.c (line 109)
   ;switch (white_status)
     0x0101 :  BANK  @0x0        
     0x0102 :  MOV   A, 0x28     
@@ -528,51 +528,51 @@ C:\Users\daminger\OneDrive\代码\light - v101\light.c (line 109)
     0x010D :  JBC   0x03, 2     
     0x010E :  JMP   0x11A       
     0x010F :  JMP   0x11E       
-C:\Users\daminger\OneDrive\代码\light - v101\light.c (line 111)
+C:\Users\daminger\OneDrive\github\project\代码 - 副本\light\light - v101-1751确定版 - 副本\light.c (line 111)
   ;case 0: white=1;red1=0;red2=0;break;
     0x0110 :  BANK  @0x0        
     0x0111 :  BS    0x06, 0     
-C:\Users\daminger\OneDrive\代码\light - v101\light.c (line 111)
+C:\Users\daminger\OneDrive\github\project\代码 - 副本\light\light - v101-1751确定版 - 副本\light.c (line 111)
   ;case 0: white=1;red1=0;red2=0;break;
     0x0112 :  BC    0x06, 1     
     0x0113 :  BC    0x06, 2     
-C:\Users\daminger\OneDrive\代码\light - v101\light.c (line 111)
+C:\Users\daminger\OneDrive\github\project\代码 - 副本\light\light - v101-1751确定版 - 副本\light.c (line 111)
   ;case 0: white=1;red1=0;red2=0;break;
     0x0114 :  JMP   0x11E       
-C:\Users\daminger\OneDrive\代码\light - v101\light.c (line 112)
+C:\Users\daminger\OneDrive\github\project\代码 - 副本\light\light - v101-1751确定版 - 副本\light.c (line 112)
   ;case 1: white=0;red1=0;red2=0;break;
     0x0115 :  BANK  @0x0        
     0x0116 :  BC    0x06, 0     
     0x0117 :  BC    0x06, 1     
-C:\Users\daminger\OneDrive\代码\light - v101\light.c (line 112)
+C:\Users\daminger\OneDrive\github\project\代码 - 副本\light\light - v101-1751确定版 - 副本\light.c (line 112)
   ;case 1: white=0;red1=0;red2=0;break;
     0x0118 :  BC    0x06, 2     
     0x0119 :  JMP   0x11E       
-C:\Users\daminger\OneDrive\代码\light - v101\light.c (line 113)
+C:\Users\daminger\OneDrive\github\project\代码 - 副本\light\light - v101-1751确定版 - 副本\light.c (line 113)
   ;case 2: white=0;red1=0;red2=0;break;
     0x011A :  BANK  @0x0        
     0x011B :  BC    0x06, 0     
     0x011C :  BC    0x06, 1     
-C:\Users\daminger\OneDrive\代码\light - v101\light.c (line 113)
+C:\Users\daminger\OneDrive\github\project\代码 - 副本\light\light - v101-1751确定版 - 副本\light.c (line 113)
   ;case 2: white=0;red1=0;red2=0;break;
     0x011D :  BC    0x06, 2     
-C:\Users\daminger\OneDrive\代码\light - v101\light.c (line 116)
+C:\Users\daminger\OneDrive\github\project\代码 - 副本\light\light - v101-1751确定版 - 副本\light.c (line 116)
   ;mode1_count2++;
     0x011E :  BANK  @0x0        
     0x011F :  INC   0x23        
-C:\Users\daminger\OneDrive\代码\light - v101\light.c (line 117)
+C:\Users\daminger\OneDrive\github\project\代码 - 副本\light\light - v101-1751确定版 - 副本\light.c (line 117)
   ;if(mode1_count2>=4)
     0x0120 :  MOV   A, @0x04    
     0x0121 :  SUB   A, 0x23     
     0x0122 :  JBS   0x03, 0     
     0x0123 :  JMP   0x126       
-C:\Users\daminger\OneDrive\代码\light - v101\light.c (line 119)
+C:\Users\daminger\OneDrive\github\project\代码 - 副本\light\light - v101-1751确定版 - 副本\light.c (line 119)
   ;mode1_count2=0;
     0x0124 :  CLR   0x23        
-C:\Users\daminger\OneDrive\代码\light - v101\light.c (line 120)
+C:\Users\daminger\OneDrive\github\project\代码 - 副本\light\light - v101-1751确定版 - 副本\light.c (line 120)
   ;mode1_light_flag=1;
     0x0125 :  BS    0x20, 1     
-C:\Users\daminger\OneDrive\代码\light - v101\light.c (line 124)
+C:\Users\daminger\OneDrive\github\project\代码 - 副本\light\light - v101-1751确定版 - 副本\light.c (line 124)
   ;}
     0x0126 :  BANK  @0x0        
     0x0127 :  MOV   A, 0x29     
@@ -581,20 +581,20 @@ C:\Users\daminger\OneDrive\代码\light - v101\light.c (line 124)
     0x012A :  MOV   A, 0x11     
     0x012B :  BANK  @0x0        
     0x012C :  MOV   0x29, A     
-C:\Users\daminger\OneDrive\代码\light - v101\light.c (line 130)
+C:\Users\daminger\OneDrive\github\project\代码 - 副本\light\light - v101-1751确定版 - 副本\light.c (line 130)
   ;if(mode2_red1_flag)					//判断是否该亮红灯1
     0x012D :  JBS   0x20, 2     
     0x012E :  JMP   0x1A8       
-C:\Users\daminger\OneDrive\代码\light - v101\light.c (line 132)
+C:\Users\daminger\OneDrive\github\project\代码 - 副本\light\light - v101-1751确定版 - 副本\light.c (line 132)
   ;if(mode2_four_cycle_flag)	//判断四次循环是否结束
     0x012F :  MOV   0x26, 0x26  
     0x0130 :  JBC   0x03, 2     
     0x0131 :  JMP   0x180       
-C:\Users\daminger\OneDrive\代码\light - v101\light.c (line 134)
+C:\Users\daminger\OneDrive\github\project\代码 - 副本\light\light - v101-1751确定版 - 副本\light.c (line 134)
   ;if(mode2_light_flag)		//判断当前是否亮灯
     0x0132 :  JBS   0x20, 3     
     0x0133 :  JMP   0x159       
-C:\Users\daminger\OneDrive\代码\light - v101\light.c (line 136)
+C:\Users\daminger\OneDrive\github\project\代码 - 副本\light\light - v101-1751确定版 - 副本\light.c (line 136)
   ;switch (white_status)	//白灯调节按钮
     0x0134 :  MOV   A, 0x28     
     0x0135 :  MOV   0x11, A     
@@ -610,52 +610,52 @@ C:\Users\daminger\OneDrive\代码\light - v101\light.c (line 136)
     0x013F :  JBC   0x03, 2     
     0x0140 :  JMP   0x14C       
     0x0141 :  JMP   0x150       
-C:\Users\daminger\OneDrive\代码\light - v101\light.c (line 138)
+C:\Users\daminger\OneDrive\github\project\代码 - 副本\light\light - v101-1751确定版 - 副本\light.c (line 138)
   ;case 0: white=1;red1=1;red2=0;break;
     0x0142 :  BANK  @0x0        
     0x0143 :  BS    0x06, 0     
-C:\Users\daminger\OneDrive\代码\light - v101\light.c (line 138)
+C:\Users\daminger\OneDrive\github\project\代码 - 副本\light\light - v101-1751确定版 - 副本\light.c (line 138)
   ;case 0: white=1;red1=1;red2=0;break;
     0x0144 :  BS    0x06, 1     
     0x0145 :  BC    0x06, 2     
-C:\Users\daminger\OneDrive\代码\light - v101\light.c (line 138)
+C:\Users\daminger\OneDrive\github\project\代码 - 副本\light\light - v101-1751确定版 - 副本\light.c (line 138)
   ;case 0: white=1;red1=1;red2=0;break;
     0x0146 :  JMP   0x150       
-C:\Users\daminger\OneDrive\代码\light - v101\light.c (line 139)
+C:\Users\daminger\OneDrive\github\project\代码 - 副本\light\light - v101-1751确定版 - 副本\light.c (line 139)
   ;case 1: white=0;red1=1;red2=0;break;
     0x0147 :  BANK  @0x0        
     0x0148 :  BC    0x06, 0     
     0x0149 :  BS    0x06, 1     
-C:\Users\daminger\OneDrive\代码\light - v101\light.c (line 139)
+C:\Users\daminger\OneDrive\github\project\代码 - 副本\light\light - v101-1751确定版 - 副本\light.c (line 139)
   ;case 1: white=0;red1=1;red2=0;break;
     0x014A :  BC    0x06, 2     
     0x014B :  JMP   0x150       
-C:\Users\daminger\OneDrive\代码\light - v101\light.c (line 140)
+C:\Users\daminger\OneDrive\github\project\代码 - 副本\light\light - v101-1751确定版 - 副本\light.c (line 140)
   ;case 2: white=1;red1=1;red2=0;break;//case0同case2
     0x014C :  BANK  @0x0        
     0x014D :  BS    0x06, 0     
     0x014E :  BS    0x06, 1     
-C:\Users\daminger\OneDrive\代码\light - v101\light.c (line 140)
+C:\Users\daminger\OneDrive\github\project\代码 - 副本\light\light - v101-1751确定版 - 副本\light.c (line 140)
   ;case 2: white=1;red1=1;red2=0;break;//case0同case2
     0x014F :  BC    0x06, 2     
-C:\Users\daminger\OneDrive\代码\light - v101\light.c (line 143)
+C:\Users\daminger\OneDrive\github\project\代码 - 副本\light\light - v101-1751确定版 - 副本\light.c (line 143)
   ;mode2_count1++;
     0x0150 :  BANK  @0x0        
     0x0151 :  INC   0x24        
-C:\Users\daminger\OneDrive\代码\light - v101\light.c (line 144)
+C:\Users\daminger\OneDrive\github\project\代码 - 副本\light\light - v101-1751确定版 - 副本\light.c (line 144)
   ;if(mode2_count1>=2)
     0x0152 :  MOV   A, @0x02    
     0x0153 :  SUB   A, 0x24     
     0x0154 :  JBS   0x03, 0     
     0x0155 :  JMP   0x221       
-C:\Users\daminger\OneDrive\代码\light - v101\light.c (line 146)
+C:\Users\daminger\OneDrive\github\project\代码 - 副本\light\light - v101-1751确定版 - 副本\light.c (line 146)
   ;mode2_count1=0;
     0x0156 :  CLR   0x24        
-C:\Users\daminger\OneDrive\代码\light - v101\light.c (line 147)
+C:\Users\daminger\OneDrive\github\project\代码 - 副本\light\light - v101-1751确定版 - 副本\light.c (line 147)
   ;mode2_light_flag=0;
     0x0157 :  BC    0x20, 3     
     0x0158 :  JMP   0x221       
-C:\Users\daminger\OneDrive\代码\light - v101\light.c (line 153)
+C:\Users\daminger\OneDrive\github\project\代码 - 副本\light\light - v101-1751确定版 - 副本\light.c (line 153)
   ;switch (white_status)	//白灯调节按钮
     0x0159 :  BANK  @0x0        
     0x015A :  MOV   A, 0x28     
@@ -672,55 +672,55 @@ C:\Users\daminger\OneDrive\代码\light - v101\light.c (line 153)
     0x0165 :  JBC   0x03, 2     
     0x0166 :  JMP   0x172       
     0x0167 :  JMP   0x176       
-C:\Users\daminger\OneDrive\代码\light - v101\light.c (line 155)
+C:\Users\daminger\OneDrive\github\project\代码 - 副本\light\light - v101-1751确定版 - 副本\light.c (line 155)
   ;case 0: white=1;red1=0;red2=0;break;
     0x0168 :  BANK  @0x0        
     0x0169 :  BS    0x06, 0     
-C:\Users\daminger\OneDrive\代码\light - v101\light.c (line 155)
+C:\Users\daminger\OneDrive\github\project\代码 - 副本\light\light - v101-1751确定版 - 副本\light.c (line 155)
   ;case 0: white=1;red1=0;red2=0;break;
     0x016A :  BC    0x06, 1     
     0x016B :  BC    0x06, 2     
-C:\Users\daminger\OneDrive\代码\light - v101\light.c (line 155)
+C:\Users\daminger\OneDrive\github\project\代码 - 副本\light\light - v101-1751确定版 - 副本\light.c (line 155)
   ;case 0: white=1;red1=0;red2=0;break;
     0x016C :  JMP   0x176       
-C:\Users\daminger\OneDrive\代码\light - v101\light.c (line 156)
+C:\Users\daminger\OneDrive\github\project\代码 - 副本\light\light - v101-1751确定版 - 副本\light.c (line 156)
   ;case 1: white=0;red1=0;red2=0;break;
     0x016D :  BANK  @0x0        
     0x016E :  BC    0x06, 0     
     0x016F :  BC    0x06, 1     
-C:\Users\daminger\OneDrive\代码\light - v101\light.c (line 156)
+C:\Users\daminger\OneDrive\github\project\代码 - 副本\light\light - v101-1751确定版 - 副本\light.c (line 156)
   ;case 1: white=0;red1=0;red2=0;break;
     0x0170 :  BC    0x06, 2     
     0x0171 :  JMP   0x176       
-C:\Users\daminger\OneDrive\代码\light - v101\light.c (line 157)
+C:\Users\daminger\OneDrive\github\project\代码 - 副本\light\light - v101-1751确定版 - 副本\light.c (line 157)
   ;case 2: white=0;red1=0;red2=0;break;//case1同case2
     0x0172 :  BANK  @0x0        
     0x0173 :  BC    0x06, 0     
     0x0174 :  BC    0x06, 1     
-C:\Users\daminger\OneDrive\代码\light - v101\light.c (line 157)
+C:\Users\daminger\OneDrive\github\project\代码 - 副本\light\light - v101-1751确定版 - 副本\light.c (line 157)
   ;case 2: white=0;red1=0;red2=0;break;//case1同case2
     0x0175 :  BC    0x06, 2     
-C:\Users\daminger\OneDrive\代码\light - v101\light.c (line 160)
+C:\Users\daminger\OneDrive\github\project\代码 - 副本\light\light - v101-1751确定版 - 副本\light.c (line 160)
   ;mode2_light_flag=1;
     0x0176 :  BANK  @0x0        
     0x0177 :  BS    0x20, 3     
-C:\Users\daminger\OneDrive\代码\light - v101\light.c (line 161)
+C:\Users\daminger\OneDrive\github\project\代码 - 副本\light\light - v101-1751确定版 - 副本\light.c (line 161)
   ;mode2_four_cycle_count++;
     0x0178 :  INC   0x27        
-C:\Users\daminger\OneDrive\代码\light - v101\light.c (line 162)
+C:\Users\daminger\OneDrive\github\project\代码 - 副本\light\light - v101-1751确定版 - 副本\light.c (line 162)
   ;if(mode2_four_cycle_count>=4)
     0x0179 :  MOV   A, @0x04    
     0x017A :  SUB   A, 0x27     
     0x017B :  JBS   0x03, 0     
     0x017C :  JMP   0x221       
-C:\Users\daminger\OneDrive\代码\light - v101\light.c (line 164)
+C:\Users\daminger\OneDrive\github\project\代码 - 副本\light\light - v101-1751确定版 - 副本\light.c (line 164)
   ;mode2_four_cycle_count=0;	//计数归零
     0x017D :  CLR   0x27        
-C:\Users\daminger\OneDrive\代码\light - v101\light.c (line 165)
+C:\Users\daminger\OneDrive\github\project\代码 - 副本\light\light - v101-1751确定版 - 副本\light.c (line 165)
   ;mode2_four_cycle_flag=0;
     0x017E :  CLR   0x26        
     0x017F :  JMP   0x221       
-C:\Users\daminger\OneDrive\代码\light - v101\light.c (line 173)
+C:\Users\daminger\OneDrive\github\project\代码 - 副本\light\light - v101-1751确定版 - 副本\light.c (line 173)
   ;switch (white_status)		//白灯调节按钮
     0x0180 :  BANK  @0x0        
     0x0181 :  MOV   A, 0x28     
@@ -737,66 +737,66 @@ C:\Users\daminger\OneDrive\代码\light - v101\light.c (line 173)
     0x018C :  JBC   0x03, 2     
     0x018D :  JMP   0x199       
     0x018E :  JMP   0x19D       
-C:\Users\daminger\OneDrive\代码\light - v101\light.c (line 175)
+C:\Users\daminger\OneDrive\github\project\代码 - 副本\light\light - v101-1751确定版 - 副本\light.c (line 175)
   ;case 0: white=1;red1=0;red2=0;break;
     0x018F :  BANK  @0x0        
     0x0190 :  BS    0x06, 0     
-C:\Users\daminger\OneDrive\代码\light - v101\light.c (line 175)
+C:\Users\daminger\OneDrive\github\project\代码 - 副本\light\light - v101-1751确定版 - 副本\light.c (line 175)
   ;case 0: white=1;red1=0;red2=0;break;
     0x0191 :  BC    0x06, 1     
     0x0192 :  BC    0x06, 2     
-C:\Users\daminger\OneDrive\代码\light - v101\light.c (line 175)
+C:\Users\daminger\OneDrive\github\project\代码 - 副本\light\light - v101-1751确定版 - 副本\light.c (line 175)
   ;case 0: white=1;red1=0;red2=0;break;
     0x0193 :  JMP   0x19D       
-C:\Users\daminger\OneDrive\代码\light - v101\light.c (line 176)
+C:\Users\daminger\OneDrive\github\project\代码 - 副本\light\light - v101-1751确定版 - 副本\light.c (line 176)
   ;case 1: white=0;red1=0;red2=0;break;
     0x0194 :  BANK  @0x0        
     0x0195 :  BC    0x06, 0     
     0x0196 :  BC    0x06, 1     
-C:\Users\daminger\OneDrive\代码\light - v101\light.c (line 176)
+C:\Users\daminger\OneDrive\github\project\代码 - 副本\light\light - v101-1751确定版 - 副本\light.c (line 176)
   ;case 1: white=0;red1=0;red2=0;break;
     0x0197 :  BC    0x06, 2     
     0x0198 :  JMP   0x19D       
-C:\Users\daminger\OneDrive\代码\light - v101\light.c (line 177)
+C:\Users\daminger\OneDrive\github\project\代码 - 副本\light\light - v101-1751确定版 - 副本\light.c (line 177)
   ;case 2: white=0;red1=0;red2=0;break;//case1同case2
     0x0199 :  BANK  @0x0        
     0x019A :  BC    0x06, 0     
     0x019B :  BC    0x06, 1     
-C:\Users\daminger\OneDrive\代码\light - v101\light.c (line 177)
+C:\Users\daminger\OneDrive\github\project\代码 - 副本\light\light - v101-1751确定版 - 副本\light.c (line 177)
   ;case 2: white=0;red1=0;red2=0;break;//case1同case2
     0x019C :  BC    0x06, 2     
-C:\Users\daminger\OneDrive\代码\light - v101\light.c (line 180)
+C:\Users\daminger\OneDrive\github\project\代码 - 副本\light\light - v101-1751确定版 - 副本\light.c (line 180)
   ;mode2_count2++;
     0x019D :  BANK  @0x0        
     0x019E :  INC   0x25        
-C:\Users\daminger\OneDrive\代码\light - v101\light.c (line 181)
+C:\Users\daminger\OneDrive\github\project\代码 - 副本\light\light - v101-1751确定版 - 副本\light.c (line 181)
   ;if(mode2_count2>=16)		//灯灭16单位结束
     0x019F :  MOV   A, @0x10    
     0x01A0 :  SUB   A, 0x25     
     0x01A1 :  JBS   0x03, 0     
     0x01A2 :  JMP   0x221       
-C:\Users\daminger\OneDrive\代码\light - v101\light.c (line 183)
+C:\Users\daminger\OneDrive\github\project\代码 - 副本\light\light - v101-1751确定版 - 副本\light.c (line 183)
   ;mode2_count2=0;
     0x01A3 :  CLR   0x25        
-C:\Users\daminger\OneDrive\代码\light - v101\light.c (line 184)
+C:\Users\daminger\OneDrive\github\project\代码 - 副本\light\light - v101-1751确定版 - 副本\light.c (line 184)
   ;mode2_red1_flag=0;
     0x01A4 :  BC    0x20, 2     
-C:\Users\daminger\OneDrive\代码\light - v101\light.c (line 185)
+C:\Users\daminger\OneDrive\github\project\代码 - 副本\light\light - v101-1751确定版 - 副本\light.c (line 185)
   ;mode2_four_cycle_flag=1;//四次循环重新开始
     0x01A5 :  MOV   A, @0x01    
     0x01A6 :  MOV   0x26, A     
     0x01A7 :  JMP   0x221       
-C:\Users\daminger\OneDrive\代码\light - v101\light.c (line 191)
+C:\Users\daminger\OneDrive\github\project\代码 - 副本\light\light - v101-1751确定版 - 副本\light.c (line 191)
   ;if(mode2_four_cycle_flag)	//判断四次循环是否结束
     0x01A8 :  BANK  @0x0        
     0x01A9 :  MOV   0x26, 0x26  
     0x01AA :  JBC   0x03, 2     
     0x01AB :  JMP   0x1FA       
-C:\Users\daminger\OneDrive\代码\light - v101\light.c (line 193)
+C:\Users\daminger\OneDrive\github\project\代码 - 副本\light\light - v101-1751确定版 - 副本\light.c (line 193)
   ;if(mode2_light_flag)		//判断当前是否亮灯
     0x01AC :  JBS   0x20, 3     
     0x01AD :  JMP   0x1D3       
-C:\Users\daminger\OneDrive\代码\light - v101\light.c (line 195)
+C:\Users\daminger\OneDrive\github\project\代码 - 副本\light\light - v101-1751确定版 - 副本\light.c (line 195)
   ;switch (white_status)	//白灯调节按钮
     0x01AE :  MOV   A, 0x28     
     0x01AF :  MOV   0x11, A     
@@ -812,52 +812,52 @@ C:\Users\daminger\OneDrive\代码\light - v101\light.c (line 195)
     0x01B9 :  JBC   0x03, 2     
     0x01BA :  JMP   0x1C6       
     0x01BB :  JMP   0x1CA       
-C:\Users\daminger\OneDrive\代码\light - v101\light.c (line 197)
+C:\Users\daminger\OneDrive\github\project\代码 - 副本\light\light - v101-1751确定版 - 副本\light.c (line 197)
   ;case 0: white=1;red1=0;red2=1;break;
     0x01BC :  BANK  @0x0        
     0x01BD :  BS    0x06, 0     
-C:\Users\daminger\OneDrive\代码\light - v101\light.c (line 197)
+C:\Users\daminger\OneDrive\github\project\代码 - 副本\light\light - v101-1751确定版 - 副本\light.c (line 197)
   ;case 0: white=1;red1=0;red2=1;break;
     0x01BE :  BC    0x06, 1     
     0x01BF :  BS    0x06, 2     
-C:\Users\daminger\OneDrive\代码\light - v101\light.c (line 197)
+C:\Users\daminger\OneDrive\github\project\代码 - 副本\light\light - v101-1751确定版 - 副本\light.c (line 197)
   ;case 0: white=1;red1=0;red2=1;break;
     0x01C0 :  JMP   0x1CA       
-C:\Users\daminger\OneDrive\代码\light - v101\light.c (line 198)
+C:\Users\daminger\OneDrive\github\project\代码 - 副本\light\light - v101-1751确定版 - 副本\light.c (line 198)
   ;case 1: white=0;red1=0;red2=1;break;
     0x01C1 :  BANK  @0x0        
     0x01C2 :  BC    0x06, 0     
     0x01C3 :  BC    0x06, 1     
-C:\Users\daminger\OneDrive\代码\light - v101\light.c (line 198)
+C:\Users\daminger\OneDrive\github\project\代码 - 副本\light\light - v101-1751确定版 - 副本\light.c (line 198)
   ;case 1: white=0;red1=0;red2=1;break;
     0x01C4 :  BS    0x06, 2     
     0x01C5 :  JMP   0x1CA       
-C:\Users\daminger\OneDrive\代码\light - v101\light.c (line 199)
+C:\Users\daminger\OneDrive\github\project\代码 - 副本\light\light - v101-1751确定版 - 副本\light.c (line 199)
   ;case 2: white=1;red1=0;red2=1;break;//case0同case2
     0x01C6 :  BANK  @0x0        
     0x01C7 :  BS    0x06, 0     
     0x01C8 :  BC    0x06, 1     
-C:\Users\daminger\OneDrive\代码\light - v101\light.c (line 199)
+C:\Users\daminger\OneDrive\github\project\代码 - 副本\light\light - v101-1751确定版 - 副本\light.c (line 199)
   ;case 2: white=1;red1=0;red2=1;break;//case0同case2
     0x01C9 :  BS    0x06, 2     
-C:\Users\daminger\OneDrive\代码\light - v101\light.c (line 202)
+C:\Users\daminger\OneDrive\github\project\代码 - 副本\light\light - v101-1751确定版 - 副本\light.c (line 202)
   ;mode2_count1++;
     0x01CA :  BANK  @0x0        
     0x01CB :  INC   0x24        
-C:\Users\daminger\OneDrive\代码\light - v101\light.c (line 203)
+C:\Users\daminger\OneDrive\github\project\代码 - 副本\light\light - v101-1751确定版 - 副本\light.c (line 203)
   ;if(mode2_count1>=2)
     0x01CC :  MOV   A, @0x02    
     0x01CD :  SUB   A, 0x24     
     0x01CE :  JBS   0x03, 0     
     0x01CF :  JMP   0x221       
-C:\Users\daminger\OneDrive\代码\light - v101\light.c (line 205)
+C:\Users\daminger\OneDrive\github\project\代码 - 副本\light\light - v101-1751确定版 - 副本\light.c (line 205)
   ;mode2_count1=0;
     0x01D0 :  CLR   0x24        
-C:\Users\daminger\OneDrive\代码\light - v101\light.c (line 206)
+C:\Users\daminger\OneDrive\github\project\代码 - 副本\light\light - v101-1751确定版 - 副本\light.c (line 206)
   ;mode2_light_flag=0;
     0x01D1 :  BC    0x20, 3     
     0x01D2 :  JMP   0x221       
-C:\Users\daminger\OneDrive\代码\light - v101\light.c (line 212)
+C:\Users\daminger\OneDrive\github\project\代码 - 副本\light\light - v101-1751确定版 - 副本\light.c (line 212)
   ;switch (white_status)	//白灯调节按钮
     0x01D3 :  BANK  @0x0        
     0x01D4 :  MOV   A, 0x28     
@@ -874,55 +874,55 @@ C:\Users\daminger\OneDrive\代码\light - v101\light.c (line 212)
     0x01DF :  JBC   0x03, 2     
     0x01E0 :  JMP   0x1EC       
     0x01E1 :  JMP   0x1F0       
-C:\Users\daminger\OneDrive\代码\light - v101\light.c (line 214)
+C:\Users\daminger\OneDrive\github\project\代码 - 副本\light\light - v101-1751确定版 - 副本\light.c (line 214)
   ;case 0: white=1;red1=0;red2=0;break;
     0x01E2 :  BANK  @0x0        
     0x01E3 :  BS    0x06, 0     
-C:\Users\daminger\OneDrive\代码\light - v101\light.c (line 214)
+C:\Users\daminger\OneDrive\github\project\代码 - 副本\light\light - v101-1751确定版 - 副本\light.c (line 214)
   ;case 0: white=1;red1=0;red2=0;break;
     0x01E4 :  BC    0x06, 1     
     0x01E5 :  BC    0x06, 2     
-C:\Users\daminger\OneDrive\代码\light - v101\light.c (line 214)
+C:\Users\daminger\OneDrive\github\project\代码 - 副本\light\light - v101-1751确定版 - 副本\light.c (line 214)
   ;case 0: white=1;red1=0;red2=0;break;
     0x01E6 :  JMP   0x1F0       
-C:\Users\daminger\OneDrive\代码\light - v101\light.c (line 215)
+C:\Users\daminger\OneDrive\github\project\代码 - 副本\light\light - v101-1751确定版 - 副本\light.c (line 215)
   ;case 1: white=0;red1=0;red2=0;break;
     0x01E7 :  BANK  @0x0        
     0x01E8 :  BC    0x06, 0     
     0x01E9 :  BC    0x06, 1     
-C:\Users\daminger\OneDrive\代码\light - v101\light.c (line 215)
+C:\Users\daminger\OneDrive\github\project\代码 - 副本\light\light - v101-1751确定版 - 副本\light.c (line 215)
   ;case 1: white=0;red1=0;red2=0;break;
     0x01EA :  BC    0x06, 2     
     0x01EB :  JMP   0x1F0       
-C:\Users\daminger\OneDrive\代码\light - v101\light.c (line 216)
+C:\Users\daminger\OneDrive\github\project\代码 - 副本\light\light - v101-1751确定版 - 副本\light.c (line 216)
   ;case 2: white=0;red1=0;red2=0;break;//case1同case2
     0x01EC :  BANK  @0x0        
     0x01ED :  BC    0x06, 0     
     0x01EE :  BC    0x06, 1     
-C:\Users\daminger\OneDrive\代码\light - v101\light.c (line 216)
+C:\Users\daminger\OneDrive\github\project\代码 - 副本\light\light - v101-1751确定版 - 副本\light.c (line 216)
   ;case 2: white=0;red1=0;red2=0;break;//case1同case2
     0x01EF :  BC    0x06, 2     
-C:\Users\daminger\OneDrive\代码\light - v101\light.c (line 219)
+C:\Users\daminger\OneDrive\github\project\代码 - 副本\light\light - v101-1751确定版 - 副本\light.c (line 219)
   ;mode2_light_flag=1;
     0x01F0 :  BANK  @0x0        
     0x01F1 :  BS    0x20, 3     
-C:\Users\daminger\OneDrive\代码\light - v101\light.c (line 220)
+C:\Users\daminger\OneDrive\github\project\代码 - 副本\light\light - v101-1751确定版 - 副本\light.c (line 220)
   ;mode2_four_cycle_count++;
     0x01F2 :  INC   0x27        
-C:\Users\daminger\OneDrive\代码\light - v101\light.c (line 221)
+C:\Users\daminger\OneDrive\github\project\代码 - 副本\light\light - v101-1751确定版 - 副本\light.c (line 221)
   ;if(mode2_four_cycle_count>=4)
     0x01F3 :  MOV   A, @0x04    
     0x01F4 :  SUB   A, 0x27     
     0x01F5 :  JBS   0x03, 0     
     0x01F6 :  JMP   0x221       
-C:\Users\daminger\OneDrive\代码\light - v101\light.c (line 223)
+C:\Users\daminger\OneDrive\github\project\代码 - 副本\light\light - v101-1751确定版 - 副本\light.c (line 223)
   ;mode2_four_cycle_count=0;	//计数归零
     0x01F7 :  CLR   0x27        
-C:\Users\daminger\OneDrive\代码\light - v101\light.c (line 224)
+C:\Users\daminger\OneDrive\github\project\代码 - 副本\light\light - v101-1751确定版 - 副本\light.c (line 224)
   ;mode2_four_cycle_flag=0;
     0x01F8 :  CLR   0x26        
     0x01F9 :  JMP   0x221       
-C:\Users\daminger\OneDrive\代码\light - v101\light.c (line 230)
+C:\Users\daminger\OneDrive\github\project\代码 - 副本\light\light - v101-1751确定版 - 副本\light.c (line 230)
   ;switch (white_status)		//白灯调节按钮
     0x01FA :  BANK  @0x0        
     0x01FB :  MOV   A, 0x28     
@@ -939,55 +939,55 @@ C:\Users\daminger\OneDrive\代码\light - v101\light.c (line 230)
     0x0206 :  JBC   0x03, 2     
     0x0207 :  JMP   0x213       
     0x0208 :  JMP   0x217       
-C:\Users\daminger\OneDrive\代码\light - v101\light.c (line 232)
+C:\Users\daminger\OneDrive\github\project\代码 - 副本\light\light - v101-1751确定版 - 副本\light.c (line 232)
   ;case 0: white=1;red1=0;red2=0;break;
     0x0209 :  BANK  @0x0        
     0x020A :  BS    0x06, 0     
-C:\Users\daminger\OneDrive\代码\light - v101\light.c (line 232)
+C:\Users\daminger\OneDrive\github\project\代码 - 副本\light\light - v101-1751确定版 - 副本\light.c (line 232)
   ;case 0: white=1;red1=0;red2=0;break;
     0x020B :  BC    0x06, 1     
     0x020C :  BC    0x06, 2     
-C:\Users\daminger\OneDrive\代码\light - v101\light.c (line 232)
+C:\Users\daminger\OneDrive\github\project\代码 - 副本\light\light - v101-1751确定版 - 副本\light.c (line 232)
   ;case 0: white=1;red1=0;red2=0;break;
     0x020D :  JMP   0x217       
-C:\Users\daminger\OneDrive\代码\light - v101\light.c (line 233)
+C:\Users\daminger\OneDrive\github\project\代码 - 副本\light\light - v101-1751确定版 - 副本\light.c (line 233)
   ;case 1: white=0;red1=0;red2=0;break;
     0x020E :  BANK  @0x0        
     0x020F :  BC    0x06, 0     
     0x0210 :  BC    0x06, 1     
-C:\Users\daminger\OneDrive\代码\light - v101\light.c (line 233)
+C:\Users\daminger\OneDrive\github\project\代码 - 副本\light\light - v101-1751确定版 - 副本\light.c (line 233)
   ;case 1: white=0;red1=0;red2=0;break;
     0x0211 :  BC    0x06, 2     
     0x0212 :  JMP   0x217       
-C:\Users\daminger\OneDrive\代码\light - v101\light.c (line 234)
+C:\Users\daminger\OneDrive\github\project\代码 - 副本\light\light - v101-1751确定版 - 副本\light.c (line 234)
   ;case 2: white=0;red1=0;red2=0;break;//case1同case2
     0x0213 :  BANK  @0x0        
     0x0214 :  BC    0x06, 0     
     0x0215 :  BC    0x06, 1     
-C:\Users\daminger\OneDrive\代码\light - v101\light.c (line 234)
+C:\Users\daminger\OneDrive\github\project\代码 - 副本\light\light - v101-1751确定版 - 副本\light.c (line 234)
   ;case 2: white=0;red1=0;red2=0;break;//case1同case2
     0x0216 :  BC    0x06, 2     
-C:\Users\daminger\OneDrive\代码\light - v101\light.c (line 237)
+C:\Users\daminger\OneDrive\github\project\代码 - 副本\light\light - v101-1751确定版 - 副本\light.c (line 237)
   ;mode2_count2++;
     0x0217 :  BANK  @0x0        
     0x0218 :  INC   0x25        
-C:\Users\daminger\OneDrive\代码\light - v101\light.c (line 238)
+C:\Users\daminger\OneDrive\github\project\代码 - 副本\light\light - v101-1751确定版 - 副本\light.c (line 238)
   ;if(mode2_count2>=16)		//灯灭16单位结束
     0x0219 :  MOV   A, @0x10    
     0x021A :  SUB   A, 0x25     
     0x021B :  JBS   0x03, 0     
     0x021C :  JMP   0x221       
-C:\Users\daminger\OneDrive\代码\light - v101\light.c (line 240)
+C:\Users\daminger\OneDrive\github\project\代码 - 副本\light\light - v101-1751确定版 - 副本\light.c (line 240)
   ;mode2_count2=0;
     0x021D :  CLR   0x25        
-C:\Users\daminger\OneDrive\代码\light - v101\light.c (line 241)
+C:\Users\daminger\OneDrive\github\project\代码 - 副本\light\light - v101-1751确定版 - 副本\light.c (line 241)
   ;mode2_red1_flag=1;
     0x021E :  BS    0x20, 2     
-C:\Users\daminger\OneDrive\代码\light - v101\light.c (line 242)
+C:\Users\daminger\OneDrive\github\project\代码 - 副本\light\light - v101-1751确定版 - 副本\light.c (line 242)
   ;mode2_four_cycle_flag=1;//四次循环重新开始
     0x021F :  MOV   A, @0x01    
     0x0220 :  MOV   0x26, A     
-C:\Users\daminger\OneDrive\代码\light - v101\light.c (line 246)
+C:\Users\daminger\OneDrive\github\project\代码 - 副本\light\light - v101-1751确定版 - 副本\light.c (line 246)
   ;}
     0x0221 :  BANK  @0x0        
     0x0222 :  MOV   A, 0x29     

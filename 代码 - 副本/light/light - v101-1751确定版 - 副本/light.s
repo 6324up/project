@@ -4,7 +4,7 @@ _SIMPLE_RSR_ EQU 1
 .include "sysdefii.inc"
 ccounter equ pr1
 .stabs "icc_compiled.",60,0,0,0
-.stabs "C:\Users\daminger\OneDrive\代码\light - v101\light.c",100,0,3,0
+.stabs "C:\Users\daminger\OneDrive\github\project\代码 - 副本\light\light - v101-1751确定版 - 副本\light.c",100,0,3,0
 .stabs "int:t1=r1;-128;127;",128,0,0,0
 .stabs "char:t2=r2;-128;127;",128,0,0,0
 .stabs "double:t3=r1;3;0;",128,0,0,0
@@ -147,23 +147,23 @@ L11:
 bc _P62,2
 .stabn 68,0,46,L12
 L12:
-.cfile "C:\Users\daminger\OneDrive\代码\light - v101\light.c(46):"
+.cfile "C:\Users\daminger\OneDrive\github\project\代码 - 副本\light\light - v101-1751确定版 - 副本\light.c(46):"
 mov		a,@0x0f
 .stabn 68,0,47,L13
 L13:
-.cfile "C:\Users\daminger\OneDrive\代码\light - v101\light.c(47):"
+.cfile "C:\Users\daminger\OneDrive\github\project\代码 - 副本\light\light - v101-1751确定版 - 副本\light.c(47):"
 contw
 .stabn 68,0,48,L14
 L14:
-.cfile "C:\Users\daminger\OneDrive\代码\light - v101\light.c(48):"
+.cfile "C:\Users\daminger\OneDrive\github\project\代码 - 副本\light\light - v101-1751确定版 - 副本\light.c(48):"
 WDTC
 .stabn 68,0,49,L15
 L15:
-.cfile "C:\Users\daminger\OneDrive\代码\light - v101\light.c(49):"
+.cfile "C:\Users\daminger\OneDrive\github\project\代码 - 副本\light\light - v101-1751确定版 - 副本\light.c(49):"
 MOV		0X6,0X6
 .stabn 68,0,51,L16
 L16:
-.cfile "C:\Users\daminger\OneDrive\代码\light - v101\light.c(51):"
+.cfile "C:\Users\daminger\OneDrive\github\project\代码 - 副本\light\light - v101-1751确定版 - 副本\light.c(51):"
 disi
 .stabn 68,0,51,L17
 L17:
@@ -177,25 +177,25 @@ mov a,@2
 STA _IMR,0,2
 .stabn 68,0,54,L20
 L20:
-.cfile "C:\Users\daminger\OneDrive\代码\light - v101\light.c(54):"
+.cfile "C:\Users\daminger\OneDrive\github\project\代码 - 副本\light\light - v101-1751确定版 - 副本\light.c(54):"
 slep
 .stabn 68,0,54,L21
 L21:
 .stabn 68,0,55,L22
 L22:
-.cfile "C:\Users\daminger\OneDrive\代码\light - v101\light.c(55):"
+.cfile "C:\Users\daminger\OneDrive\github\project\代码 - 副本\light\light - v101-1751确定版 - 副本\light.c(55):"
 nop
 .stabn 68,0,55,L23
 L23:
 .stabn 68,0,56,L24
 L24:
-.cfile "C:\Users\daminger\OneDrive\代码\light - v101\light.c(56):"
+.cfile "C:\Users\daminger\OneDrive\github\project\代码 - 副本\light\light - v101-1751确定版 - 副本\light.c(56):"
 nop
 .stabn 68,0,56,L25
 L25:
 .stabn 68,0,57,L26
 L26:
-.cfile "C:\Users\daminger\OneDrive\代码\light - v101\light.c(57):"
+.cfile "C:\Users\daminger\OneDrive\github\project\代码 - 副本\light\light - v101-1751确定版 - 副本\light.c(57):"
 wdtc
 .stabn 68,0,57,L27
 L27:
@@ -234,13 +234,13 @@ L38:
 L$2:
 .stabn 68,0,71,L39
 L39:
-.cfile "C:\Users\daminger\OneDrive\代码\light - v101\light.c(71):"
+.cfile "C:\Users\daminger\OneDrive\github\project\代码 - 副本\light\light - v101-1751确定版 - 副本\light.c(71):"
 wdtc
 .stabn 68,0,71,L40
 L40:
 .stabn 68,0,72,L41
 L41:
-.cfile "C:\Users\daminger\OneDrive\代码\light - v101\light.c(72):"
+.cfile "C:\Users\daminger\OneDrive\github\project\代码 - 副本\light\light - v101-1751确定版 - 副本\light.c(72):"
 disi
 .stabn 68,0,72,L42
 L42:
@@ -250,11 +250,11 @@ mov a,@0
 STA _WDTCR,0,2
 .stabn 68,0,77,L44
 L44:
-.cfile "C:\Users\daminger\OneDrive\代码\light - v101\light.c(77):"
+.cfile "C:\Users\daminger\OneDrive\github\project\代码 - 副本\light\light - v101-1751确定版 - 副本\light.c(77):"
 mov	a,@0x07
 .stabn 68,0,78,L45
 L45:
-.cfile "C:\Users\daminger\OneDrive\代码\light - v101\light.c(78):"
+.cfile "C:\Users\daminger\OneDrive\github\project\代码 - 副本\light\light - v101-1751确定版 - 副本\light.c(78):"
 contw
 .stabn 68,0,80,L46
 L46:
@@ -268,7 +268,7 @@ mov a,@1
 STA _IMR,0,2
 .stabn 68,0,83,L49
 L49:
-.cfile "C:\Users\daminger\OneDrive\代码\light - v101\light.c(83):"
+.cfile "C:\Users\daminger\OneDrive\github\project\代码 - 副本\light\light - v101-1751确定版 - 副本\light.c(83):"
 eni
 .stabn 68,0,83,L50
 L50:
@@ -1462,13 +1462,13 @@ L508:
 L509:
 .stabn 68,0,288,L510
 L510:
-.cfile "C:\Users\daminger\OneDrive\代码\light - v101\light.c(288):"
+.cfile "C:\Users\daminger\OneDrive\github\project\代码 - 副本\light\light - v101-1751确定版 - 副本\light.c(288):"
 wdtc
 .stabn 68,0,288,L511
 L511:
 .stabn 68,0,289,L512
 L512:
-.cfile "C:\Users\daminger\OneDrive\代码\light - v101\light.c(289):"
+.cfile "C:\Users\daminger\OneDrive\github\project\代码 - 副本\light\light - v101-1751确定版 - 副本\light.c(289):"
 disi
 .stabn 68,0,289,L513
 L513:
@@ -1496,11 +1496,11 @@ L519:
 clr _PORT6
 .stabn 68,0,297,L520
 L520:
-.cfile "C:\Users\daminger\OneDrive\代码\light - v101\light.c(297):"
+.cfile "C:\Users\daminger\OneDrive\github\project\代码 - 副本\light\light - v101-1751确定版 - 副本\light.c(297):"
 mov	a,@0x07
 .stabn 68,0,298,L521
 L521:
-.cfile "C:\Users\daminger\OneDrive\代码\light - v101\light.c(298):"
+.cfile "C:\Users\daminger\OneDrive\github\project\代码 - 副本\light\light - v101-1751确定版 - 副本\light.c(298):"
 contw
 .stabn 68,0,300,L522
 L522:
@@ -1510,7 +1510,7 @@ L523:
 clr _ISR
 .stabn 68,0,302,L524
 L524:
-.cfile "C:\Users\daminger\OneDrive\代码\light - v101\light.c(302):"
+.cfile "C:\Users\daminger\OneDrive\github\project\代码 - 副本\light\light - v101-1751确定版 - 副本\light.c(302):"
 eni
 .stabn 68,0,302,L525
 L525:

@@ -32,9 +32,9 @@ bit mode1_light_flag=1;			//mode1当前灯亮标志
 bit mode2_red1_flag=1;			//模式2红灯1灯亮标志
 bit mode2_light_flag=1;			//mode2当前灯亮标志
 
-bit S1_flag=0;
-bit S2_flag=0;
-bit S1_sleep_flag=0;
+bit S1_flag=0;					//S1按下标志
+bit S2_flag=0;					//S2按下标志
+bit S1_sleep_flag=0;			//S1唤醒标志
 void keyscan();
 void mode0(void)				//模式0休眠,PORT6唤醒
 {	

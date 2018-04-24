@@ -1,6 +1,6 @@
-Dump of file C:\Users\daminger\OneDrive\代码\light - v101\light.dbg
+Dump of file C:\Users\daminger\OneDrive\github\project\代码 - 副本\light\light - v101-1751确定版 - 副本\light.dbg
 
-Machine:0x0000 NumberOfSections:4 TimeDateStamp:0x00000000 PointerToSymbolTable:0x000021f4 NumberOfSymbols:765 SizeOfOptionalHeader:0 Characteristics:0x0000
+Machine:0x0000 NumberOfSections:4 TimeDateStamp:0x00000000 PointerToSymbolTable:0x00002224 NumberOfSymbols:765 SizeOfOptionalHeader:0 Characteristics:0x0000
 
 Relocation flags meanning:
      0x0000: Reference is absolute, no relocation is necessary
@@ -21,7 +21,7 @@ Relocation flags meanning:
 .stab Misc:0 VirtualAddress:0x00000000 SizeOfRawData:6912 PointerToRawData: 0x00000138
       PointerToRelocations:0x00000000 PointerToLinenumbers:0x00000000 NumberOfRelocations:0
       NumberOfLinenumbers:0 Characteristics:0x00000000
-.stabstr Misc:0 VirtualAddress:0x00000000 SizeOfRawData:1467 PointerToRawData: 0x00001c38
+.stabstr Misc:0 VirtualAddress:0x00000000 SizeOfRawData:1513 PointerToRawData: 0x00001c38
       PointerToRelocations:0x00000000 PointerToLinenumbers:0x00000000 NumberOfRelocations:0
       NumberOfLinenumbers:0 Characteristics:0x00000000
 
@@ -698,7 +698,7 @@ Relocation flags meanning:
    Index  type    other   desc      value  Name
    -----  ----    -----   ---- ----------  ----
       0  N_OPT        0      0 0x00000000  icc_compiled.
-      1  N_SO         0      3 0x00000000  C:\Users\daminger\OneDrive\代码\light - v101\light.c
+      1  N_SO         0      3 0x00000000  C:\Users\daminger\OneDrive\github\project\代码 - 副本\light\light - v101-1751确定版 - 副本\light.c
       2  N_LSYM       0      0 0x00000000  int:t1=r1;-128;127;
       3  N_LSYM       0      0 0x00000000  char:t2=r2;-128;127;
       4  N_LSYM       0      0 0x00000000  double:t3=r1;3;0;

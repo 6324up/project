@@ -41,14 +41,14 @@ BackupA=0x0
 SpecialBackUpID=0
 
 [Files]
-ObjFiles=C:\Users\daminger\OneDrive\代码\light - v101\light.o
+ObjFiles=C:\Users\daminger\OneDrive\github\project\代码 - 副本\light\light - v101-1751确定版 - 副本\light.o
 LibraryFiles=D:\Program Files\ELAN\eUIDE\Bin\EM78P173N\EM78P173NII.lib
 LibraryFiles=D:\Program Files\ELAN\eUIDE\Bin\libc13.lib
 LibraryFiles=D:\Program Files\ELAN\eUIDE\Bin\libm13.lib
-OutFile=C:\Users\daminger\OneDrive\代码\light - v101\light.cds
+OutFile=C:\Users\daminger\OneDrive\github\project\代码 - 副本\light\light - v101-1751确定版 - 副本\light.cds
 MapFile=
-DisassemblyFile=C:\Users\daminger\OneDrive\代码\light - v101\light.lst
-DebugFile=C:\Users\daminger\OneDrive\代码\light - v101\light.dbg
+DisassemblyFile=C:\Users\daminger\OneDrive\github\project\代码 - 副本\light\light - v101-1751确定版 - 副本\light.lst
+DebugFile=C:\Users\daminger\OneDrive\github\project\代码 - 副本\light\light - v101-1751确定版 - 副本\light.dbg
 CDSTailFile=
 [Instructions]
 OPCode=0x0000,0x0001
