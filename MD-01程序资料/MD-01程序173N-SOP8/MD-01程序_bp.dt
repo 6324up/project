@@ -1,0 +1,1129 @@
+  JMP   0x00C           ;'0x000000'
+;C:\Users\daminger\Desktop\练习\MD-01程序资料\MD-01程序173N-SOP8\NTC3435.c (line 38)
+;P6CR &= 0xFE;//P60//0为输出，1为输入
+  IOR   0x6             ;'0x000001'
+  AND   A, @0xFE        ;'0x000002'
+  IOW   0x6             ;'0x000003'
+;C:\Users\daminger\Desktop\练习\MD-01程序资料\MD-01程序173N-SOP8\NTC3435.c (line 39)
+;}
+  RET                   ;'0x000004'
+  ADD   A, @0xFF        ;'0x000005'
+  ADD   A, @0xFF        ;'0x000006'
+  ADD   A, @0xFF        ;'0x000007'
+;C:\Users\daminger\Desktop\练习\MD-01程序资料\MD-01程序173N-SOP8\main.c (line 88)
+;mov 0x1F , a	//backup acc, don't remove
+  MOV   0x1F, A         ;'0x000008'
+  BC    0x03, 5         ;'0x000009'
+  BC    0x03, 6         ;'0x00000A'
+  JMP   0x01C           ;'0x00000B'
+;C:\Users\daminger\Desktop\练习\MD-01程序资料\MD-01程序173N-SOP8\main.c (line 12)
+;init();
+  BANK  @0x0            ;'0x00000C'
+  MOV   A, @0x00        ;'0x00000D'
+  MOV   0x20, A         ;'0x00000E'
+  BANK  @0x0            ;'0x00000F'
+  CALL  0x026           ;'0x000010'
+  JMP   0x01A           ;'0x000011'
+;C:\Users\daminger\Desktop\练习\MD-01程序资料\MD-01程序173N-SOP8\main.c (line 15)
+;if(Timer_interrupt_flag == 1)
+  JBS   0x20, 0         ;'0x000012'
+  JMP   0x01A           ;'0x000013'
+;C:\Users\daminger\Desktop\练习\MD-01程序资料\MD-01程序173N-SOP8\main.c (line 17)
+;Temperature_collection();
+  CALL  0x170           ;'0x000014'
+;C:\Users\daminger\Desktop\练习\MD-01程序资料\MD-01程序173N-SOP8\main.c (line 18)
+;if(Display_AIP1620_flag == 1)
+  JBS   0x20, 1         ;'0x000015'
+  JMP   0x019           ;'0x000016'
+;C:\Users\daminger\Desktop\练习\MD-01程序资料\MD-01程序173N-SOP8\main.c (line 20)
+;TM1650_display();
+  CALL  0x0B6           ;'0x000017'
+;C:\Users\daminger\Desktop\练习\MD-01程序资料\MD-01程序173N-SOP8\main.c (line 21)
+;Display_AIP1620_flag = 0;
+  BC    0x20, 1         ;'0x000018'
+;C:\Users\daminger\Desktop\练习\MD-01程序资料\MD-01程序173N-SOP8\main.c (line 23)
+;Timer_interrupt_flag = 0;
+  BC    0x20, 0         ;'0x000019'
+;C:\Users\daminger\Desktop\练习\MD-01程序资料\MD-01程序173N-SOP8\main.c (line 13)
+;while(1)
+  JMP   0x012           ;'0x00001A'
+;C:\Users\daminger\Desktop\练习\MD-01程序资料\MD-01程序173N-SOP8\main.c (line 26)
+;}
+  RET                   ;'0x00001B'
+;C:\Users\daminger\Desktop\练习\MD-01程序资料\MD-01程序173N-SOP8\main.c (line 71)
+;if(TCIF)
+  MOV   0x10, A         ;'0x00001C'
+  BANK  @0x0            ;'0x00001D'
+  JBS   0x0F, 0         ;'0x00001E'
+  JMP   0x024           ;'0x00001F'
+;C:\Users\daminger\Desktop\练习\MD-01程序资料\MD-01程序173N-SOP8\main.c (line 73)
+;TCIF = 0;
+  BC    0x0F, 0         ;'0x000020'
+;C:\Users\daminger\Desktop\练习\MD-01程序资料\MD-01程序173N-SOP8\main.c (line 74)
+;TCC = 6;
+  MOV   A, @0x06        ;'0x000021'
+  MOV   0x01, A         ;'0x000022'
+;C:\Users\daminger\Desktop\练习\MD-01程序资料\MD-01程序173N-SOP8\main.c (line 75)
+;Timer_interrupt_flag = 1;
+  BS    0x20, 0         ;'0x000023'
+;C:\Users\daminger\Desktop\练习\MD-01程序资料\MD-01程序173N-SOP8\main.c (line 79)
+;reti            //Tell Compiler to recover common registers here.
+  NOP                   ;'0x000024'
+;C:\Users\daminger\Desktop\练习\MD-01程序资料\MD-01程序173N-SOP8\main.c (line 82)
+;}
+  RETI                  ;'0x000025'
+;C:\Users\daminger\Desktop\练习\MD-01程序资料\MD-01程序173N-SOP8\main.c (line 30)
+;disi();
+  DISI                  ;'0x000026'
+;C:\Users\daminger\Desktop\练习\MD-01程序资料\MD-01程序173N-SOP8\main.c (line 31)
+;wdtc();
+  WDTC                  ;'0x000027'
+;C:\Users\daminger\Desktop\练习\MD-01程序资料\MD-01程序173N-SOP8\main.c (line 34)
+;mov a,@0x06  //128分频
+  MOV   A, @0x06        ;'0x000028'
+;C:\Users\daminger\Desktop\练习\MD-01程序资料\MD-01程序173N-SOP8\main.c (line 35)
+;contw
+  CONTW                 ;'0x000029'
+;C:\Users\daminger\Desktop\练习\MD-01程序资料\MD-01程序173N-SOP8\main.c (line 38)
+;WDTCR = 0;
+  MOV   A, @0x00        ;'0x00002A'
+  IOW   0xE             ;'0x00002B'
+;C:\Users\daminger\Desktop\练习\MD-01程序资料\MD-01程序173N-SOP8\main.c (line 40)
+;P6CR = 0x00;  	//所有IO都位输出。	//0为输出，1为输入
+  MOV   A, @0x00        ;'0x00002C'
+  IOW   0x6             ;'0x00002D'
+;C:\Users\daminger\Desktop\练习\MD-01程序资料\MD-01程序173N-SOP8\main.c (line 41)
+;PHCR = 0xFF;	//关闭所有上拉功能。//0为开启，1为关闭
+  MOV   A, @0xFF        ;'0x00002E'
+  IOW   0xD             ;'0x00002F'
+;C:\Users\daminger\Desktop\练习\MD-01程序资料\MD-01程序173N-SOP8\main.c (line 42)
+;PDCR = 0xFF;	//关闭所有下拉功能。//0为开启，1为关闭
+  MOV   A, @0xFF        ;'0x000030'
+  IOW   0xB             ;'0x000031'
+;C:\Users\daminger\Desktop\练习\MD-01程序资料\MD-01程序173N-SOP8\main.c (line 43)
+;ODCR = 0x00;	//关闭所有漏极开路输出功能。//0为关闭，//1为开启
+  MOV   A, @0x00        ;'0x000032'
+  IOW   0xC             ;'0x000033'
+;C:\Users\daminger\Desktop\练习\MD-01程序资料\MD-01程序173N-SOP8\main.c (line 45)
+;clrram();
+  CALL  0x03D           ;'0x000034'
+;C:\Users\daminger\Desktop\练习\MD-01程序资料\MD-01程序173N-SOP8\main.c (line 46)
+;ISR = 0;   		//
+  BANK  @0x0            ;'0x000035'
+  CLR   0x0F            ;'0x000036'
+;C:\Users\daminger\Desktop\练习\MD-01程序资料\MD-01程序173N-SOP8\main.c (line 47)
+;IMR = 1;  		//使能定时器中断
+  MOV   A, @0x01        ;'0x000037'
+  IOW   0xF             ;'0x000038'
+;C:\Users\daminger\Desktop\练习\MD-01程序资料\MD-01程序173N-SOP8\main.c (line 48)
+;TCC = 6;  		//TIMEINT = 2*32*(256-6)/8M=2MS
+  MOV   A, @0x06        ;'0x000039'
+  MOV   0x01, A         ;'0x00003A'
+;C:\Users\daminger\Desktop\练习\MD-01程序资料\MD-01程序173N-SOP8\main.c (line 49)
+;eni();
+  ENI                   ;'0x00003B'
+;C:\Users\daminger\Desktop\练习\MD-01程序资料\MD-01程序173N-SOP8\main.c (line 50)
+;}
+  RET                   ;'0x00003C'
+;C:\Users\daminger\Desktop\练习\MD-01程序资料\MD-01程序173N-SOP8\main.c (line 55)
+;MOV A,@0X11
+  MOV   A, @0x11        ;'0x00003D'
+;C:\Users\daminger\Desktop\练习\MD-01程序资料\MD-01程序173N-SOP8\main.c (line 56)
+;MOV	0X10,A
+  MOV   0x10, A         ;'0x00003E'
+;C:\Users\daminger\Desktop\练习\MD-01程序资料\MD-01程序173N-SOP8\main.c (line 58)
+;MOV	A,0X10
+  MOV   A, 0x10         ;'0x00003F'
+;C:\Users\daminger\Desktop\练习\MD-01程序资料\MD-01程序173N-SOP8\main.c (line 59)
+;MOV 0X04,A
+  MOV   0x04, A         ;'0x000040'
+;C:\Users\daminger\Desktop\练习\MD-01程序资料\MD-01程序173N-SOP8\main.c (line 60)
+;CLR 0x00
+  CLR   0x00            ;'0x000041'
+;C:\Users\daminger\Desktop\练习\MD-01程序资料\MD-01程序173N-SOP8\main.c (line 61)
+;INC 0X10
+  INC   0x10            ;'0x000042'
+;C:\Users\daminger\Desktop\练习\MD-01程序资料\MD-01程序173N-SOP8\main.c (line 62)
+;JBS 0X10,6
+  JBS   0x10, 6         ;'0x000043'
+;C:\Users\daminger\Desktop\练习\MD-01程序资料\MD-01程序173N-SOP8\main.c (line 63)
+;JMP clrloop
+  JMP   0x03F           ;'0x000044'
+;C:\Users\daminger\Desktop\练习\MD-01程序资料\MD-01程序173N-SOP8\main.c (line 64)
+;CLR 0X04
+  CLR   0x04            ;'0x000045'
+;C:\Users\daminger\Desktop\练习\MD-01程序资料\MD-01程序173N-SOP8\main.c (line 65)
+;CLR	0X10
+  CLR   0x10            ;'0x000046'
+;C:\Users\daminger\Desktop\练习\MD-01程序资料\MD-01程序173N-SOP8\main.c (line 67)
+;}
+  RET                   ;'0x000047'
+;C:\Users\daminger\Desktop\练习\MD-01程序资料\MD-01程序173N-SOP8\NTC3435.c (line 42)
+;P6CR &= 0xFD;//P61//0为输出，1为输入
+  IOR   0x6             ;'0x000048'
+  AND   A, @0xFD        ;'0x000049'
+  IOW   0x6             ;'0x00004A'
+;C:\Users\daminger\Desktop\练习\MD-01程序资料\MD-01程序173N-SOP8\NTC3435.c (line 43)
+;}
+  RET                   ;'0x00004B'
+;C:\Users\daminger\Desktop\练习\MD-01程序资料\MD-01程序173N-SOP8\NTC3435.c (line 46)
+;P6CR &= 0xFB;//P62//0为输出，1为输入
+  IOR   0x6             ;'0x00004C'
+  AND   A, @0xFB        ;'0x00004D'
+  IOW   0x6             ;'0x00004E'
+  RET                   ;'0x00004F'
+;C:\Users\daminger\Desktop\练习\MD-01程序资料\MD-01程序173N-SOP8\NTC3435.c (line 30)
+;P6CR |= 0x02;//P61//0为输出，1为输入
+  IOR   0x6             ;'0x000050'
+  OR    A, @0x02        ;'0x000051'
+  IOW   0x6             ;'0x000052'
+;C:\Users\daminger\Desktop\练习\MD-01程序资料\MD-01程序173N-SOP8\NTC3435.c (line 31)
+;}
+  RET                   ;'0x000053'
+;C:\Users\daminger\Desktop\练习\MD-01程序资料\MD-01程序173N-SOP8\NTC3435.c (line 34)
+;P6CR |= 0x04;//P62//0为输出，1为输入
+  IOR   0x6             ;'0x000054'
+  OR    A, @0x04        ;'0x000055'
+  IOW   0x6             ;'0x000056'
+;C:\Users\daminger\Desktop\练习\MD-01程序资料\MD-01程序173N-SOP8\NTC3435.c (line 35)
+;}
+  RET                   ;'0x000057'
+;C:\Users\daminger\Desktop\练习\MD-01程序资料\MD-01程序173N-SOP8\NTC3435.c (line 26)
+;P6CR |= 0x01;//P60//0为输出，1为输入
+  IOR   0x6             ;'0x000058'
+  OR    A, @0x01        ;'0x000059'
+  IOW   0x6             ;'0x00005A'
+;C:\Users\daminger\Desktop\练习\MD-01程序资料\MD-01程序173N-SOP8\NTC3435.c (line 27)
+;}
+  RET                   ;'0x00005B'
+  MOV   A, 0x17         ;'0x00005C'
+  MOV   0x04, A         ;'0x00005D'
+  MOV   A, 0x00         ;'0x00005E'
+  MOV   0x17, A         ;'0x00005F'
+  INC   0x04            ;'0x000060'
+  MOV   A, 0x00         ;'0x000061'
+  MOV   0x18, A         ;'0x000062'
+  CLR   0x19            ;'0x000063'
+  CLR   0x1A            ;'0x000064'
+  MOV   A, 0x15         ;'0x000065'
+  MOV   0x04, A         ;'0x000066'
+  MOV   A, @0x10        ;'0x000067'
+  MOV   0x15, A         ;'0x000068'
+  RRC   0x18            ;'0x000069'
+  RRC   0x17            ;'0x00006A'
+  JBS   0x03, 0         ;'0x00006B'
+  JMP   0x075           ;'0x00006C'
+  MOV   A, 0x00         ;'0x00006D'
+  ADD   0x19, A         ;'0x00006E'
+  JBC   0x03, 0         ;'0x00006F'
+  INC   0x1A            ;'0x000070'
+  INC   0x04            ;'0x000071'
+  MOV   A, 0x00         ;'0x000072'
+  ADD   0x1A, A         ;'0x000073'
+  DEC   0x04            ;'0x000074'
+  BC    0x03, 0         ;'0x000075'
+  RLC   0x00            ;'0x000076'
+  INC   0x04            ;'0x000077'
+  RLC   0x00            ;'0x000078'
+  DEC   0x04            ;'0x000079'
+  DJZ   0x15            ;'0x00007A'
+  JMP   0x069           ;'0x00007B'
+  MOV   A, 0x19         ;'0x00007C'
+  MOV   0x00, A         ;'0x00007D'
+  INC   0x04            ;'0x00007E'
+  MOV   A, 0x1A         ;'0x00007F'
+  MOV   0x00, A         ;'0x000080'
+  RET                   ;'0x000081'
+  MOV   A, 0x17         ;'0x000082'
+  MOV   0x04, A         ;'0x000083'
+  MOV   A, 0x00         ;'0x000084'
+  MOV   0x17, A         ;'0x000085'
+  INC   0x04            ;'0x000086'
+  MOV   A, 0x00         ;'0x000087'
+  MOV   0x18, A         ;'0x000088'
+  OR    A, 0x17         ;'0x000089'
+  JBC   0x03, 2         ;'0x00008A'
+  RET                   ;'0x00008B'
+  MOV   A, 0x15         ;'0x00008C'
+  MOV   0x04, A         ;'0x00008D'
+  MOV   A, @0x10        ;'0x00008E'
+  MOV   0x15, A         ;'0x00008F'
+  CLR   0x19            ;'0x000090'
+  CLR   0x1A            ;'0x000091'
+  BC    0x03, 0         ;'0x000092'
+  RLC   0x00            ;'0x000093'
+  INC   0x04            ;'0x000094'
+  RLC   0x00            ;'0x000095'
+  DEC   0x04            ;'0x000096'
+  RLC   0x19            ;'0x000097'
+  RLC   0x1A            ;'0x000098'
+  MOV   A, 0x18         ;'0x000099'
+  SUB   A, 0x1A         ;'0x00009A'
+  JBS   0x03, 0         ;'0x00009B'
+  JMP   0x0AF           ;'0x00009C'
+  JBS   0x03, 2         ;'0x00009D'
+  JMP   0x0A3           ;'0x00009E'
+  MOV   A, 0x17         ;'0x00009F'
+  SUB   A, 0x19         ;'0x0000A0'
+  JBS   0x03, 0         ;'0x0000A1'
+  JMP   0x0AF           ;'0x0000A2'
+  MOV   A, 0x17         ;'0x0000A3'
+  SUB   0x19, A         ;'0x0000A4'
+  JBS   0x03, 0         ;'0x0000A5'
+  DEC   0x1A            ;'0x0000A6'
+  MOV   A, 0x18         ;'0x0000A7'
+  SUB   0x1A, A         ;'0x0000A8'
+  INC   0x00            ;'0x0000A9'
+  JBS   0x03, 2         ;'0x0000AA'
+  JMP   0x0AF           ;'0x0000AB'
+  INC   0x04            ;'0x0000AC'
+  INC   0x00            ;'0x0000AD'
+  DEC   0x04            ;'0x0000AE'
+  DJZ   0x15            ;'0x0000AF'
+  JMP   0x092           ;'0x0000B0'
+  MOV   A, 0x19         ;'0x0000B1'
+  MOV   0x15, A         ;'0x0000B2'
+  MOV   A, 0x1A         ;'0x0000B3'
+  MOV   0x16, A         ;'0x0000B4'
+  RET                   ;'0x0000B5'
+;C:\Users\daminger\Desktop\练习\MD-01程序资料\MD-01程序173N-SOP8\TM1650.c (line 82)
+;TM1650_START();
+  CALL  0x257           ;'0x0000B6'
+;C:\Users\daminger\Desktop\练习\MD-01程序资料\MD-01程序173N-SOP8\TM1650.c (line 83)
+;TM1650_sendbit(0x48);//模式命令
+  MOV   A, @0x48        ;'0x0000B7'
+  MOV   0x24, A         ;'0x0000B8'
+  CALL  0x266           ;'0x0000B9'
+;C:\Users\daminger\Desktop\练习\MD-01程序资料\MD-01程序173N-SOP8\TM1650.c (line 84)
+;TM1650_ASK();
+  CALL  0x284           ;'0x0000BA'
+;C:\Users\daminger\Desktop\练习\MD-01程序资料\MD-01程序173N-SOP8\TM1650.c (line 85)
+;TM1650_sendbit(0x71);//亮度等级7级
+  MOV   A, @0x71        ;'0x0000BB'
+  MOV   0x24, A         ;'0x0000BC'
+  CALL  0x266           ;'0x0000BD'
+;C:\Users\daminger\Desktop\练习\MD-01程序资料\MD-01程序173N-SOP8\TM1650.c (line 86)
+;TM1650_ASK();
+  CALL  0x284           ;'0x0000BE'
+;C:\Users\daminger\Desktop\练习\MD-01程序资料\MD-01程序173N-SOP8\TM1650.c (line 87)
+;TM1650_STOP();
+  CALL  0x29F           ;'0x0000BF'
+;C:\Users\daminger\Desktop\练习\MD-01程序资料\MD-01程序173N-SOP8\TM1650.c (line 90)
+;TM1650_START();
+  CALL  0x257           ;'0x0000C0'
+;C:\Users\daminger\Desktop\练习\MD-01程序资料\MD-01程序173N-SOP8\TM1650.c (line 91)
+;TM1650_sendbit(0x68);//com1
+  MOV   A, @0x68        ;'0x0000C1'
+  MOV   0x24, A         ;'0x0000C2'
+  CALL  0x266           ;'0x0000C3'
+;C:\Users\daminger\Desktop\练习\MD-01程序资料\MD-01程序173N-SOP8\TM1650.c (line 92)
+;TM1650_ASK();
+  CALL  0x284           ;'0x0000C4'
+;C:\Users\daminger\Desktop\练习\MD-01程序资料\MD-01程序173N-SOP8\TM1650.c (line 93)
+;TM1650_sendbit(0xFF);//com1数据//基本显示亮
+  MOV   A, @0xFF        ;'0x0000C5'
+  MOV   0x24, A         ;'0x0000C6'
+  CALL  0x266           ;'0x0000C7'
+;C:\Users\daminger\Desktop\练习\MD-01程序资料\MD-01程序173N-SOP8\TM1650.c (line 94)
+;TM1650_ASK();
+  CALL  0x284           ;'0x0000C8'
+;C:\Users\daminger\Desktop\练习\MD-01程序资料\MD-01程序173N-SOP8\TM1650.c (line 95)
+;TM1650_STOP();
+  CALL  0x29F           ;'0x0000C9'
+;C:\Users\daminger\Desktop\练习\MD-01程序资料\MD-01程序173N-SOP8\TM1650.c (line 97)
+;TM1650_START();
+  CALL  0x257           ;'0x0000CA'
+;C:\Users\daminger\Desktop\练习\MD-01程序资料\MD-01程序173N-SOP8\TM1650.c (line 98)
+;TM1650_sendbit(0x6a);//com2
+  MOV   A, @0x6A        ;'0x0000CB'
+  MOV   0x24, A         ;'0x0000CC'
+  CALL  0x266           ;'0x0000CD'
+;C:\Users\daminger\Desktop\练习\MD-01程序资料\MD-01程序173N-SOP8\TM1650.c (line 99)
+;TM1650_ASK();
+  CALL  0x284           ;'0x0000CE'
+;C:\Users\daminger\Desktop\练习\MD-01程序资料\MD-01程序173N-SOP8\TM1650.c (line 100)
+;TM1650_sendbit(0xFF);//com2数据//基本显示亮
+  MOV   A, @0xFF        ;'0x0000CF'
+  MOV   0x24, A         ;'0x0000D0'
+  CALL  0x266           ;'0x0000D1'
+;C:\Users\daminger\Desktop\练习\MD-01程序资料\MD-01程序173N-SOP8\TM1650.c (line 101)
+;TM1650_ASK();
+  CALL  0x284           ;'0x0000D2'
+;C:\Users\daminger\Desktop\练习\MD-01程序资料\MD-01程序173N-SOP8\TM1650.c (line 102)
+;TM1650_STOP();
+  CALL  0x29F           ;'0x0000D3'
+;C:\Users\daminger\Desktop\练习\MD-01程序资料\MD-01程序173N-SOP8\TM1650.c (line 104)
+;TM1650_START();
+  CALL  0x257           ;'0x0000D4'
+;C:\Users\daminger\Desktop\练习\MD-01程序资料\MD-01程序173N-SOP8\TM1650.c (line 105)
+;TM1650_sendbit(0x6c);//com3
+  MOV   A, @0x6C        ;'0x0000D5'
+  MOV   0x24, A         ;'0x0000D6'
+  CALL  0x266           ;'0x0000D7'
+;C:\Users\daminger\Desktop\练习\MD-01程序资料\MD-01程序173N-SOP8\TM1650.c (line 106)
+;TM1650_ASK();
+  CALL  0x284           ;'0x0000D8'
+;C:\Users\daminger\Desktop\练习\MD-01程序资料\MD-01程序173N-SOP8\TM1650.c (line 107)
+;TM1650_sendbit(Display_data[Temperature_collection_data%10]);//com3数据//1~7低位数码管
+  MOV   A, 0x2F         ;'0x0000D9'
+  MOV   0x15, A         ;'0x0000DA'
+  MOV   A, @0x0A        ;'0x0000DB'
+  MOV   0x17, A         ;'0x0000DC'
+  CALL  0x2AE           ;'0x0000DD'
+  CALL  0x100           ;'0x0000DE'
+  MOV   0x24, A         ;'0x0000DF'
+  CALL  0x266           ;'0x0000E0'
+;C:\Users\daminger\Desktop\练习\MD-01程序资料\MD-01程序173N-SOP8\TM1650.c (line 108)
+;TM1650_ASK();
+  CALL  0x284           ;'0x0000E1'
+;C:\Users\daminger\Desktop\练习\MD-01程序资料\MD-01程序173N-SOP8\TM1650.c (line 109)
+;TM1650_STOP();
+  CALL  0x29F           ;'0x0000E2'
+;C:\Users\daminger\Desktop\练习\MD-01程序资料\MD-01程序173N-SOP8\TM1650.c (line 111)
+;TM1650_START();
+  CALL  0x257           ;'0x0000E3'
+;C:\Users\daminger\Desktop\练习\MD-01程序资料\MD-01程序173N-SOP8\TM1650.c (line 112)
+;TM1650_sendbit(0x6e);//com4
+  MOV   A, @0x6E        ;'0x0000E4'
+  MOV   0x24, A         ;'0x0000E5'
+  CALL  0x266           ;'0x0000E6'
+;C:\Users\daminger\Desktop\练习\MD-01程序资料\MD-01程序173N-SOP8\TM1650.c (line 113)
+;TM1650_ASK();
+  CALL  0x284           ;'0x0000E7'
+;C:\Users\daminger\Desktop\练习\MD-01程序资料\MD-01程序173N-SOP8\TM1650.c (line 114)
+;TM1650_sendbit(Display_data[Temperature_collection_data/10]);//com4数据//1~7高位数码管
+  MOV   A, 0x2F         ;'0x0000E8'
+  MOV   0x15, A         ;'0x0000E9'
+  MOV   A, @0x0A        ;'0x0000EA'
+  MOV   0x17, A         ;'0x0000EB'
+  CALL  0x2BE           ;'0x0000EC'
+  CALL  0x100           ;'0x0000ED'
+  MOV   0x24, A         ;'0x0000EE'
+  CALL  0x266           ;'0x0000EF'
+;C:\Users\daminger\Desktop\练习\MD-01程序资料\MD-01程序173N-SOP8\TM1650.c (line 115)
+;TM1650_ASK();
+  CALL  0x284           ;'0x0000F0'
+;C:\Users\daminger\Desktop\练习\MD-01程序资料\MD-01程序173N-SOP8\TM1650.c (line 116)
+;TM1650_STOP();
+  CALL  0x29F           ;'0x0000F1'
+  RET                   ;'0x0000F2'
+  ADD   A, @0xFF        ;'0x0000F3'
+  ADD   A, @0xFF        ;'0x0000F4'
+  ADD   A, @0xFF        ;'0x0000F5'
+  ADD   A, @0xFF        ;'0x0000F6'
+  ADD   A, @0xFF        ;'0x0000F7'
+  ADD   A, @0xFF        ;'0x0000F8'
+  ADD   A, @0xFF        ;'0x0000F9'
+  ADD   A, @0xFF        ;'0x0000FA'
+  ADD   A, @0xFF        ;'0x0000FB'
+  ADD   A, @0xFF        ;'0x0000FC'
+  ADD   A, @0xFF        ;'0x0000FD'
+  ADD   A, @0xFF        ;'0x0000FE'
+  ADD   A, @0xFF        ;'0x0000FF'
+  ADD   0x02, A         ;'0x000100'
+  RETL  @0xFC           ;'0x000101'
+  RETL  @0x60           ;'0x000102'
+  RETL  @0xDA           ;'0x000103'
+  RETL  @0xF2           ;'0x000104'
+  RETL  @0x66           ;'0x000105'
+  RETL  @0xB6           ;'0x000106'
+  RETL  @0xBE           ;'0x000107'
+  RETL  @0xE0           ;'0x000108'
+  RETL  @0xFE           ;'0x000109'
+  RETL  @0xF6           ;'0x00010A'
+  ADD   0x02, A         ;'0x00010B'
+  RETL  @0xD6           ;'0x00010C'
+  RETL  @0xCD           ;'0x00010D'
+  RETL  @0xC4           ;'0x00010E'
+  RETL  @0xBC           ;'0x00010F'
+  RETL  @0xB4           ;'0x000110'
+  RETL  @0xAD           ;'0x000111'
+  RETL  @0xA6           ;'0x000112'
+  RETL  @0x9F           ;'0x000113'
+  RETL  @0x99           ;'0x000114'
+  RETL  @0x93           ;'0x000115'
+  RETL  @0x8D           ;'0x000116'
+  RETL  @0x87           ;'0x000117'
+  RETL  @0x82           ;'0x000118'
+  RETL  @0x7D           ;'0x000119'
+  RETL  @0x78           ;'0x00011A'
+  RETL  @0x73           ;'0x00011B'
+  RETL  @0x6F           ;'0x00011C'
+  RETL  @0x6B           ;'0x00011D'
+  RETL  @0x67           ;'0x00011E'
+  RETL  @0x63           ;'0x00011F'
+  RETL  @0x5F           ;'0x000120'
+  RETL  @0x5B           ;'0x000121'
+  RETL  @0x58           ;'0x000122'
+  RETL  @0x55           ;'0x000123'
+  RETL  @0x52           ;'0x000124'
+  RETL  @0x4F           ;'0x000125'
+  RETL  @0x4C           ;'0x000126'
+  RETL  @0x49           ;'0x000127'
+  RETL  @0x46           ;'0x000128'
+  RETL  @0x44           ;'0x000129'
+  RETL  @0x41           ;'0x00012A'
+  RETL  @0x3F           ;'0x00012B'
+  RETL  @0x3D           ;'0x00012C'
+  RETL  @0x3B           ;'0x00012D'
+  RETL  @0x39           ;'0x00012E'
+  RETL  @0x37           ;'0x00012F'
+  RETL  @0x35           ;'0x000130'
+  RETL  @0x33           ;'0x000131'
+  RETL  @0x31           ;'0x000132'
+  RETL  @0x2F           ;'0x000133'
+  RETL  @0x2E           ;'0x000134'
+  RETL  @0x2C           ;'0x000135'
+  RETL  @0x2B           ;'0x000136'
+  RETL  @0x29           ;'0x000137'
+  RETL  @0x28           ;'0x000138'
+  RETL  @0x27           ;'0x000139'
+  RETL  @0x25           ;'0x00013A'
+  RETL  @0x24           ;'0x00013B'
+  RETL  @0x23           ;'0x00013C'
+  RETL  @0x22           ;'0x00013D'
+  RETL  @0x21           ;'0x00013E'
+  RETL  @0x20           ;'0x00013F'
+  RETL  @0x1F           ;'0x000140'
+  RETL  @0x1E           ;'0x000141'
+  RETL  @0x1D           ;'0x000142'
+  RETL  @0x1C           ;'0x000143'
+  RETL  @0x1B           ;'0x000144'
+  RETL  @0x1A           ;'0x000145'
+  RETL  @0x19           ;'0x000146'
+  RETL  @0x19           ;'0x000147'
+  RETL  @0x18           ;'0x000148'
+  RETL  @0x17           ;'0x000149'
+  RETL  @0x16           ;'0x00014A'
+  RETL  @0x16           ;'0x00014B'
+  RETL  @0x15           ;'0x00014C'
+  RETL  @0x14           ;'0x00014D'
+  RETL  @0x14           ;'0x00014E'
+  RETL  @0x13           ;'0x00014F'
+  RETL  @0x13           ;'0x000150'
+  RETL  @0x12           ;'0x000151'
+  RETL  @0x12           ;'0x000152'
+  RETL  @0x11           ;'0x000153'
+  RETL  @0x11           ;'0x000154'
+  RETL  @0x10           ;'0x000155'
+  RETL  @0x10           ;'0x000156'
+  RETL  @0x0F           ;'0x000157'
+  RETL  @0x0F           ;'0x000158'
+  RETL  @0x0E           ;'0x000159'
+  RETL  @0x0E           ;'0x00015A'
+  RETL  @0x0E           ;'0x00015B'
+  RETL  @0x0D           ;'0x00015C'
+  RETL  @0x0D           ;'0x00015D'
+  RETL  @0x0C           ;'0x00015E'
+  RETL  @0x0C           ;'0x00015F'
+  RETL  @0x0C           ;'0x000160'
+  RETL  @0x0B           ;'0x000161'
+  RETL  @0x0B           ;'0x000162'
+  RETL  @0x0B           ;'0x000163'
+  RETL  @0x0B           ;'0x000164'
+  RETL  @0x0A           ;'0x000165'
+  RETL  @0x0A           ;'0x000166'
+  RETL  @0x0A           ;'0x000167'
+  RETL  @0x0A           ;'0x000168'
+  RETL  @0x09           ;'0x000169'
+  RETL  @0x09           ;'0x00016A'
+  RETL  @0x09           ;'0x00016B'
+  RETL  @0x09           ;'0x00016C'
+  RETL  @0x08           ;'0x00016D'
+  RETL  @0x08           ;'0x00016E'
+  RETL  @0x07           ;'0x00016F'
+  MOV   A, 0x13         ;'0x000170'
+  MOV   0x21, A         ;'0x000171'
+  MOV   A, 0x14         ;'0x000172'
+  MOV   0x22, A         ;'0x000173'
+;C:\Users\daminger\Desktop\练习\MD-01程序资料\MD-01程序173N-SOP8\NTC3435.c (line 158)
+;NTC_out();R10K_out();TEST_out();
+  CALL  0x001           ;'0x000174'
+;C:\Users\daminger\Desktop\练习\MD-01程序资料\MD-01程序173N-SOP8\NTC3435.c (line 158)
+;NTC_out();R10K_out();TEST_out();
+  CALL  0x048           ;'0x000175'
+  CALL  0x04C           ;'0x000176'
+;C:\Users\daminger\Desktop\练习\MD-01程序资料\MD-01程序173N-SOP8\NTC3435.c (line 159)
+;NTC_io=0;R10K_io=0;TEST_io=0;//三个脚全部输出0
+  BANK  @0x0            ;'0x000177'
+  BC    0x06, 0         ;'0x000178'
+  BC    0x06, 1         ;'0x000179'
+;C:\Users\daminger\Desktop\练习\MD-01程序资料\MD-01程序173N-SOP8\NTC3435.c (line 159)
+;NTC_io=0;R10K_io=0;TEST_io=0;//三个脚全部输出0
+  BC    0x06, 2         ;'0x00017A'
+;C:\Users\daminger\Desktop\练习\MD-01程序资料\MD-01程序173N-SOP8\NTC3435.c (line 161)
+;while(TEST_io);
+  JBC   0x06, 2         ;'0x00017B'
+  JMP   0x17B           ;'0x00017C'
+;C:\Users\daminger\Desktop\练习\MD-01程序资料\MD-01程序173N-SOP8\NTC3435.c (line 162)
+;CAP_charge_time = 0;
+  CLR   0x26            ;'0x00017D'
+  CLR   0x25            ;'0x00017E'
+;C:\Users\daminger\Desktop\练习\MD-01程序资料\MD-01程序173N-SOP8\NTC3435.c (line 165)
+;nop();nop();
+  NOP                   ;'0x00017F'
+;C:\Users\daminger\Desktop\练习\MD-01程序资料\MD-01程序173N-SOP8\NTC3435.c (line 165)
+;nop();nop();
+  NOP                   ;'0x000180'
+;C:\Users\daminger\Desktop\练习\MD-01程序资料\MD-01程序173N-SOP8\NTC3435.c (line 166)
+;CAP_charge_time ++;  //电容放电+延时
+  INC   0x25            ;'0x000181'
+  JBC   0x03, 2         ;'0x000182'
+  INC   0x26            ;'0x000183'
+;C:\Users\daminger\Desktop\练习\MD-01程序资料\MD-01程序173N-SOP8\NTC3435.c (line 168)
+;while(CAP_charge_time < 0x0100);
+  MOV   A, @0x01        ;'0x000184'
+  SUB   A, 0x26         ;'0x000185'
+  JBS   0x03, 2         ;'0x000186'
+  JMP   0x18A           ;'0x000187'
+  MOV   A, @0x00        ;'0x000188'
+  SUB   A, 0x25         ;'0x000189'
+  JBS   0x03, 0         ;'0x00018A'
+  JMP   0x17F           ;'0x00018B'
+;C:\Users\daminger\Desktop\练习\MD-01程序资料\MD-01程序173N-SOP8\NTC3435.c (line 169)
+;CAP_charge_time = 0;
+  CLR   0x26            ;'0x00018C'
+  CLR   0x25            ;'0x00018D'
+;C:\Users\daminger\Desktop\练习\MD-01程序资料\MD-01程序173N-SOP8\NTC3435.c (line 171)
+;switch(Temperature_collection_status)		//0:采集10K电阻充电时间 1:采集NTC充电时间 2:数据处理
+  MOV   A, 0x27         ;'0x00018E'
+  MOV   0x13, A         ;'0x00018F'
+  MOV   0x13, 0x13      ;'0x000190'
+  JBC   0x03, 2         ;'0x000191'
+  JMP   0x19C           ;'0x000192'
+  MOV   A, 0x13         ;'0x000193'
+  XOR   A, @0x01        ;'0x000194'
+  JBC   0x03, 2         ;'0x000195'
+  JMP   0x1C5           ;'0x000196'
+  MOV   A, 0x13         ;'0x000197'
+  XOR   A, @0x02        ;'0x000198'
+  JBC   0x03, 2         ;'0x000199'
+  JMP   0x1F8           ;'0x00019A'
+  JMP   0x251           ;'0x00019B'
+;C:\Users\daminger\Desktop\练习\MD-01程序资料\MD-01程序173N-SOP8\NTC3435.c (line 174)
+;Temperature_collection_times ++;	//检测数据次数+1
+  INC   0x28            ;'0x00019C'
+;C:\Users\daminger\Desktop\练习\MD-01程序资料\MD-01程序173N-SOP8\NTC3435.c (line 175)
+;R10K_in();TEST_in();    			//NTC脚输出其余脚输入
+  CALL  0x050           ;'0x00019D'
+  CALL  0x054           ;'0x00019E'
+;C:\Users\daminger\Desktop\练习\MD-01程序资料\MD-01程序173N-SOP8\NTC3435.c (line 176)
+;CAP_charge_time = 0;
+  CLR   0x26            ;'0x00019F'
+  CLR   0x25            ;'0x0001A0'
+;C:\Users\daminger\Desktop\练习\MD-01程序资料\MD-01程序173N-SOP8\NTC3435.c (line 177)
+;NTC_io=1;       					//NTC脚充电
+  BANK  @0x0            ;'0x0001A1'
+  BS    0x06, 0         ;'0x0001A2'
+;C:\Users\daminger\Desktop\练习\MD-01程序资料\MD-01程序173N-SOP8\NTC3435.c (line 180)
+;CAP_charge_time ++;  			//计时
+  INC   0x25            ;'0x0001A3'
+  JBC   0x03, 2         ;'0x0001A4'
+  INC   0x26            ;'0x0001A5'
+;C:\Users\daminger\Desktop\练习\MD-01程序资料\MD-01程序173N-SOP8\NTC3435.c (line 182)
+;while((!TEST_io)&&(CAP_charge_time<0x0200)); //大于0x200无效
+  JBC   0x06, 2         ;'0x0001A6'
+  JMP   0x1B0           ;'0x0001A7'
+  MOV   A, @0x02        ;'0x0001A8'
+  SUB   A, 0x26         ;'0x0001A9'
+  JBS   0x03, 2         ;'0x0001AA'
+  JMP   0x1AE           ;'0x0001AB'
+  MOV   A, @0x00        ;'0x0001AC'
+  SUB   A, 0x25         ;'0x0001AD'
+  JBS   0x03, 0         ;'0x0001AE'
+  JMP   0x1A3           ;'0x0001AF'
+;C:\Users\daminger\Desktop\练习\MD-01程序资料\MD-01程序173N-SOP8\NTC3435.c (line 183)
+;NTC_CAP_charge_time += CAP_charge_time;	//累加计时
+  MOV   A, 0x25         ;'0x0001B0'
+  ADD   0x29, A         ;'0x0001B1'
+  JBC   0x03, 0         ;'0x0001B2'
+  INC   0x2A            ;'0x0001B3'
+  MOV   A, 0x26         ;'0x0001B4'
+  ADD   0x2A, A         ;'0x0001B5'
+;C:\Users\daminger\Desktop\练习\MD-01程序资料\MD-01程序173N-SOP8\NTC3435.c (line 184)
+;if(Temperature_collection_times >= 16)
+  MOV   A, @0x10        ;'0x0001B6'
+  SUB   A, 0x28         ;'0x0001B7'
+  JBS   0x03, 0         ;'0x0001B8'
+  JMP   0x252           ;'0x0001B9'
+;C:\Users\daminger\Desktop\练习\MD-01程序资料\MD-01程序173N-SOP8\NTC3435.c (line 186)
+;Temperature_collection_times = 0;
+  CLR   0x28            ;'0x0001BA'
+;C:\Users\daminger\Desktop\练习\MD-01程序资料\MD-01程序173N-SOP8\NTC3435.c (line 187)
+;Temperature_collection_status = 1;
+  MOV   A, @0x01        ;'0x0001BB'
+  MOV   0x27, A         ;'0x0001BC'
+;C:\Users\daminger\Desktop\练习\MD-01程序资料\MD-01程序173N-SOP8\NTC3435.c (line 188)
+;NTC_CAP_charge_time >>= 4;
+  MOV   A, @0x04        ;'0x0001BD'
+  MOV   0x17, A         ;'0x0001BE'
+  BC    0x03, 0         ;'0x0001BF'
+  RRC   0x2A            ;'0x0001C0'
+  RRC   0x29            ;'0x0001C1'
+  DJZ   0x17            ;'0x0001C2'
+  JMP   0x1BF           ;'0x0001C3'
+;C:\Users\daminger\Desktop\练习\MD-01程序资料\MD-01程序173N-SOP8\NTC3435.c (line 190)
+;break;
+  JMP   0x252           ;'0x0001C4'
+;C:\Users\daminger\Desktop\练习\MD-01程序资料\MD-01程序173N-SOP8\NTC3435.c (line 192)
+;Temperature_collection_times ++;
+  INC   0x28            ;'0x0001C5'
+;C:\Users\daminger\Desktop\练习\MD-01程序资料\MD-01程序173N-SOP8\NTC3435.c (line 193)
+;NTC_in();TEST_in();    					//R10K脚输出其余脚输入
+  CALL  0x058           ;'0x0001C6'
+  CALL  0x054           ;'0x0001C7'
+;C:\Users\daminger\Desktop\练习\MD-01程序资料\MD-01程序173N-SOP8\NTC3435.c (line 194)
+;CAP_charge_time = 0;
+  CLR   0x26            ;'0x0001C8'
+  CLR   0x25            ;'0x0001C9'
+;C:\Users\daminger\Desktop\练习\MD-01程序资料\MD-01程序173N-SOP8\NTC3435.c (line 195)
+;R10K_io = 1;
+  BANK  @0x0            ;'0x0001CA'
+  BS    0x06, 1         ;'0x0001CB'
+;C:\Users\daminger\Desktop\练习\MD-01程序资料\MD-01程序173N-SOP8\NTC3435.c (line 198)
+;CAP_charge_time ++;  				//计时
+  INC   0x25            ;'0x0001CC'
+  JBC   0x03, 2         ;'0x0001CD'
+  INC   0x26            ;'0x0001CE'
+;C:\Users\daminger\Desktop\练习\MD-01程序资料\MD-01程序173N-SOP8\NTC3435.c (line 200)
+;while((!TEST_io)&&(CAP_charge_time<0x0200));
+  JBC   0x06, 2         ;'0x0001CF'
+  JMP   0x1D9           ;'0x0001D0'
+  MOV   A, @0x02        ;'0x0001D1'
+  SUB   A, 0x26         ;'0x0001D2'
+  JBS   0x03, 2         ;'0x0001D3'
+  JMP   0x1D7           ;'0x0001D4'
+  MOV   A, @0x00        ;'0x0001D5'
+  SUB   A, 0x25         ;'0x0001D6'
+  JBS   0x03, 0         ;'0x0001D7'
+  JMP   0x1CC           ;'0x0001D8'
+;C:\Users\daminger\Desktop\练习\MD-01程序资料\MD-01程序173N-SOP8\NTC3435.c (line 201)
+;if(CAP_charge_time >= 0x0200)
+  MOV   A, @0x02        ;'0x0001D9'
+  SUB   A, 0x26         ;'0x0001DA'
+  JBS   0x03, 2         ;'0x0001DB'
+  JMP   0x1DF           ;'0x0001DC'
+  MOV   A, @0x00        ;'0x0001DD'
+  SUB   A, 0x25         ;'0x0001DE'
+  JBS   0x03, 0         ;'0x0001DF'
+  JMP   0x1E3           ;'0x0001E0'
+;C:\Users\daminger\Desktop\练习\MD-01程序资料\MD-01程序173N-SOP8\NTC3435.c (line 203)
+;CAP_charge_time = 0;
+  CLR   0x26            ;'0x0001E1'
+  CLR   0x25            ;'0x0001E2'
+;C:\Users\daminger\Desktop\练习\MD-01程序资料\MD-01程序173N-SOP8\NTC3435.c (line 205)
+;R10K_CAP_charge_time += CAP_charge_time;
+  MOV   A, 0x25         ;'0x0001E3'
+  ADD   0x2B, A         ;'0x0001E4'
+  JBC   0x03, 0         ;'0x0001E5'
+  INC   0x2C            ;'0x0001E6'
+  MOV   A, 0x26         ;'0x0001E7'
+  ADD   0x2C, A         ;'0x0001E8'
+;C:\Users\daminger\Desktop\练习\MD-01程序资料\MD-01程序173N-SOP8\NTC3435.c (line 206)
+;if(Temperature_collection_times >= 16)
+  MOV   A, @0x10        ;'0x0001E9'
+  SUB   A, 0x28         ;'0x0001EA'
+  JBS   0x03, 0         ;'0x0001EB'
+  JMP   0x252           ;'0x0001EC'
+;C:\Users\daminger\Desktop\练习\MD-01程序资料\MD-01程序173N-SOP8\NTC3435.c (line 208)
+;Temperature_collection_times = 0;
+  CLR   0x28            ;'0x0001ED'
+;C:\Users\daminger\Desktop\练习\MD-01程序资料\MD-01程序173N-SOP8\NTC3435.c (line 209)
+;Temperature_collection_status = 2;
+  MOV   A, @0x02        ;'0x0001EE'
+  MOV   0x27, A         ;'0x0001EF'
+;C:\Users\daminger\Desktop\练习\MD-01程序资料\MD-01程序173N-SOP8\NTC3435.c (line 210)
+;R10K_CAP_charge_time >>= 4;
+  MOV   A, @0x04        ;'0x0001F0'
+  MOV   0x17, A         ;'0x0001F1'
+  BC    0x03, 0         ;'0x0001F2'
+  RRC   0x2C            ;'0x0001F3'
+  RRC   0x2B            ;'0x0001F4'
+  DJZ   0x17            ;'0x0001F5'
+  JMP   0x1F2           ;'0x0001F6'
+;C:\Users\daminger\Desktop\练习\MD-01程序资料\MD-01程序173N-SOP8\NTC3435.c (line 212)
+;break;
+  JMP   0x252           ;'0x0001F7'
+;C:\Users\daminger\Desktop\练习\MD-01程序资料\MD-01程序173N-SOP8\NTC3435.c (line 216)
+;NTC_CAP_charge_time *= 10;
+  MOV   A, @0x0A        ;'0x0001F8'
+  MOV   0x13, A         ;'0x0001F9'
+  MOV   A, @0x00        ;'0x0001FA'
+  MOV   0x14, A         ;'0x0001FB'
+  MOV   A, 0x29         ;'0x0001FC'
+  MOV   0x11, A         ;'0x0001FD'
+  MOV   A, 0x2A         ;'0x0001FE'
+  MOV   0x12, A         ;'0x0001FF'
+  MOV   A, @0x13        ;'0x000200'
+  MOV   0x15, A         ;'0x000201'
+  MOV   A, @0x11        ;'0x000202'
+  MOV   0x17, A         ;'0x000203'
+  CALL  0x05C           ;'0x000204'
+  MOV   A, 0x13         ;'0x000205'
+  MOV   0x29, A         ;'0x000206'
+  MOV   A, 0x14         ;'0x000207'
+  MOV   0x2A, A         ;'0x000208'
+;C:\Users\daminger\Desktop\练习\MD-01程序资料\MD-01程序173N-SOP8\NTC3435.c (line 217)
+;NTC_CAP_charge_time <<= 3;				//ntc延时时间*100K
+  MOV   A, @0x03        ;'0x000209'
+  MOV   0x17, A         ;'0x00020A'
+  BC    0x03, 0         ;'0x00020B'
+  RLC   0x29            ;'0x00020C'
+  RLC   0x2A            ;'0x00020D'
+  DJZ   0x17            ;'0x00020E'
+  JMP   0x20B           ;'0x00020F'
+;C:\Users\daminger\Desktop\练习\MD-01程序资料\MD-01程序173N-SOP8\NTC3435.c (line 218)
+;NTC_CAP_charge_time /= R10K_CAP_charge_time;
+  MOV   A, 0x29         ;'0x000210'
+  MOV   0x13, A         ;'0x000211'
+  MOV   A, 0x2A         ;'0x000212'
+  MOV   0x14, A         ;'0x000213'
+  MOV   A, 0x2B         ;'0x000214'
+  MOV   0x11, A         ;'0x000215'
+  MOV   A, 0x2C         ;'0x000216'
+  MOV   0x12, A         ;'0x000217'
+  MOV   A, @0x13        ;'0x000218'
+  MOV   0x15, A         ;'0x000219'
+  MOV   A, @0x11        ;'0x00021A'
+  MOV   0x17, A         ;'0x00021B'
+  CALL  0x082           ;'0x00021C'
+  MOV   A, 0x13         ;'0x00021D'
+  MOV   0x29, A         ;'0x00021E'
+  MOV   A, 0x14         ;'0x00021F'
+  MOV   0x2A, A         ;'0x000220'
+;C:\Users\daminger\Desktop\练习\MD-01程序资料\MD-01程序173N-SOP8\NTC3435.c (line 222)
+;Temperature_collection_count ++;
+  INC   0x2D            ;'0x000221'
+;C:\Users\daminger\Desktop\练习\MD-01程序资料\MD-01程序173N-SOP8\NTC3435.c (line 223)
+;if(Temperature_collection_count > 4)
+  MOV   A, 0x2D         ;'0x000222'
+  SUB   A, @0x04        ;'0x000223'
+  JBC   0x03, 0         ;'0x000224'
+  JMP   0x24A           ;'0x000225'
+;C:\Users\daminger\Desktop\练习\MD-01程序资料\MD-01程序173N-SOP8\NTC3435.c (line 225)
+;for(Temperature_collection_temp=0;Temperature_collection_temp<100;Temperature_collection_temp++)
+  CLR   0x2E            ;'0x000226'
+  JMP   0x23E           ;'0x000227'
+;C:\Users\daminger\Desktop\练习\MD-01程序资料\MD-01程序173N-SOP8\NTC3435.c (line 227)
+;if(NTC_CAP_charge_time > wenducode[Temperature_collection_temp])
+  MOV   A, 0x2E         ;'0x000228'
+  MOV   0x13, A         ;'0x000229'
+  MOV   A, 0x29         ;'0x00022A'
+  MOV   0x11, A         ;'0x00022B'
+  MOV   A, 0x2A         ;'0x00022C'
+  MOV   0x12, A         ;'0x00022D'
+  MOV   A, 0x13         ;'0x00022E'
+  CALL  0x10B           ;'0x00022F'
+  MOV   0x13, A         ;'0x000230'
+  CLR   0x14            ;'0x000231'
+  MOV   A, 0x12         ;'0x000232'
+  SUB   A, 0x14         ;'0x000233'
+  JBS   0x03, 2         ;'0x000234'
+  JMP   0x238           ;'0x000235'
+  MOV   A, 0x11         ;'0x000236'
+  SUB   A, 0x13         ;'0x000237'
+  JBC   0x03, 0         ;'0x000238'
+  JMP   0x23D           ;'0x000239'
+;C:\Users\daminger\Desktop\练习\MD-01程序资料\MD-01程序173N-SOP8\NTC3435.c (line 229)
+;Temperature_collection_data = Temperature_collection_temp;
+  MOV   A, 0x2E         ;'0x00023A'
+  MOV   0x2F, A         ;'0x00023B'
+;C:\Users\daminger\Desktop\练习\MD-01程序资料\MD-01程序173N-SOP8\NTC3435.c (line 230)
+;break;
+  JMP   0x242           ;'0x00023C'
+;C:\Users\daminger\Desktop\练习\MD-01程序资料\MD-01程序173N-SOP8\NTC3435.c (line 232)
+;}
+  INC   0x2E            ;'0x00023D'
+;C:\Users\daminger\Desktop\练习\MD-01程序资料\MD-01程序173N-SOP8\NTC3435.c (line 225)
+;for(Temperature_collection_temp=0;Temperature_collection_temp<100;Temperature_collection_temp++)
+  MOV   A, @0x64        ;'0x00023E'
+  SUB   A, 0x2E         ;'0x00023F'
+  JBS   0x03, 0         ;'0x000240'
+  JMP   0x228           ;'0x000241'
+;C:\Users\daminger\Desktop\练习\MD-01程序资料\MD-01程序173N-SOP8\NTC3435.c (line 233)
+;if(Temperature_collection_temp == 100)
+  MOV   A, 0x2E         ;'0x000242'
+  XOR   A, @0x64        ;'0x000243'
+  JBS   0x03, 2         ;'0x000244'
+  JMP   0x248           ;'0x000245'
+;C:\Users\daminger\Desktop\练习\MD-01程序资料\MD-01程序173N-SOP8\NTC3435.c (line 235)
+;Temperature_collection_data = 99;
+  MOV   A, @0x63        ;'0x000246'
+  MOV   0x2F, A         ;'0x000247'
+;C:\Users\daminger\Desktop\练习\MD-01程序资料\MD-01程序173N-SOP8\NTC3435.c (line 237)
+;Temperature_collection_count = 0;
+  CLR   0x2D            ;'0x000248'
+;C:\Users\daminger\Desktop\练习\MD-01程序资料\MD-01程序173N-SOP8\NTC3435.c (line 238)
+;Display_AIP1620_flag = 1;
+  BS    0x20, 1         ;'0x000249'
+;C:\Users\daminger\Desktop\练习\MD-01程序资料\MD-01程序173N-SOP8\NTC3435.c (line 246)
+;NTC_CAP_charge_time = 0;
+  CLR   0x2A            ;'0x00024A'
+  CLR   0x29            ;'0x00024B'
+;C:\Users\daminger\Desktop\练习\MD-01程序资料\MD-01程序173N-SOP8\NTC3435.c (line 247)
+;R10K_CAP_charge_time = 0;
+  CLR   0x2C            ;'0x00024C'
+  CLR   0x2B            ;'0x00024D'
+;C:\Users\daminger\Desktop\练习\MD-01程序资料\MD-01程序173N-SOP8\NTC3435.c (line 248)
+;Temperature_collection_times = 0;
+  CLR   0x28            ;'0x00024E'
+;C:\Users\daminger\Desktop\练习\MD-01程序资料\MD-01程序173N-SOP8\NTC3435.c (line 249)
+;Temperature_collection_status = 0;
+  CLR   0x27            ;'0x00024F'
+;C:\Users\daminger\Desktop\练习\MD-01程序资料\MD-01程序173N-SOP8\NTC3435.c (line 250)
+;break;
+  JMP   0x252           ;'0x000250'
+;C:\Users\daminger\Desktop\练习\MD-01程序资料\MD-01程序173N-SOP8\NTC3435.c (line 253)
+;Temperature_collection_status = 0;
+  CLR   0x27            ;'0x000251'
+  MOV   A, 0x21         ;'0x000252'
+  MOV   0x13, A         ;'0x000253'
+  MOV   A, 0x22         ;'0x000254'
+  MOV   0x14, A         ;'0x000255'
+  RET                   ;'0x000256'
+;C:\Users\daminger\Desktop\练习\MD-01程序资料\MD-01程序173N-SOP8\TM1650.c (line 50)
+;TM1650_SDA = 1;
+  BANK  @0x0            ;'0x000257'
+  BS    0x06, 5         ;'0x000258'
+;C:\Users\daminger\Desktop\练习\MD-01程序资料\MD-01程序173N-SOP8\TM1650.c (line 51)
+;TM1650_SCL = 1;
+  BS    0x06, 4         ;'0x000259'
+;C:\Users\daminger\Desktop\练习\MD-01程序资料\MD-01程序173N-SOP8\TM1650.c (line 52)
+;nop();nop();nop();nop();nop();
+  NOP                   ;'0x00025A'
+;C:\Users\daminger\Desktop\练习\MD-01程序资料\MD-01程序173N-SOP8\TM1650.c (line 52)
+;nop();nop();nop();nop();nop();
+  NOP                   ;'0x00025B'
+;C:\Users\daminger\Desktop\练习\MD-01程序资料\MD-01程序173N-SOP8\TM1650.c (line 52)
+;nop();nop();nop();nop();nop();
+  NOP                   ;'0x00025C'
+;C:\Users\daminger\Desktop\练习\MD-01程序资料\MD-01程序173N-SOP8\TM1650.c (line 52)
+;nop();nop();nop();nop();nop();
+  NOP                   ;'0x00025D'
+;C:\Users\daminger\Desktop\练习\MD-01程序资料\MD-01程序173N-SOP8\TM1650.c (line 52)
+;nop();nop();nop();nop();nop();
+  NOP                   ;'0x00025E'
+;C:\Users\daminger\Desktop\练习\MD-01程序资料\MD-01程序173N-SOP8\TM1650.c (line 53)
+;TM1650_SDA = 0;
+  BC    0x06, 5         ;'0x00025F'
+;C:\Users\daminger\Desktop\练习\MD-01程序资料\MD-01程序173N-SOP8\TM1650.c (line 54)
+;nop();nop();nop();nop();nop();
+  NOP                   ;'0x000260'
+;C:\Users\daminger\Desktop\练习\MD-01程序资料\MD-01程序173N-SOP8\TM1650.c (line 54)
+;nop();nop();nop();nop();nop();
+  NOP                   ;'0x000261'
+;C:\Users\daminger\Desktop\练习\MD-01程序资料\MD-01程序173N-SOP8\TM1650.c (line 54)
+;nop();nop();nop();nop();nop();
+  NOP                   ;'0x000262'
+;C:\Users\daminger\Desktop\练习\MD-01程序资料\MD-01程序173N-SOP8\TM1650.c (line 54)
+;nop();nop();nop();nop();nop();
+  NOP                   ;'0x000263'
+;C:\Users\daminger\Desktop\练习\MD-01程序资料\MD-01程序173N-SOP8\TM1650.c (line 54)
+;nop();nop();nop();nop();nop();
+  NOP                   ;'0x000264'
+;C:\Users\daminger\Desktop\练习\MD-01程序资料\MD-01程序173N-SOP8\TM1650.c (line 55)
+;}
+  RET                   ;'0x000265'
+;C:\Users\daminger\Desktop\练习\MD-01程序资料\MD-01程序173N-SOP8\TM1650.c (line 30)
+;for(TM1650_sendbit_i=0;TM1650_sendbit_i<8;TM1650_sendbit_i++)
+  CLR   0x23            ;'0x000266'
+  JMP   0x27F           ;'0x000267'
+;C:\Users\daminger\Desktop\练习\MD-01程序资料\MD-01程序173N-SOP8\TM1650.c (line 32)
+;TM1650_SCL = 0;
+  BANK  @0x0            ;'0x000268'
+  BC    0x06, 4         ;'0x000269'
+;C:\Users\daminger\Desktop\练习\MD-01程序资料\MD-01程序173N-SOP8\TM1650.c (line 33)
+;nop();nop();nop();nop();nop();
+  NOP                   ;'0x00026A'
+;C:\Users\daminger\Desktop\练习\MD-01程序资料\MD-01程序173N-SOP8\TM1650.c (line 33)
+;nop();nop();nop();nop();nop();
+  NOP                   ;'0x00026B'
+;C:\Users\daminger\Desktop\练习\MD-01程序资料\MD-01程序173N-SOP8\TM1650.c (line 33)
+;nop();nop();nop();nop();nop();
+  NOP                   ;'0x00026C'
+;C:\Users\daminger\Desktop\练习\MD-01程序资料\MD-01程序173N-SOP8\TM1650.c (line 33)
+;nop();nop();nop();nop();nop();
+  NOP                   ;'0x00026D'
+;C:\Users\daminger\Desktop\练习\MD-01程序资料\MD-01程序173N-SOP8\TM1650.c (line 33)
+;nop();nop();nop();nop();nop();
+  NOP                   ;'0x00026E'
+;C:\Users\daminger\Desktop\练习\MD-01程序资料\MD-01程序173N-SOP8\TM1650.c (line 34)
+;if(TM1650_sendbit_data & 0x80)
+  MOV   A, 0x24         ;'0x00026F'
+  AND   A, @0x80        ;'0x000270'
+  JBC   0x03, 2         ;'0x000271'
+  JMP   0x275           ;'0x000272'
+;C:\Users\daminger\Desktop\练习\MD-01程序资料\MD-01程序173N-SOP8\TM1650.c (line 36)
+;TM1650_SDA = 1;
+  BS    0x06, 5         ;'0x000273'
+  JMP   0x276           ;'0x000274'
+;C:\Users\daminger\Desktop\练习\MD-01程序资料\MD-01程序173N-SOP8\TM1650.c (line 40)
+;TM1650_SDA = 0;
+  BC    0x06, 5         ;'0x000275'
+;C:\Users\daminger\Desktop\练习\MD-01程序资料\MD-01程序173N-SOP8\TM1650.c (line 42)
+;TM1650_sendbit_data <<= 1; //数据左移一位
+  BC    0x03, 0         ;'0x000276'
+  RLC   0x24            ;'0x000277'
+;C:\Users\daminger\Desktop\练习\MD-01程序资料\MD-01程序173N-SOP8\TM1650.c (line 43)
+;TM1650_SCL = 1;
+  BS    0x06, 4         ;'0x000278'
+;C:\Users\daminger\Desktop\练习\MD-01程序资料\MD-01程序173N-SOP8\TM1650.c (line 44)
+;nop();nop();nop();nop();nop();
+  NOP                   ;'0x000279'
+;C:\Users\daminger\Desktop\练习\MD-01程序资料\MD-01程序173N-SOP8\TM1650.c (line 44)
+;nop();nop();nop();nop();nop();
+  NOP                   ;'0x00027A'
+;C:\Users\daminger\Desktop\练习\MD-01程序资料\MD-01程序173N-SOP8\TM1650.c (line 44)
+;nop();nop();nop();nop();nop();
+  NOP                   ;'0x00027B'
+;C:\Users\daminger\Desktop\练习\MD-01程序资料\MD-01程序173N-SOP8\TM1650.c (line 44)
+;nop();nop();nop();nop();nop();
+  NOP                   ;'0x00027C'
+;C:\Users\daminger\Desktop\练习\MD-01程序资料\MD-01程序173N-SOP8\TM1650.c (line 44)
+;nop();nop();nop();nop();nop();
+  NOP                   ;'0x00027D'
+;C:\Users\daminger\Desktop\练习\MD-01程序资料\MD-01程序173N-SOP8\TM1650.c (line 45)
+;}
+  INC   0x23            ;'0x00027E'
+;C:\Users\daminger\Desktop\练习\MD-01程序资料\MD-01程序173N-SOP8\TM1650.c (line 30)
+;for(TM1650_sendbit_i=0;TM1650_sendbit_i<8;TM1650_sendbit_i++)
+  MOV   A, @0x08        ;'0x00027F'
+  SUB   A, 0x23         ;'0x000280'
+  JBS   0x03, 0         ;'0x000281'
+  JMP   0x268           ;'0x000282'
+;C:\Users\daminger\Desktop\练习\MD-01程序资料\MD-01程序173N-SOP8\TM1650.c (line 46)
+;}
+  RET                   ;'0x000283'
+;C:\Users\daminger\Desktop\练习\MD-01程序资料\MD-01程序173N-SOP8\TM1650.c (line 66)
+;unsigned int AT24C16_SendNACK_i=0;
+  CLR   0x23            ;'0x000284'
+;C:\Users\daminger\Desktop\练习\MD-01程序资料\MD-01程序173N-SOP8\TM1650.c (line 67)
+;TM1650_SCL = 0;
+  BANK  @0x0            ;'0x000285'
+  BC    0x06, 4         ;'0x000286'
+;C:\Users\daminger\Desktop\练习\MD-01程序资料\MD-01程序173N-SOP8\TM1650.c (line 68)
+;nop();nop();nop();nop();nop();
+  NOP                   ;'0x000287'
+;C:\Users\daminger\Desktop\练习\MD-01程序资料\MD-01程序173N-SOP8\TM1650.c (line 68)
+;nop();nop();nop();nop();nop();
+  NOP                   ;'0x000288'
+;C:\Users\daminger\Desktop\练习\MD-01程序资料\MD-01程序173N-SOP8\TM1650.c (line 68)
+;nop();nop();nop();nop();nop();
+  NOP                   ;'0x000289'
+;C:\Users\daminger\Desktop\练习\MD-01程序资料\MD-01程序173N-SOP8\TM1650.c (line 68)
+;nop();nop();nop();nop();nop();
+  NOP                   ;'0x00028A'
+;C:\Users\daminger\Desktop\练习\MD-01程序资料\MD-01程序173N-SOP8\TM1650.c (line 68)
+;nop();nop();nop();nop();nop();
+  NOP                   ;'0x00028B'
+;C:\Users\daminger\Desktop\练习\MD-01程序资料\MD-01程序173N-SOP8\TM1650.c (line 69)
+;TM1650_SDA_IN;
+  IOR   0x6             ;'0x00028C'
+  OR    A, @0x20        ;'0x00028D'
+  IOW   0x6             ;'0x00028E'
+  JMP   0x291           ;'0x00028F'
+;C:\Users\daminger\Desktop\练习\MD-01程序资料\MD-01程序173N-SOP8\TM1650.c (line 72)
+;AT24C16_SendNACK_i ++;
+  INC   0x23            ;'0x000290'
+;C:\Users\daminger\Desktop\练习\MD-01程序资料\MD-01程序173N-SOP8\TM1650.c (line 70)
+;while((TM1650_SDA)&&(AT24C16_SendNACK_i<100)) //
+  BANK  @0x0            ;'0x000291'
+  JBS   0x06, 5         ;'0x000292'
+  JMP   0x298           ;'0x000293'
+  MOV   A, @0x64        ;'0x000294'
+  SUB   A, 0x23         ;'0x000295'
+  JBS   0x03, 0         ;'0x000296'
+  JMP   0x290           ;'0x000297'
+;C:\Users\daminger\Desktop\练习\MD-01程序资料\MD-01程序173N-SOP8\TM1650.c (line 74)
+;TM1650_SCL = 1;
+  BS    0x06, 4         ;'0x000298'
+;C:\Users\daminger\Desktop\练习\MD-01程序资料\MD-01程序173N-SOP8\TM1650.c (line 75)
+;TM1650_SDA_OUT;  //SCL高电平期间,把SDA拉低,表示应答
+  IOR   0x6             ;'0x000299'
+  AND   A, @0xDF        ;'0x00029A'
+  IOW   0x6             ;'0x00029B'
+;C:\Users\daminger\Desktop\练习\MD-01程序资料\MD-01程序173N-SOP8\TM1650.c (line 76)
+;TM1650_SCL = 0;
+  BC    0x06, 4         ;'0x00029C'
+;C:\Users\daminger\Desktop\练习\MD-01程序资料\MD-01程序173N-SOP8\TM1650.c (line 77)
+;TM1650_SDA = 0;
+  BC    0x06, 5         ;'0x00029D'
+;C:\Users\daminger\Desktop\练习\MD-01程序资料\MD-01程序173N-SOP8\TM1650.c (line 78)
+;}
+  RET                   ;'0x00029E'
+;C:\Users\daminger\Desktop\练习\MD-01程序资料\MD-01程序173N-SOP8\TM1650.c (line 58)
+;TM1650_SCL = 1;
+  BANK  @0x0            ;'0x00029F'
+  BS    0x06, 4         ;'0x0002A0'
+;C:\Users\daminger\Desktop\练习\MD-01程序资料\MD-01程序173N-SOP8\TM1650.c (line 59)
+;TM1650_SDA = 0;
+  BC    0x06, 5         ;'0x0002A1'
+;C:\Users\daminger\Desktop\练习\MD-01程序资料\MD-01程序173N-SOP8\TM1650.c (line 60)
+;nop();nop();nop();nop();nop();
+  NOP                   ;'0x0002A2'
+;C:\Users\daminger\Desktop\练习\MD-01程序资料\MD-01程序173N-SOP8\TM1650.c (line 60)
+;nop();nop();nop();nop();nop();
+  NOP                   ;'0x0002A3'
+;C:\Users\daminger\Desktop\练习\MD-01程序资料\MD-01程序173N-SOP8\TM1650.c (line 60)
+;nop();nop();nop();nop();nop();
+  NOP                   ;'0x0002A4'
+;C:\Users\daminger\Desktop\练习\MD-01程序资料\MD-01程序173N-SOP8\TM1650.c (line 60)
+;nop();nop();nop();nop();nop();
+  NOP                   ;'0x0002A5'
+;C:\Users\daminger\Desktop\练习\MD-01程序资料\MD-01程序173N-SOP8\TM1650.c (line 60)
+;nop();nop();nop();nop();nop();
+  NOP                   ;'0x0002A6'
+;C:\Users\daminger\Desktop\练习\MD-01程序资料\MD-01程序173N-SOP8\TM1650.c (line 61)
+;TM1650_SDA = 1;
+  BS    0x06, 5         ;'0x0002A7'
+;C:\Users\daminger\Desktop\练习\MD-01程序资料\MD-01程序173N-SOP8\TM1650.c (line 62)
+;nop();nop();nop();nop();nop();
+  NOP                   ;'0x0002A8'
+;C:\Users\daminger\Desktop\练习\MD-01程序资料\MD-01程序173N-SOP8\TM1650.c (line 62)
+;nop();nop();nop();nop();nop();
+  NOP                   ;'0x0002A9'
+;C:\Users\daminger\Desktop\练习\MD-01程序资料\MD-01程序173N-SOP8\TM1650.c (line 62)
+;nop();nop();nop();nop();nop();
+  NOP                   ;'0x0002AA'
+;C:\Users\daminger\Desktop\练习\MD-01程序资料\MD-01程序173N-SOP8\TM1650.c (line 62)
+;nop();nop();nop();nop();nop();
+  NOP                   ;'0x0002AB'
+;C:\Users\daminger\Desktop\练习\MD-01程序资料\MD-01程序173N-SOP8\TM1650.c (line 62)
+;nop();nop();nop();nop();nop();
+  NOP                   ;'0x0002AC'
+;C:\Users\daminger\Desktop\练习\MD-01程序资料\MD-01程序173N-SOP8\TM1650.c (line 63)
+;}
+  RET                   ;'0x0002AD'
+  MOV   A, @0x08        ;'0x0002AE'
+  MOV   0x18, A         ;'0x0002AF'
+  CLR   0x16            ;'0x0002B0'
+  BC    0x03, 0         ;'0x0002B1'
+  RLC   0x15            ;'0x0002B2'
+  RLC   0x16            ;'0x0002B3'
+  MOV   A, 0x17         ;'0x0002B4'
+  SUB   A, 0x16         ;'0x0002B5'
+  JBS   0x03, 0         ;'0x0002B6'
+  JMP   0x2BA           ;'0x0002B7'
+  MOV   A, 0x17         ;'0x0002B8'
+  SUB   0x16, A         ;'0x0002B9'
+  DJZ   0x18            ;'0x0002BA'
+  JMP   0x2B1           ;'0x0002BB'
+  MOV   A, 0x16         ;'0x0002BC'
+  RET                   ;'0x0002BD'
+  MOV   A, @0x08        ;'0x0002BE'
+  MOV   0x18, A         ;'0x0002BF'
+  CLR   0x16            ;'0x0002C0'
+  BC    0x03, 0         ;'0x0002C1'
+  RLC   0x15            ;'0x0002C2'
+  RLC   0x16            ;'0x0002C3'
+  MOV   A, 0x17         ;'0x0002C4'
+  SUB   A, 0x16         ;'0x0002C5'
+  JBS   0x03, 0         ;'0x0002C6'
+  JMP   0x2CB           ;'0x0002C7'
+  MOV   A, 0x17         ;'0x0002C8'
+  SUB   0x16, A         ;'0x0002C9'
+  INC   0x15            ;'0x0002CA'
+  DJZ   0x18            ;'0x0002CB'
+  JMP   0x2C1           ;'0x0002CC'
+  MOV   A, 0x15         ;'0x0002CD'
+  RET                   ;'0x0002CE'
