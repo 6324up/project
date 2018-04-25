@@ -8,7 +8,9 @@ BlockNum=0
 [EEPROMBlock]
 BlockNum=0
 [BREAKPOINT]
-BP Num=0
+BP Num=2
+BP0=1,A,1699016,1,1699024,61,$\light.c
+BP1=1,A,1699016,1,1699024,307,$\light.c
 [CODEOPTION]
 Option Num=92
 Target Power=1
@@ -127,7 +129,7 @@ File Num=1
 File0=$\EM78P173N.H
 [Map Files]
 File Num=1
-File0=$\light.map
+File0=?
 [Library Files]
 File Num=0
 [BOOKMARK]
@@ -185,12 +187,9 @@ RE=0E
 RF=0F
 [GlobalIO]
 [Watch]
-Size#0=5
-0,0=white_status
-0,1=white_status
-0,2=mode_count
-0,3=mode_count
-0,4=mode_count
+Size#0=2
+0,0=S1_flag
+0,1=S1_sleep_flag
 Size#1=2
 1,0=mode_count
 1,1=white_status
@@ -198,6 +197,6 @@ Size#2=0
 [ICEVOLTAGE SETTING]
 Voltage=1
 [$\light.c]
-Rectangle=0026 0026 1341 0299
+Rectangle=0000 0000 0473 0377
 Iconized=0
 Maximized=0

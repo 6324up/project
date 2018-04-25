@@ -38,8 +38,6 @@ bit S1_sleep_flag=0;
 void keyscan();
 void mode0(void)				//模式0休眠,PORT6唤醒
 {	
-	
-	
 	{
 		white=0;red1=0;red2=0;
 		_asm{
@@ -59,10 +57,10 @@ void mode0(void)				//模式0休眠,PORT6唤醒
 		
 		SCR=0X63;				////IRC 4MHz IDLE=0 TCC时钟源:fm(主振荡器) cpu振荡源:fm(主振荡器)
  		keyscan();
- 		if(S1_flag)
+ 		if(S1_flag)				//如果S1按键唤醒,置S1唤醒标志1
  		{
  			S1_sleep_flag=1;
- 			white=1;
+ 			white=1;			//S1唤醒,白灯亮
  			S1_flag=0;
  		}
  			
@@ -251,7 +249,7 @@ void delayms(uchar xms) 	//延时
 	for(i=xms;i>0;i--)
 		for(j=200;j>0;j--);
 }
-void keyscan()				//按键扫描
+ void keyscan()				//按键扫描
 {
 	if(!S1)					//S1按下
 	{
@@ -313,8 +311,7 @@ void main()
 			{
  				case 0: if(S1_sleep_flag==0)mode0();break;
 				case 1: S1_sleep_flag=0; mode1();break;
-				case 2: S1_sleep_flag=0; mode2();break;
-				
+				case 2: S1_sleep_flag=0; mode2();break;	
 				default: break; 
 			}
 			if(S1_sleep_flag==1)

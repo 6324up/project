@@ -134,149 +134,149 @@ L4:
 L6:
 .stabn 192,0,1,L7
 L7:
-.stabn 68,0,43,L8
+.stabn 68,0,41,L8
 L8:
-.stabn 68,0,44,L9
+.stabn 68,0,42,L9
 L9:
 bc _P60,0
-.stabn 68,0,44,L10
+.stabn 68,0,42,L10
 L10:
 bc _P61,1
-.stabn 68,0,44,L11
+.stabn 68,0,42,L11
 L11:
 bc _P62,2
-.stabn 68,0,46,L12
+.stabn 68,0,44,L12
 L12:
-.cfile "C:\Users\daminger\OneDrive\github\project\light - v101-1751确定版\light.c(46):"
+.cfile "C:\Users\daminger\OneDrive\github\project\light - v101-1751确定版\light.c(44):"
 mov		a,@0x0f
-.stabn 68,0,47,L13
+.stabn 68,0,45,L13
 L13:
-.cfile "C:\Users\daminger\OneDrive\github\project\light - v101-1751确定版\light.c(47):"
+.cfile "C:\Users\daminger\OneDrive\github\project\light - v101-1751确定版\light.c(45):"
 contw
-.stabn 68,0,48,L14
+.stabn 68,0,46,L14
 L14:
-.cfile "C:\Users\daminger\OneDrive\github\project\light - v101-1751确定版\light.c(48):"
+.cfile "C:\Users\daminger\OneDrive\github\project\light - v101-1751确定版\light.c(46):"
 WDTC
-.stabn 68,0,49,L15
+.stabn 68,0,47,L15
 L15:
-.cfile "C:\Users\daminger\OneDrive\github\project\light - v101-1751确定版\light.c(49):"
+.cfile "C:\Users\daminger\OneDrive\github\project\light - v101-1751确定版\light.c(47):"
 MOV		0X6,0X6
-.stabn 68,0,51,L16
+.stabn 68,0,49,L16
 L16:
-.cfile "C:\Users\daminger\OneDrive\github\project\light - v101-1751确定版\light.c(51):"
+.cfile "C:\Users\daminger\OneDrive\github\project\light - v101-1751确定版\light.c(49):"
 disi
-.stabn 68,0,51,L17
+.stabn 68,0,49,L17
 L17:
-.stabn 68,0,52,L18
+.stabn 68,0,50,L18
 L18:
 mov a,@35
 STA _SCR,0,0
-.stabn 68,0,53,L19
+.stabn 68,0,51,L19
 L19:
 mov a,@2
 STA _IMR,0,2
-.stabn 68,0,54,L20
+.stabn 68,0,52,L20
 L20:
-.cfile "C:\Users\daminger\OneDrive\github\project\light - v101-1751确定版\light.c(54):"
+.cfile "C:\Users\daminger\OneDrive\github\project\light - v101-1751确定版\light.c(52):"
 slep
-.stabn 68,0,54,L21
+.stabn 68,0,52,L21
 L21:
-.stabn 68,0,55,L22
+.stabn 68,0,53,L22
 L22:
-.cfile "C:\Users\daminger\OneDrive\github\project\light - v101-1751确定版\light.c(55):"
+.cfile "C:\Users\daminger\OneDrive\github\project\light - v101-1751确定版\light.c(53):"
 nop
-.stabn 68,0,55,L23
+.stabn 68,0,53,L23
 L23:
-.stabn 68,0,56,L24
+.stabn 68,0,54,L24
 L24:
-.cfile "C:\Users\daminger\OneDrive\github\project\light - v101-1751确定版\light.c(56):"
+.cfile "C:\Users\daminger\OneDrive\github\project\light - v101-1751确定版\light.c(54):"
 nop
-.stabn 68,0,56,L25
+.stabn 68,0,54,L25
 L25:
-.stabn 68,0,57,L26
+.stabn 68,0,55,L26
 L26:
-.cfile "C:\Users\daminger\OneDrive\github\project\light - v101-1751确定版\light.c(57):"
+.cfile "C:\Users\daminger\OneDrive\github\project\light - v101-1751确定版\light.c(55):"
 wdtc
-.stabn 68,0,57,L27
+.stabn 68,0,55,L27
 L27:
-.stabn 68,0,58,L28
+.stabn 68,0,56,L28
 L28:
 mov a,@0
 STA _WDTCR,0,2
-.stabn 68,0,60,L29
+.stabn 68,0,58,L29
 L29:
 mov a,@99
 STA _SCR,0,0
-.stabn 68,0,61,L30
+.stabn 68,0,59,L30
 L30:
 call _keyscan
-.stabn 68,0,62,L31
+.stabn 68,0,60,L31
 L31:
 jbs _S1_flag,BIT
 EXTJMP @L$2
 .stabn 192,0,2,L32
 L32:
-.stabn 68,0,63,L33
+.stabn 68,0,61,L33
 L33:
-.stabn 68,0,64,L34
+.stabn 68,0,62,L34
 L34:
 bs _S1_sleep_flag,BIT
-.stabn 68,0,65,L35
+.stabn 68,0,63,L35
 L35:
 bs _P60,0
-.stabn 68,0,66,L36
+.stabn 68,0,64,L36
 L36:
 bc _S1_flag,BIT
-.stabn 68,0,67,L37
+.stabn 68,0,65,L37
 L37:
 .stabn 224,0,2,L38
 L38:
 L$2:
-.stabn 68,0,71,L39
+.stabn 68,0,69,L39
 L39:
-.cfile "C:\Users\daminger\OneDrive\github\project\light - v101-1751确定版\light.c(71):"
+.cfile "C:\Users\daminger\OneDrive\github\project\light - v101-1751确定版\light.c(69):"
 wdtc
-.stabn 68,0,71,L40
+.stabn 68,0,69,L40
 L40:
-.stabn 68,0,72,L41
+.stabn 68,0,70,L41
 L41:
-.cfile "C:\Users\daminger\OneDrive\github\project\light - v101-1751确定版\light.c(72):"
+.cfile "C:\Users\daminger\OneDrive\github\project\light - v101-1751确定版\light.c(70):"
 disi
-.stabn 68,0,72,L42
+.stabn 68,0,70,L42
 L42:
-.stabn 68,0,73,L43
+.stabn 68,0,71,L43
 L43:
 mov a,@0
 STA _WDTCR,0,2
-.stabn 68,0,77,L44
+.stabn 68,0,75,L44
 L44:
-.cfile "C:\Users\daminger\OneDrive\github\project\light - v101-1751确定版\light.c(77):"
+.cfile "C:\Users\daminger\OneDrive\github\project\light - v101-1751确定版\light.c(75):"
 mov	a,@0x07
-.stabn 68,0,78,L45
+.stabn 68,0,76,L45
 L45:
-.cfile "C:\Users\daminger\OneDrive\github\project\light - v101-1751确定版\light.c(78):"
+.cfile "C:\Users\daminger\OneDrive\github\project\light - v101-1751确定版\light.c(76):"
 contw
-.stabn 68,0,80,L46
+.stabn 68,0,78,L46
 L46:
 clr _TCC
-.stabn 68,0,81,L47
+.stabn 68,0,79,L47
 L47:
 clr _ISR
-.stabn 68,0,82,L48
+.stabn 68,0,80,L48
 L48:
 mov a,@1
 STA _IMR,0,2
-.stabn 68,0,83,L49
+.stabn 68,0,81,L49
 L49:
-.cfile "C:\Users\daminger\OneDrive\github\project\light - v101-1751确定版\light.c(83):"
+.cfile "C:\Users\daminger\OneDrive\github\project\light - v101-1751确定版\light.c(81):"
 eni
-.stabn 68,0,83,L50
+.stabn 68,0,81,L50
 L50:
-.stabn 68,0,84,L51
+.stabn 68,0,82,L51
 L51:
 .stabn 224,0,1,L52
 L52:
-.stabn 68,0,86,L53
+.stabn 68,0,84,L53
 L53:
 .stabn 224,0,0,L54
 L54:
@@ -308,17 +308,17 @@ mov a,ecx+3
 mov mode1_bp-1,a
 .stabn 192,0,0,L72
 L72:
-.stabn 68,0,89,L73
+.stabn 68,0,87,L73
 L73:
-.stabn 68,0,90,L74
+.stabn 68,0,88,L74
 L74:
 jbs _mode1_light_flag,BIT
 EXTJMP @L$56
 .stabn 192,0,1,L75
 L75:
-.stabn 68,0,91,L76
+.stabn 68,0,89,L76
 L76:
-.stabn 68,0,92,L77
+.stabn 68,0,90,L77
 L77:
 LDA _white_status,0,0
 mov ecx,a
@@ -334,80 +334,80 @@ EXTJMP @L$62
 jmp @L$59
 .stabn 192,0,2,L78
 L78:
-.stabn 68,0,93,L79
+.stabn 68,0,91,L79
 L79:
 L$60:
-.stabn 68,0,94,L80
+.stabn 68,0,92,L80
 L80:
 bs _P60,0
-.stabn 68,0,94,L81
+.stabn 68,0,92,L81
 L81:
 bs _P61,1
-.stabn 68,0,94,L82
+.stabn 68,0,92,L82
 L82:
 bs _P62,2
-.stabn 68,0,94,L83
+.stabn 68,0,92,L83
 L83:
 jmp @L$59
 L$61:
-.stabn 68,0,95,L84
+.stabn 68,0,93,L84
 L84:
 bc _P60,0
-.stabn 68,0,95,L85
+.stabn 68,0,93,L85
 L85:
 bs _P61,1
-.stabn 68,0,95,L86
+.stabn 68,0,93,L86
 L86:
 bs _P62,2
-.stabn 68,0,95,L87
+.stabn 68,0,93,L87
 L87:
 jmp @L$59
 L$62:
-.stabn 68,0,96,L88
+.stabn 68,0,94,L88
 L88:
 bs _P60,0
-.stabn 68,0,96,L89
+.stabn 68,0,94,L89
 L89:
 bs _P61,1
-.stabn 68,0,96,L90
+.stabn 68,0,94,L90
 L90:
 bs _P62,2
-.stabn 68,0,96,L91
+.stabn 68,0,94,L91
 L91:
-.stabn 68,0,97,L92
+.stabn 68,0,95,L92
 L92:
-.stabn 68,0,98,L93
+.stabn 68,0,96,L93
 L93:
 .stabn 224,0,2,L94
 L94:
 L$59:
-.stabn 68,0,99,L95
+.stabn 68,0,97,L95
 L95:
 LDA _mode1_count1,0,0
 add a,@1
 STA _mode1_count1,0,0
-.stabn 68,0,100,L96
+.stabn 68,0,98,L96
 L96:
 ULTRIB _mode1_count1,0x4
 jbs STATUS, cf
 EXTJMP L$57
 .stabn 192,0,2,L97
 L97:
-.stabn 68,0,101,L98
+.stabn 68,0,99,L98
 L98:
-.stabn 68,0,102,L99
+.stabn 68,0,100,L99
 L99:
 clr _mode1_count1
-.stabn 68,0,103,L100
+.stabn 68,0,101,L100
 L100:
 bc _mode1_light_flag,BIT
-.stabn 68,0,104,L101
+.stabn 68,0,102,L101
 L101:
 .stabn 224,0,2,L102
 L102:
-.stabn 68,0,105,L103
+.stabn 68,0,103,L103
 L103:
-.stabn 68,0,106,L104
+.stabn 68,0,104,L104
 L104:
 .stabn 224,0,1,L105
 L105:
@@ -415,9 +415,9 @@ jmp @L$57
 L$56:
 .stabn 192,0,1,L106
 L106:
-.stabn 68,0,108,L107
+.stabn 68,0,106,L107
 L107:
-.stabn 68,0,109,L108
+.stabn 68,0,107,L108
 L108:
 LDA _white_status,0,0
 mov ecx,a
@@ -433,87 +433,87 @@ EXTJMP @L$69
 jmp @L$66
 .stabn 192,0,2,L109
 L109:
-.stabn 68,0,110,L110
+.stabn 68,0,108,L110
 L110:
 L$67:
-.stabn 68,0,111,L111
+.stabn 68,0,109,L111
 L111:
 bs _P60,0
-.stabn 68,0,111,L112
+.stabn 68,0,109,L112
 L112:
 bc _P61,1
-.stabn 68,0,111,L113
+.stabn 68,0,109,L113
 L113:
 bc _P62,2
-.stabn 68,0,111,L114
+.stabn 68,0,109,L114
 L114:
 jmp @L$66
 L$68:
-.stabn 68,0,112,L115
+.stabn 68,0,110,L115
 L115:
 bc _P60,0
-.stabn 68,0,112,L116
+.stabn 68,0,110,L116
 L116:
 bc _P61,1
-.stabn 68,0,112,L117
+.stabn 68,0,110,L117
 L117:
 bc _P62,2
-.stabn 68,0,112,L118
+.stabn 68,0,110,L118
 L118:
 jmp @L$66
 L$69:
-.stabn 68,0,113,L119
+.stabn 68,0,111,L119
 L119:
 bc _P60,0
-.stabn 68,0,113,L120
+.stabn 68,0,111,L120
 L120:
 bc _P61,1
-.stabn 68,0,113,L121
+.stabn 68,0,111,L121
 L121:
 bc _P62,2
-.stabn 68,0,113,L122
+.stabn 68,0,111,L122
 L122:
-.stabn 68,0,114,L123
+.stabn 68,0,112,L123
 L123:
-.stabn 68,0,115,L124
+.stabn 68,0,113,L124
 L124:
 .stabn 224,0,2,L125
 L125:
 L$66:
-.stabn 68,0,116,L126
+.stabn 68,0,114,L126
 L126:
 LDA _mode1_count2,0,0
 add a,@1
 STA _mode1_count2,0,0
-.stabn 68,0,117,L127
+.stabn 68,0,115,L127
 L127:
 ULTRIB _mode1_count2,0x4
 jbs STATUS, cf
 EXTJMP L$70
 .stabn 192,0,2,L128
 L128:
-.stabn 68,0,118,L129
+.stabn 68,0,116,L129
 L129:
-.stabn 68,0,119,L130
+.stabn 68,0,117,L130
 L130:
 clr _mode1_count2
-.stabn 68,0,120,L131
+.stabn 68,0,118,L131
 L131:
 bs _mode1_light_flag,BIT
-.stabn 68,0,121,L132
+.stabn 68,0,119,L132
 L132:
 .stabn 224,0,2,L133
 L133:
 L$70:
-.stabn 68,0,122,L134
+.stabn 68,0,120,L134
 L134:
 L$71:
-.stabn 68,0,123,L135
+.stabn 68,0,121,L135
 L135:
 .stabn 224,0,1,L136
 L136:
 L$57:
-.stabn 68,0,124,L137
+.stabn 68,0,122,L137
 L137:
 .stabn 224,0,0,L138
 L138:
@@ -545,34 +545,34 @@ mov a,ecx+3
 mov mode2_bp-1,a
 .stabn 192,0,0,L192
 L192:
-.stabn 68,0,129,L193
+.stabn 68,0,127,L193
 L193:
-.stabn 68,0,130,L194
+.stabn 68,0,128,L194
 L194:
 jbs _mode2_red1_flag,BIT
 EXTJMP @L$140
 .stabn 192,0,1,L195
 L195:
-.stabn 68,0,131,L196
+.stabn 68,0,129,L196
 L196:
-.stabn 68,0,132,L197
+.stabn 68,0,130,L197
 L197:
 EQNEPRIB _mode2_four_cycle_flag,0
 jbc STATUS,zf
 EXTJMP @L$142
 .stabn 192,0,2,L198
 L198:
-.stabn 68,0,133,L199
+.stabn 68,0,131,L199
 L199:
-.stabn 68,0,134,L200
+.stabn 68,0,132,L200
 L200:
 jbs _mode2_light_flag,BIT
 EXTJMP @L$144
 .stabn 192,0,3,L201
 L201:
-.stabn 68,0,135,L202
+.stabn 68,0,133,L202
 L202:
-.stabn 68,0,136,L203
+.stabn 68,0,134,L203
 L203:
 LDA _white_status,0,0
 mov ecx,a
@@ -588,80 +588,80 @@ EXTJMP @L$150
 jmp @L$147
 .stabn 192,0,4,L204
 L204:
-.stabn 68,0,137,L205
+.stabn 68,0,135,L205
 L205:
 L$148:
-.stabn 68,0,138,L206
+.stabn 68,0,136,L206
 L206:
 bs _P60,0
-.stabn 68,0,138,L207
+.stabn 68,0,136,L207
 L207:
 bs _P61,1
-.stabn 68,0,138,L208
+.stabn 68,0,136,L208
 L208:
 bc _P62,2
-.stabn 68,0,138,L209
+.stabn 68,0,136,L209
 L209:
 jmp @L$147
 L$149:
-.stabn 68,0,139,L210
+.stabn 68,0,137,L210
 L210:
 bc _P60,0
-.stabn 68,0,139,L211
+.stabn 68,0,137,L211
 L211:
 bs _P61,1
-.stabn 68,0,139,L212
+.stabn 68,0,137,L212
 L212:
 bc _P62,2
-.stabn 68,0,139,L213
+.stabn 68,0,137,L213
 L213:
 jmp @L$147
 L$150:
-.stabn 68,0,140,L214
+.stabn 68,0,138,L214
 L214:
 bs _P60,0
-.stabn 68,0,140,L215
+.stabn 68,0,138,L215
 L215:
 bs _P61,1
-.stabn 68,0,140,L216
+.stabn 68,0,138,L216
 L216:
 bc _P62,2
-.stabn 68,0,140,L217
+.stabn 68,0,138,L217
 L217:
-.stabn 68,0,141,L218
+.stabn 68,0,139,L218
 L218:
-.stabn 68,0,142,L219
+.stabn 68,0,140,L219
 L219:
 .stabn 224,0,4,L220
 L220:
 L$147:
-.stabn 68,0,143,L221
+.stabn 68,0,141,L221
 L221:
 LDA _mode2_count1,0,0
 add a,@1
 STA _mode2_count1,0,0
-.stabn 68,0,144,L222
+.stabn 68,0,142,L222
 L222:
 ULTRIB _mode2_count1,0x2
 jbs STATUS, cf
 EXTJMP L$141
 .stabn 192,0,4,L223
 L223:
-.stabn 68,0,145,L224
+.stabn 68,0,143,L224
 L224:
-.stabn 68,0,146,L225
+.stabn 68,0,144,L225
 L225:
 clr _mode2_count1
-.stabn 68,0,147,L226
+.stabn 68,0,145,L226
 L226:
 bc _mode2_light_flag,BIT
-.stabn 68,0,148,L227
+.stabn 68,0,146,L227
 L227:
 .stabn 224,0,4,L228
 L228:
-.stabn 68,0,149,L229
+.stabn 68,0,147,L229
 L229:
-.stabn 68,0,150,L230
+.stabn 68,0,148,L230
 L230:
 .stabn 224,0,3,L231
 L231:
@@ -669,9 +669,9 @@ jmp @L$141
 L$144:
 .stabn 192,0,3,L232
 L232:
-.stabn 68,0,152,L233
+.stabn 68,0,150,L233
 L233:
-.stabn 68,0,153,L234
+.stabn 68,0,151,L234
 L234:
 LDA _white_status,0,0
 mov ecx,a
@@ -687,85 +687,85 @@ EXTJMP @L$157
 jmp @L$154
 .stabn 192,0,4,L235
 L235:
-.stabn 68,0,154,L236
+.stabn 68,0,152,L236
 L236:
 L$155:
-.stabn 68,0,155,L237
+.stabn 68,0,153,L237
 L237:
 bs _P60,0
-.stabn 68,0,155,L238
+.stabn 68,0,153,L238
 L238:
 bc _P61,1
-.stabn 68,0,155,L239
+.stabn 68,0,153,L239
 L239:
 bc _P62,2
-.stabn 68,0,155,L240
+.stabn 68,0,153,L240
 L240:
 jmp @L$154
 L$156:
-.stabn 68,0,156,L241
+.stabn 68,0,154,L241
 L241:
 bc _P60,0
-.stabn 68,0,156,L242
+.stabn 68,0,154,L242
 L242:
 bc _P61,1
-.stabn 68,0,156,L243
+.stabn 68,0,154,L243
 L243:
 bc _P62,2
-.stabn 68,0,156,L244
+.stabn 68,0,154,L244
 L244:
 jmp @L$154
 L$157:
-.stabn 68,0,157,L245
+.stabn 68,0,155,L245
 L245:
 bc _P60,0
-.stabn 68,0,157,L246
+.stabn 68,0,155,L246
 L246:
 bc _P61,1
-.stabn 68,0,157,L247
+.stabn 68,0,155,L247
 L247:
 bc _P62,2
-.stabn 68,0,157,L248
+.stabn 68,0,155,L248
 L248:
-.stabn 68,0,158,L249
+.stabn 68,0,156,L249
 L249:
-.stabn 68,0,159,L250
+.stabn 68,0,157,L250
 L250:
 .stabn 224,0,4,L251
 L251:
 L$154:
-.stabn 68,0,160,L252
+.stabn 68,0,158,L252
 L252:
 bs _mode2_light_flag,BIT
-.stabn 68,0,161,L253
+.stabn 68,0,159,L253
 L253:
 LDA _mode2_four_cycle_count,0,0
 add a,@1
 STA _mode2_four_cycle_count,0,0
-.stabn 68,0,162,L254
+.stabn 68,0,160,L254
 L254:
 ULTRIB _mode2_four_cycle_count,0x4
 jbs STATUS, cf
 EXTJMP L$141
 .stabn 192,0,4,L255
 L255:
-.stabn 68,0,163,L256
+.stabn 68,0,161,L256
 L256:
-.stabn 68,0,164,L257
+.stabn 68,0,162,L257
 L257:
 clr _mode2_four_cycle_count
-.stabn 68,0,165,L258
+.stabn 68,0,163,L258
 L258:
 clr _mode2_four_cycle_flag
-.stabn 68,0,166,L259
+.stabn 68,0,164,L259
 L259:
 .stabn 224,0,4,L260
 L260:
-.stabn 68,0,167,L261
+.stabn 68,0,165,L261
 L261:
 .stabn 224,0,3,L262
 L262:
-.stabn 68,0,168,L263
+.stabn 68,0,166,L263
 L263:
 .stabn 224,0,2,L264
 L264:
@@ -773,9 +773,9 @@ jmp @L$141
 L$142:
 .stabn 192,0,2,L265
 L265:
-.stabn 68,0,170,L266
+.stabn 68,0,168,L266
 L266:
-.stabn 68,0,173,L267
+.stabn 68,0,171,L267
 L267:
 LDA _white_status,0,0
 mov ecx,a
@@ -791,86 +791,86 @@ EXTJMP @L$164
 jmp @L$161
 .stabn 192,0,3,L268
 L268:
-.stabn 68,0,174,L269
+.stabn 68,0,172,L269
 L269:
 L$162:
-.stabn 68,0,175,L270
+.stabn 68,0,173,L270
 L270:
 bs _P60,0
-.stabn 68,0,175,L271
+.stabn 68,0,173,L271
 L271:
 bc _P61,1
-.stabn 68,0,175,L272
+.stabn 68,0,173,L272
 L272:
 bc _P62,2
-.stabn 68,0,175,L273
+.stabn 68,0,173,L273
 L273:
 jmp @L$161
 L$163:
-.stabn 68,0,176,L274
+.stabn 68,0,174,L274
 L274:
 bc _P60,0
-.stabn 68,0,176,L275
+.stabn 68,0,174,L275
 L275:
 bc _P61,1
-.stabn 68,0,176,L276
+.stabn 68,0,174,L276
 L276:
 bc _P62,2
-.stabn 68,0,176,L277
+.stabn 68,0,174,L277
 L277:
 jmp @L$161
 L$164:
-.stabn 68,0,177,L278
+.stabn 68,0,175,L278
 L278:
 bc _P60,0
-.stabn 68,0,177,L279
+.stabn 68,0,175,L279
 L279:
 bc _P61,1
-.stabn 68,0,177,L280
+.stabn 68,0,175,L280
 L280:
 bc _P62,2
-.stabn 68,0,177,L281
+.stabn 68,0,175,L281
 L281:
-.stabn 68,0,178,L282
+.stabn 68,0,176,L282
 L282:
-.stabn 68,0,179,L283
+.stabn 68,0,177,L283
 L283:
 .stabn 224,0,3,L284
 L284:
 L$161:
-.stabn 68,0,180,L285
+.stabn 68,0,178,L285
 L285:
 LDA _mode2_count2,0,0
 add a,@1
 STA _mode2_count2,0,0
-.stabn 68,0,181,L286
+.stabn 68,0,179,L286
 L286:
 ULTRIB _mode2_count2,0x10
 jbs STATUS, cf
 EXTJMP L$141
 .stabn 192,0,3,L287
 L287:
-.stabn 68,0,182,L288
+.stabn 68,0,180,L288
 L288:
-.stabn 68,0,183,L289
+.stabn 68,0,181,L289
 L289:
 clr _mode2_count2
-.stabn 68,0,184,L290
+.stabn 68,0,182,L290
 L290:
 bc _mode2_red1_flag,BIT
-.stabn 68,0,185,L291
+.stabn 68,0,183,L291
 L291:
 mov a,@1
 STA _mode2_four_cycle_flag,0,0
-.stabn 68,0,186,L292
+.stabn 68,0,184,L292
 L292:
 .stabn 224,0,3,L293
 L293:
-.stabn 68,0,187,L294
+.stabn 68,0,185,L294
 L294:
 .stabn 224,0,2,L295
 L295:
-.stabn 68,0,188,L296
+.stabn 68,0,186,L296
 L296:
 .stabn 224,0,1,L297
 L297:
@@ -878,26 +878,26 @@ jmp @L$141
 L$140:
 .stabn 192,0,1,L298
 L298:
-.stabn 68,0,190,L299
+.stabn 68,0,188,L299
 L299:
-.stabn 68,0,191,L300
+.stabn 68,0,189,L300
 L300:
 EQNEPRIB _mode2_four_cycle_flag,0
 jbc STATUS,zf
 EXTJMP @L$167
 .stabn 192,0,2,L301
 L301:
-.stabn 68,0,192,L302
+.stabn 68,0,190,L302
 L302:
-.stabn 68,0,193,L303
+.stabn 68,0,191,L303
 L303:
 jbs _mode2_light_flag,BIT
 EXTJMP @L$169
 .stabn 192,0,3,L304
 L304:
-.stabn 68,0,194,L305
+.stabn 68,0,192,L305
 L305:
-.stabn 68,0,195,L306
+.stabn 68,0,193,L306
 L306:
 LDA _white_status,0,0
 mov ecx,a
@@ -913,80 +913,80 @@ EXTJMP @L$175
 jmp @L$172
 .stabn 192,0,4,L307
 L307:
-.stabn 68,0,196,L308
+.stabn 68,0,194,L308
 L308:
 L$173:
-.stabn 68,0,197,L309
+.stabn 68,0,195,L309
 L309:
 bs _P60,0
-.stabn 68,0,197,L310
+.stabn 68,0,195,L310
 L310:
 bc _P61,1
-.stabn 68,0,197,L311
+.stabn 68,0,195,L311
 L311:
 bs _P62,2
-.stabn 68,0,197,L312
+.stabn 68,0,195,L312
 L312:
 jmp @L$172
 L$174:
-.stabn 68,0,198,L313
+.stabn 68,0,196,L313
 L313:
 bc _P60,0
-.stabn 68,0,198,L314
+.stabn 68,0,196,L314
 L314:
 bc _P61,1
-.stabn 68,0,198,L315
+.stabn 68,0,196,L315
 L315:
 bs _P62,2
-.stabn 68,0,198,L316
+.stabn 68,0,196,L316
 L316:
 jmp @L$172
 L$175:
-.stabn 68,0,199,L317
+.stabn 68,0,197,L317
 L317:
 bs _P60,0
-.stabn 68,0,199,L318
+.stabn 68,0,197,L318
 L318:
 bc _P61,1
-.stabn 68,0,199,L319
+.stabn 68,0,197,L319
 L319:
 bs _P62,2
-.stabn 68,0,199,L320
+.stabn 68,0,197,L320
 L320:
-.stabn 68,0,200,L321
+.stabn 68,0,198,L321
 L321:
-.stabn 68,0,201,L322
+.stabn 68,0,199,L322
 L322:
 .stabn 224,0,4,L323
 L323:
 L$172:
-.stabn 68,0,202,L324
+.stabn 68,0,200,L324
 L324:
 LDA _mode2_count1,0,0
 add a,@1
 STA _mode2_count1,0,0
-.stabn 68,0,203,L325
+.stabn 68,0,201,L325
 L325:
 ULTRIB _mode2_count1,0x2
 jbs STATUS, cf
 EXTJMP L$168
 .stabn 192,0,4,L326
 L326:
-.stabn 68,0,204,L327
+.stabn 68,0,202,L327
 L327:
-.stabn 68,0,205,L328
+.stabn 68,0,203,L328
 L328:
 clr _mode2_count1
-.stabn 68,0,206,L329
+.stabn 68,0,204,L329
 L329:
 bc _mode2_light_flag,BIT
-.stabn 68,0,207,L330
+.stabn 68,0,205,L330
 L330:
 .stabn 224,0,4,L331
 L331:
-.stabn 68,0,208,L332
+.stabn 68,0,206,L332
 L332:
-.stabn 68,0,209,L333
+.stabn 68,0,207,L333
 L333:
 .stabn 224,0,3,L334
 L334:
@@ -994,9 +994,9 @@ jmp @L$168
 L$169:
 .stabn 192,0,3,L335
 L335:
-.stabn 68,0,211,L336
+.stabn 68,0,209,L336
 L336:
-.stabn 68,0,212,L337
+.stabn 68,0,210,L337
 L337:
 LDA _white_status,0,0
 mov ecx,a
@@ -1012,85 +1012,85 @@ EXTJMP @L$182
 jmp @L$179
 .stabn 192,0,4,L338
 L338:
-.stabn 68,0,213,L339
+.stabn 68,0,211,L339
 L339:
 L$180:
-.stabn 68,0,214,L340
+.stabn 68,0,212,L340
 L340:
 bs _P60,0
-.stabn 68,0,214,L341
+.stabn 68,0,212,L341
 L341:
 bc _P61,1
-.stabn 68,0,214,L342
+.stabn 68,0,212,L342
 L342:
 bc _P62,2
-.stabn 68,0,214,L343
+.stabn 68,0,212,L343
 L343:
 jmp @L$179
 L$181:
-.stabn 68,0,215,L344
+.stabn 68,0,213,L344
 L344:
 bc _P60,0
-.stabn 68,0,215,L345
+.stabn 68,0,213,L345
 L345:
 bc _P61,1
-.stabn 68,0,215,L346
+.stabn 68,0,213,L346
 L346:
 bc _P62,2
-.stabn 68,0,215,L347
+.stabn 68,0,213,L347
 L347:
 jmp @L$179
 L$182:
-.stabn 68,0,216,L348
+.stabn 68,0,214,L348
 L348:
 bc _P60,0
-.stabn 68,0,216,L349
+.stabn 68,0,214,L349
 L349:
 bc _P61,1
-.stabn 68,0,216,L350
+.stabn 68,0,214,L350
 L350:
 bc _P62,2
-.stabn 68,0,216,L351
+.stabn 68,0,214,L351
 L351:
-.stabn 68,0,217,L352
+.stabn 68,0,215,L352
 L352:
-.stabn 68,0,218,L353
+.stabn 68,0,216,L353
 L353:
 .stabn 224,0,4,L354
 L354:
 L$179:
-.stabn 68,0,219,L355
+.stabn 68,0,217,L355
 L355:
 bs _mode2_light_flag,BIT
-.stabn 68,0,220,L356
+.stabn 68,0,218,L356
 L356:
 LDA _mode2_four_cycle_count,0,0
 add a,@1
 STA _mode2_four_cycle_count,0,0
-.stabn 68,0,221,L357
+.stabn 68,0,219,L357
 L357:
 ULTRIB _mode2_four_cycle_count,0x4
 jbs STATUS, cf
 EXTJMP L$168
 .stabn 192,0,4,L358
 L358:
-.stabn 68,0,222,L359
+.stabn 68,0,220,L359
 L359:
-.stabn 68,0,223,L360
+.stabn 68,0,221,L360
 L360:
 clr _mode2_four_cycle_count
-.stabn 68,0,224,L361
+.stabn 68,0,222,L361
 L361:
 clr _mode2_four_cycle_flag
-.stabn 68,0,225,L362
+.stabn 68,0,223,L362
 L362:
 .stabn 224,0,4,L363
 L363:
-.stabn 68,0,226,L364
+.stabn 68,0,224,L364
 L364:
 .stabn 224,0,3,L365
 L365:
-.stabn 68,0,227,L366
+.stabn 68,0,225,L366
 L366:
 .stabn 224,0,2,L367
 L367:
@@ -1098,9 +1098,9 @@ jmp @L$168
 L$167:
 .stabn 192,0,2,L368
 L368:
-.stabn 68,0,229,L369
+.stabn 68,0,227,L369
 L369:
-.stabn 68,0,230,L370
+.stabn 68,0,228,L370
 L370:
 LDA _white_status,0,0
 mov ecx,a
@@ -1116,93 +1116,93 @@ EXTJMP @L$189
 jmp @L$186
 .stabn 192,0,3,L371
 L371:
-.stabn 68,0,231,L372
+.stabn 68,0,229,L372
 L372:
 L$187:
-.stabn 68,0,232,L373
+.stabn 68,0,230,L373
 L373:
 bs _P60,0
-.stabn 68,0,232,L374
+.stabn 68,0,230,L374
 L374:
 bc _P61,1
-.stabn 68,0,232,L375
+.stabn 68,0,230,L375
 L375:
 bc _P62,2
-.stabn 68,0,232,L376
+.stabn 68,0,230,L376
 L376:
 jmp @L$186
 L$188:
-.stabn 68,0,233,L377
+.stabn 68,0,231,L377
 L377:
 bc _P60,0
-.stabn 68,0,233,L378
+.stabn 68,0,231,L378
 L378:
 bc _P61,1
-.stabn 68,0,233,L379
+.stabn 68,0,231,L379
 L379:
 bc _P62,2
-.stabn 68,0,233,L380
+.stabn 68,0,231,L380
 L380:
 jmp @L$186
 L$189:
-.stabn 68,0,234,L381
+.stabn 68,0,232,L381
 L381:
 bc _P60,0
-.stabn 68,0,234,L382
+.stabn 68,0,232,L382
 L382:
 bc _P61,1
-.stabn 68,0,234,L383
+.stabn 68,0,232,L383
 L383:
 bc _P62,2
-.stabn 68,0,234,L384
+.stabn 68,0,232,L384
 L384:
-.stabn 68,0,235,L385
+.stabn 68,0,233,L385
 L385:
-.stabn 68,0,236,L386
+.stabn 68,0,234,L386
 L386:
 .stabn 224,0,3,L387
 L387:
 L$186:
-.stabn 68,0,237,L388
+.stabn 68,0,235,L388
 L388:
 LDA _mode2_count2,0,0
 add a,@1
 STA _mode2_count2,0,0
-.stabn 68,0,238,L389
+.stabn 68,0,236,L389
 L389:
 ULTRIB _mode2_count2,0x10
 jbs STATUS, cf
 EXTJMP L$190
 .stabn 192,0,3,L390
 L390:
-.stabn 68,0,239,L391
+.stabn 68,0,237,L391
 L391:
-.stabn 68,0,240,L392
+.stabn 68,0,238,L392
 L392:
 clr _mode2_count2
-.stabn 68,0,241,L393
+.stabn 68,0,239,L393
 L393:
 bs _mode2_red1_flag,BIT
-.stabn 68,0,242,L394
+.stabn 68,0,240,L394
 L394:
 mov a,@1
 STA _mode2_four_cycle_flag,0,0
-.stabn 68,0,243,L395
+.stabn 68,0,241,L395
 L395:
 .stabn 224,0,3,L396
 L396:
 L$190:
-.stabn 68,0,244,L397
+.stabn 68,0,242,L397
 L397:
 .stabn 224,0,2,L398
 L398:
 L$168:
-.stabn 68,0,245,L399
+.stabn 68,0,243,L399
 L399:
 .stabn 224,0,1,L400
 L400:
 L$141:
-.stabn 68,0,246,L401
+.stabn 68,0,244,L401
 L401:
 .stabn 224,0,0,L402
 L402:
@@ -1237,43 +1237,43 @@ mov delayms_bp-1,a
 .stabs "i:10",128,0,0,delayms_bp-6
 .stabn 192,0,0,L412
 L412:
-.stabn 68,0,249,L413
+.stabn 68,0,247,L413
 L413:
-.stabn 68,0,251,L414
+.stabn 68,0,249,L414
 L414:
 LDA delayms_bp+0,0,0
 STA delayms_bp-6,0,0
 jmp @L$407
 L$404:
-.stabn 68,0,252,L415
+.stabn 68,0,250,L415
 L415:
 mov a,@200
 STA delayms_bp-5,0,0
 jmp @L$411
 L$408:
-.stabn 68,0,252,L416
+.stabn 68,0,250,L416
 L416:
 L$409:
-.stabn 68,0,252,L417
+.stabn 68,0,250,L417
 L417:
 DECMB delayms_bp-5,0
 L$411:
-.stabn 68,0,252,L418
+.stabn 68,0,250,L418
 L418:
 EQNEPRIB delayms_bp-5,0
 jbs STATUS, zf
 EXTJMP L$408
 L$405:
-.stabn 68,0,251,L419
+.stabn 68,0,249,L419
 L419:
 DECMB delayms_bp-6,0
 L$407:
-.stabn 68,0,251,L420
+.stabn 68,0,249,L420
 L420:
 EQNEPRIB delayms_bp-6,0
 jbs STATUS, zf
 EXTJMP L$404
-.stabn 68,0,253,L421
+.stabn 68,0,251,L421
 L421:
 .stabn 224,0,0,L422
 L422:
@@ -1305,136 +1305,136 @@ mov a,ecx+3
 mov keyscan_bp-1,a
 .stabn 192,0,0,L442
 L442:
-.stabn 68,0,255,L443
+.stabn 68,0,253,L443
 L443:
-.stabn 68,0,256,L444
+.stabn 68,0,254,L444
 L444:
 jbc _P65,5
 EXTJMP @L$424
 .stabn 192,0,1,L445
 L445:
-.stabn 68,0,257,L446
+.stabn 68,0,255,L446
 L446:
-.stabn 68,0,258,L447
+.stabn 68,0,256,L447
 L447:
 mov a,@10
 mov delayms_bp+0,a
 .STACK delayms_bp,parameter,1
 call _delayms
-.stabn 68,0,259,L448
+.stabn 68,0,257,L448
 L448:
 jbc _P65,5
 EXTJMP @L$426
 .stabn 192,0,2,L449
 L449:
-.stabn 68,0,260,L450
+.stabn 68,0,258,L450
 L450:
-.stabn 68,0,261,L451
+.stabn 68,0,259,L451
 L451:
 bs _S1_flag,BIT
-.stabn 68,0,262,L452
+.stabn 68,0,260,L452
 L452:
 LDA _white_status,0,0
 add a,@1
 STA _white_status,0,0
-.stabn 68,0,263,L453
+.stabn 68,0,261,L453
 L453:
 ULTRIB _white_status,0x3
 jbs STATUS, cf
 EXTJMP L$431
-.stabn 68,0,264,L454
+.stabn 68,0,262,L454
 L454:
 clr _white_status
 L$430:
-.stabn 68,0,265,L455
+.stabn 68,0,263,L455
 L455:
 L$431:
-.stabn 68,0,265,L456
+.stabn 68,0,263,L456
 L456:
 jbs _P65,5
 EXTJMP @L$430
-.stabn 68,0,266,L457
+.stabn 68,0,264,L457
 L457:
 .stabn 224,0,2,L458
 L458:
 L$426:
-.stabn 68,0,267,L459
+.stabn 68,0,265,L459
 L459:
 .stabn 224,0,1,L460
 L460:
 L$424:
-.stabn 68,0,268,L461
+.stabn 68,0,266,L461
 L461:
 jbc _P64,4
 EXTJMP @L$433
 .stabn 192,0,1,L462
 L462:
-.stabn 68,0,269,L463
+.stabn 68,0,267,L463
 L463:
-.stabn 68,0,270,L464
+.stabn 68,0,268,L464
 L464:
 mov a,@10
 mov delayms_bp+0,a
 .STACK delayms_bp,parameter,1
 call _delayms
-.stabn 68,0,271,L465
+.stabn 68,0,269,L465
 L465:
 jbc _P64,4
 EXTJMP @L$435
 .stabn 192,0,2,L466
 L466:
-.stabn 68,0,272,L467
+.stabn 68,0,270,L467
 L467:
-.stabn 68,0,273,L468
+.stabn 68,0,271,L468
 L468:
 bs _S2_flag,BIT
-.stabn 68,0,274,L469
+.stabn 68,0,272,L469
 L469:
 mov a,@2
 STA _white_status,0,0
-.stabn 68,0,275,L470
+.stabn 68,0,273,L470
 L470:
 LDA _mode_count,0,0
 add a,@1
 STA _mode_count,0,0
-.stabn 68,0,276,L471
+.stabn 68,0,274,L471
 L471:
 ULTRIB _mode_count,0x3
 jbs STATUS, cf
 EXTJMP L$440
 .stabn 192,0,3,L472
 L472:
-.stabn 68,0,277,L473
+.stabn 68,0,275,L473
 L473:
-.stabn 68,0,277,L474
+.stabn 68,0,275,L474
 L474:
 clr _mode_count
-.stabn 68,0,278,L475
+.stabn 68,0,276,L475
 L475:
 bc _S1_sleep_flag,BIT
-.stabn 68,0,278,L476
+.stabn 68,0,276,L476
 L476:
 .stabn 224,0,3,L477
 L477:
 L$439:
-.stabn 68,0,279,L478
+.stabn 68,0,277,L478
 L478:
 L$440:
-.stabn 68,0,279,L479
+.stabn 68,0,277,L479
 L479:
 jbs _P64,4
 EXTJMP @L$439
-.stabn 68,0,280,L480
+.stabn 68,0,278,L480
 L480:
 .stabn 224,0,2,L481
 L481:
 L$435:
-.stabn 68,0,281,L482
+.stabn 68,0,279,L482
 L482:
 .stabn 224,0,1,L483
 L483:
 L$433:
-.stabn 68,0,283,L484
+.stabn 68,0,281,L484
 L484:
 .stabn 224,0,0,L485
 L485:
@@ -1458,63 +1458,63 @@ _main:
 .SYMDEF "_main" 
 .stabn 192,0,0,L508
 L508:
-.stabn 68,0,286,L509
+.stabn 68,0,284,L509
 L509:
-.stabn 68,0,288,L510
+.stabn 68,0,286,L510
 L510:
-.cfile "C:\Users\daminger\OneDrive\github\project\light - v101-1751确定版\light.c(288):"
+.cfile "C:\Users\daminger\OneDrive\github\project\light - v101-1751确定版\light.c(286):"
 wdtc
-.stabn 68,0,288,L511
+.stabn 68,0,286,L511
 L511:
-.stabn 68,0,289,L512
+.stabn 68,0,287,L512
 L512:
-.cfile "C:\Users\daminger\OneDrive\github\project\light - v101-1751确定版\light.c(289):"
+.cfile "C:\Users\daminger\OneDrive\github\project\light - v101-1751确定版\light.c(287):"
 disi
-.stabn 68,0,289,L513
+.stabn 68,0,287,L513
 L513:
-.stabn 68,0,290,L514
+.stabn 68,0,288,L514
 L514:
 mov a,@0
 STA _WDTCR,0,2
-.stabn 68,0,291,L515
+.stabn 68,0,289,L515
 L515:
 mov a,@56
 STA _P6CR,0,2
-.stabn 68,0,292,L516
+.stabn 68,0,290,L516
 L516:
 mov a,@0
 STA _P5CR,0,2
-.stabn 68,0,293,L517
+.stabn 68,0,291,L517
 L517:
 clr _PORT5
-.stabn 68,0,294,L518
+.stabn 68,0,292,L518
 L518:
 mov a,@207
 STA _PHCR,0,2
-.stabn 68,0,295,L519
+.stabn 68,0,293,L519
 L519:
 clr _PORT6
-.stabn 68,0,297,L520
+.stabn 68,0,295,L520
 L520:
-.cfile "C:\Users\daminger\OneDrive\github\project\light - v101-1751确定版\light.c(297):"
+.cfile "C:\Users\daminger\OneDrive\github\project\light - v101-1751确定版\light.c(295):"
 mov	a,@0x07
-.stabn 68,0,298,L521
+.stabn 68,0,296,L521
 L521:
-.cfile "C:\Users\daminger\OneDrive\github\project\light - v101-1751确定版\light.c(298):"
+.cfile "C:\Users\daminger\OneDrive\github\project\light - v101-1751确定版\light.c(296):"
 contw
-.stabn 68,0,300,L522
+.stabn 68,0,298,L522
 L522:
 clr _TCC
-.stabn 68,0,301,L523
+.stabn 68,0,299,L523
 L523:
 clr _ISR
-.stabn 68,0,302,L524
+.stabn 68,0,300,L524
 L524:
-.cfile "C:\Users\daminger\OneDrive\github\project\light - v101-1751确定版\light.c(302):"
+.cfile "C:\Users\daminger\OneDrive\github\project\light - v101-1751确定版\light.c(300):"
 eni
-.stabn 68,0,302,L525
+.stabn 68,0,300,L525
 L525:
-.stabn 68,0,303,L526
+.stabn 68,0,301,L526
 L526:
 mov a,@3
 STA _IMR,0,2
@@ -1522,23 +1522,23 @@ jmp @L$488
 L$487:
 .stabn 192,0,1,L527
 L527:
-.stabn 68,0,305,L528
+.stabn 68,0,303,L528
 L528:
-.stabn 68,0,306,L529
+.stabn 68,0,304,L529
 L529:
 call _keyscan
-.stabn 68,0,308,L530
+.stabn 68,0,306,L530
 L530:
 jbs _Timer_interrupt_flag,BIT
 EXTJMP @L$490
 .stabn 192,0,2,L531
 L531:
-.stabn 68,0,309,L532
+.stabn 68,0,307,L532
 L532:
-.stabn 68,0,310,L533
+.stabn 68,0,308,L533
 L533:
 bc _Timer_interrupt_flag,BIT
-.stabn 68,0,312,L534
+.stabn 68,0,310,L534
 L534:
 LDA _mode_count,0,0
 mov ecx,a
@@ -1554,62 +1554,62 @@ EXTJMP @L$498
 jmp @L$493
 .stabn 192,0,3,L535
 L535:
-.stabn 68,0,313,L536
+.stabn 68,0,311,L536
 L536:
 L$494:
-.stabn 68,0,314,L537
+.stabn 68,0,312,L537
 L537:
 jbc _S1_sleep_flag,BIT
 EXTJMP @L$493
-.stabn 68,0,314,L538
+.stabn 68,0,312,L538
 L538:
 call _mode0
-.stabn 68,0,314,L539
+.stabn 68,0,312,L539
 L539:
 jmp @L$493
 L$497:
-.stabn 68,0,315,L540
+.stabn 68,0,313,L540
 L540:
 bc _S1_sleep_flag,BIT
-.stabn 68,0,315,L541
+.stabn 68,0,313,L541
 L541:
 call _mode1
-.stabn 68,0,315,L542
+.stabn 68,0,313,L542
 L542:
 jmp @L$493
 L$498:
-.stabn 68,0,316,L543
+.stabn 68,0,314,L543
 L543:
 bc _S1_sleep_flag,BIT
-.stabn 68,0,316,L544
+.stabn 68,0,314,L544
 L544:
 call _mode2
-.stabn 68,0,316,L545
+.stabn 68,0,314,L545
 L545:
-.stabn 68,0,318,L546
+.stabn 68,0,315,L546
 L546:
-.stabn 68,0,319,L547
+.stabn 68,0,316,L547
 L547:
 .stabn 224,0,3,L548
 L548:
 L$493:
-.stabn 68,0,320,L549
+.stabn 68,0,317,L549
 L549:
 jbs _S1_sleep_flag,BIT
 EXTJMP @L$499
 .stabn 192,0,3,L550
 L550:
-.stabn 68,0,321,L551
+.stabn 68,0,318,L551
 L551:
-.stabn 68,0,322,L552
+.stabn 68,0,319,L552
 L552:
 jbs _S1_flag,BIT
 EXTJMP @L$501
 .stabn 192,0,4,L553
 L553:
-.stabn 68,0,323,L554
+.stabn 68,0,320,L554
 L554:
-.stabn 68,0,324,L555
+.stabn 68,0,321,L555
 L555:
 jbc _P60,0
 EXTJMP @L$504
@@ -1624,49 +1624,49 @@ mov ecx,a
 bc _P60,0
 jbc ecx,0
 bs _P60,0
-.stabn 68,0,325,L556
+.stabn 68,0,322,L556
 L556:
 bc _S1_flag,BIT
-.stabn 68,0,326,L557
+.stabn 68,0,323,L557
 L557:
 jbc _P60,0
 EXTJMP @L$506
 .stabn 192,0,5,L558
 L558:
-.stabn 68,0,327,L559
+.stabn 68,0,324,L559
 L559:
-.stabn 68,0,328,L560
+.stabn 68,0,325,L560
 L560:
 bc _S1_sleep_flag,BIT
-.stabn 68,0,329,L561
+.stabn 68,0,326,L561
 L561:
 .stabn 224,0,5,L562
 L562:
 L$506:
-.stabn 68,0,330,L563
+.stabn 68,0,327,L563
 L563:
 .stabn 224,0,4,L564
 L564:
 L$501:
-.stabn 68,0,331,L565
+.stabn 68,0,328,L565
 L565:
 .stabn 224,0,3,L566
 L566:
 L$499:
-.stabn 68,0,332,L567
+.stabn 68,0,329,L567
 L567:
 .stabn 224,0,2,L568
 L568:
 L$490:
-.stabn 68,0,333,L569
+.stabn 68,0,330,L569
 L569:
 .stabn 224,0,1,L570
 L570:
 L$488:
-.stabn 68,0,304,L571
+.stabn 68,0,302,L571
 L571:
 jmp @L$487
-.stabn 68,0,334,L572
+.stabn 68,0,331,L572
 L572:
 .stabn 224,0,0,L573
 L573:
@@ -1682,33 +1682,33 @@ _interrupt:
 .SYMDEF "_interrupt" INT:-1
 .stabn 192,0,0,L577
 L577:
-.stabn 68,0,337,L578
+.stabn 68,0,334,L578
 L578:
-.stabn 68,0,340,L579
+.stabn 68,0,337,L579
 L579:
 jbs _TCIF,0
 EXTJMP @L$575
 .stabn 192,0,1,L580
 L580:
-.stabn 68,0,341,L581
+.stabn 68,0,338,L581
 L581:
-.stabn 68,0,343,L582
+.stabn 68,0,340,L582
 L582:
 LDA _ISR,0,0
 and a,@254
 STA _ISR,0,0
-.stabn 68,0,344,L583
+.stabn 68,0,341,L583
 L583:
 clr _TCC
-.stabn 68,0,346,L584
+.stabn 68,0,343,L584
 L584:
 bs _Timer_interrupt_flag,BIT
-.stabn 68,0,347,L585
+.stabn 68,0,344,L585
 L585:
 .stabn 224,0,1,L586
 L586:
 L$575:
-.stabn 68,0,348,L587
+.stabn 68,0,345,L587
 L587:
 .stabn 224,0,0,L588
 L588:
@@ -1724,9 +1724,9 @@ _interrupt_l:
 .SYMDEF "_interrupt_l" LOWINT:0,8
 .stabn 192,0,0,L590
 L590:
-.stabn 68,0,351,L591
+.stabn 68,0,348,L591
 L591:
-.stabn 68,0,352,L592
+.stabn 68,0,349,L592
 L592:
 .stabn 224,0,0,L593
 L593:
