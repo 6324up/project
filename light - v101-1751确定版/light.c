@@ -39,7 +39,7 @@ void keyscan();
 void mode0(void)				//模式0休眠,PORT6唤醒
 {	
 	{
-		white=0;red1=0;red2=0;
+		white=0;red1=0;red2=0;  //休眠前io初始化
 		_asm{
 		mov		a,@0x0f
 		contw				
@@ -57,12 +57,13 @@ void mode0(void)				//模式0休眠,PORT6唤醒
 		
 		SCR=0X63;				////IRC 4MHz IDLE=0 TCC时钟源:fm(主振荡器) cpu振荡源:fm(主振荡器)
  		keyscan();
- 		if(S1_flag)				//如果S1按键唤醒,置S1唤醒标志1
+ 		if(S1_flag)				//唤醒时检测是否是S1唤醒
  		{
  			S1_sleep_flag=1;
- 			white=1;			//S1唤醒,白灯亮
+ 			white=1;
  			S1_flag=0;
  		}
+ 
  			
 //		mode_count=1;				//唤醒后模式初始化
 //		white_status=2;				//初始化模式1,白灯状态2
@@ -307,14 +308,38 @@ void main()
 		{
 			Timer_interrupt_flag=0;
 			
-			switch(mode_count)
+			switch(mode_count)				
 			{
- 				case 0: if(S1_sleep_flag==0)mode0();break;
+ 				case 0: if(S1_sleep_flag==0)mode0();break;  	//加入判断是否等于0,S1唤醒不进入
 				case 1: S1_sleep_flag=0; mode1();break;
 				case 2: S1_sleep_flag=0; mode2();break;	
 				default: break; 
 			}
-			if(S1_sleep_flag==1)
+			
+			if(S1_sleep_flag)
+			{
+				if(S1_flag)
+				{
+					white=!white;
+					S1_flag=0;
+					S1_sleep_flag=0;							//S1再按下,下次中断进入case0休眠
+				}
+			}
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+/*			if(S1_sleep_flag==1)					//由S1唤醒,检测下一次还是S1按键则如下处理
 			{	
 				if(S1_flag)
 				{
@@ -322,10 +347,10 @@ void main()
 					S1_flag=0;
 					if(white==0)
 					{
-						S1_sleep_flag=0;
+						S1_sleep_flag=0;		//置0,下次中断进入case0,休眠		
 					}
 				}
-			}
+			}*/
 		}  
 	}
 }

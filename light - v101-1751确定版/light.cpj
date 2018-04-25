@@ -8,9 +8,8 @@ BlockNum=0
 [EEPROMBlock]
 BlockNum=0
 [BREAKPOINT]
-BP Num=2
-BP0=1,A,1699016,1,1699024,61,$\light.c
-BP1=1,A,1699016,1,1699024,307,$\light.c
+BP Num=1
+BP0=1,A,1701692,1,1701700,308,$\light.c
 [CODEOPTION]
 Option Num=92
 Target Power=1
@@ -120,7 +119,8 @@ AGENT=0
 [LibraryProject]
 LibraryProject=0
 [LastOpenFiles]
-File Num=0
+File0=C:\Users\daminger\OneDrive\代码\MD-01程序资料\MD-01程序173N-SOP8\MD-01程序.cpj
+File Num=1
 [Source Files]
 File Num=1
 File0=$\light.c
@@ -196,7 +196,11 @@ Size#1=2
 Size#2=0
 [ICEVOLTAGE SETTING]
 Voltage=1
+[$C:\Users\daminger\OneDrive\代码\MD-01程序资料\MD-01程序173N-SOP8\MD-01程序.cpj]
+Rectangle=0000 0000 1315 0273
+Iconized=0
+Maximized=0
 [$\light.c]
-Rectangle=0000 0000 0473 0377
+Rectangle=0000 0000 1315 0273
 Iconized=0
 Maximized=0
