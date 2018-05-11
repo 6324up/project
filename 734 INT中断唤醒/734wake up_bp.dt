@@ -1,0 +1,90 @@
+  JMP   0x006           ;'0x000000'
+  NOP                   ;'0x000001'
+  NOP                   ;'0x000002'
+;C:\Users\daminger\OneDrive\github\project\734\wake up.c (line 47)
+;_asm{MOV A,0x2};
+  MOV   A, 0x02         ;'0x000003'
+  LJMP  0x000020        ;'0x000004'
+;C:\Users\daminger\OneDrive\github\project\734\wake up.c (line 11)
+;DISI();
+  DISI                  ;'0x000006'
+;C:\Users\daminger\OneDrive\github\project\734\wake up.c (line 12)
+;WDTC();
+  WDTC                  ;'0x000007'
+;C:\Users\daminger\OneDrive\github\project\734\wake up.c (line 13)
+;MSR = 0X60;			//选择主频模式
+  MOV   A, @0x60        ;'0x000008'
+  BANK  @0x0            ;'0x000009'
+  MOV   0x0E, A         ;'0x00000A'
+;C:\Users\daminger\OneDrive\github\project\734\wake up.c (line 14)
+;P7CR = 0X00;		//P73设置为输出
+  MOV   A, @0x00        ;'0x00000B'
+  IOW   0x7             ;'0x00000C'
+;C:\Users\daminger\OneDrive\github\project\734\wake up.c (line 15)
+;P73 = 0;			//P73输出低电平
+  BC    0x07, 3         ;'0x00000D'
+;C:\Users\daminger\OneDrive\github\project\734\wake up.c (line 17)
+;P6CR = 0x01;		//P60设置为输入
+  MOV   A, @0x01        ;'0x00000E'
+  IOW   0x6             ;'0x00000F'
+;C:\Users\daminger\OneDrive\github\project\734\wake up.c (line 18)
+;WDTCR = 0x40;		//使能/INT外部信号输入
+  MOV   A, @0x40        ;'0x000010'
+  IOW   0xA             ;'0x000011'
+;C:\Users\daminger\OneDrive\github\project\734\wake up.c (line 20)
+;MOV		A,@0x00
+  MOV   A, @0x00        ;'0x000012'
+;C:\Users\daminger\OneDrive\github\project\734\wake up.c (line 21)
+;CONTW				//外部中断信号边沿选择上升沿
+  CONTW                 ;'0x000013'
+;C:\Users\daminger\OneDrive\github\project\734\wake up.c (line 23)
+;IMR1 = 0x04;		//使能EXIT中断
+  MOV   A, @0x04        ;'0x000014'
+  IOW   0xF             ;'0x000015'
+;C:\Users\daminger\OneDrive\github\project\734\wake up.c (line 24)
+;PORT6 = PORT6;
+  MOV   0x06, 0x06      ;'0x000016'
+;C:\Users\daminger\OneDrive\github\project\734\wake up.c (line 25)
+;WUCR =0x10;			//使能INT脚唤醒
+  MOV   A, @0x10        ;'0x000017'
+  MOV   0x0A, A         ;'0x000018'
+;C:\Users\daminger\OneDrive\github\project\734\wake up.c (line 26)
+;ENI();				//使能总中断
+  ENI                   ;'0x000019'
+;C:\Users\daminger\OneDrive\github\project\734\wake up.c (line 27)
+;SLEP();				//进入睡眠
+  SLEP                  ;'0x00001A'
+;C:\Users\daminger\OneDrive\github\project\734\wake up.c (line 28)
+;NOP();
+  NOP                   ;'0x00001B'
+;C:\Users\daminger\OneDrive\github\project\734\wake up.c (line 29)
+;WDTC();
+  WDTC                  ;'0x00001C'
+;C:\Users\daminger\OneDrive\github\project\734\wake up.c (line 30)
+;NOP();
+  NOP                   ;'0x00001D'
+;C:\Users\daminger\OneDrive\github\project\734\wake up.c (line 31)
+;while(1);
+  JMP   0x01E           ;'0x00001E'
+;C:\Users\daminger\OneDrive\github\project\734\wake up.c (line 32)
+;}
+  RET                   ;'0x00001F'
+;C:\Users\daminger\OneDrive\github\project\734\wake up.c (line 36)
+;switch(IntVecIdx)
+  MOV   0x10, A         ;'0x000020'
+  MOV   A, 0x10         ;'0x000021'
+  XOR   A, @0x04        ;'0x000022'
+  JBC   0x03, 2         ;'0x000023'
+  JMP   0x026           ;'0x000024'
+  JMP   0x02A           ;'0x000025'
+;C:\Users\daminger\OneDrive\github\project\734\wake up.c (line 39)
+;ISR1&=0XFB;			//外部中断标志位清零
+  MOV   A, @0xFB        ;'0x000026'
+  BANK  @0x0            ;'0x000027'
+  AND   0x0F, A         ;'0x000028'
+;C:\Users\daminger\OneDrive\github\project\734\wake up.c (line 40)
+;P73=1;				//唤醒以后P73输出高电平
+  BS    0x07, 3         ;'0x000029'
+;C:\Users\daminger\OneDrive\github\project\734\wake up.c (line 43)
+;}
+  RETI                  ;'0x00002A'

@@ -26,14 +26,14 @@ bit Display_AIP1620_flag = 0;
 //向TM1650发送8位数据，从低位开始----------------------
 void TM1650_sendbit(unsigned int TM1650_sendbit_data)
 {
-    unsigned int TM1650_sendbit_i;
+	unsigned int TM1650_sendbit_i;
     for(TM1650_sendbit_i=0;TM1650_sendbit_i<8;TM1650_sendbit_i++)
     {  
         TM1650_SCL = 0;
         nop();nop();nop();nop();nop();
 		if(TM1650_sendbit_data & 0x80)
 		{
-			TM1650_SDA = 1;
+			TM1650_SDA = 1;//判断最高为是否为1
 		}
 		else
 		{
@@ -64,6 +64,7 @@ void TM1650_STOP(void)
 void TM1650_ASK(void)
 {
 	unsigned int AT24C16_SendNACK_i=0;
+	int i = "0";
 	TM1650_SCL = 0;
 	nop();nop();nop();nop();nop();
 	TM1650_SDA_IN;

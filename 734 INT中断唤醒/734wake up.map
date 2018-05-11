@@ -1,0 +1,143 @@
+*************************************
+------------- Call Depth ------------
+ Depth  Interrupt    Function
+-------------------------------------
+    0        N         ProgramStart
+    1        Y           _ext_interrupt_l
+    1        Y           _ALLint
+    0        N         _main
+-------------------------------------
+Stack Depth: 1
+****************************************
+------------- Free ROM Size ------------
+Start=0X1    , End=0X2    , Size=2
+Start=0X1B   , End=0X1B   , Size=1
+Start=0X1D   , End=0X1D   , Size=1
+Start=0X2B   , End=0XFFF  , Size=4053
+----------------------------------------
+EM78F734N       |        ROM Size        
+----------------+-----------------------
+Total           |  4096 x 13 bits(100.0%)
+Used            |    39 x 13 bits(  1.0%)
+Free            |  4057 x 13 bits( 99.0%)
+----------------------------------------
+*************************************
+-------------- Data Map -------------
+d -- Uninitialized data
+D -- Initialized data
+b -- Uninitialized bit data
+B -- Initialized bit data
+C -- C Register
+X -- Non-existing space 
+-------------- RAM Data -------------
+0x00  - - - - - - - - - - - - - - - - 
+0x10  - - - - - - - - - - - - - - - - 
+0x20  - - - - - - - - - - - - - - - - 
+0x30  - - - - - - - - - - - - - - - - 
+0x40  - - - - - - - - - - - - - - - - 
+0x50  - - - - - - - - - - - - - - - - 
+0x60  - - - - - - - - - - - - - - - - 
+0x70  - - - - - - - - - - - - - - - - 
+0x80  - - - - - - - - - - - - - - - - 
+0x90  - - - - - - - - - - - - - - - - 
+----------- Register Data -----------
+0x00  d d d b b b b b b - b b d d b b 
+0x10  d - - - - - - - - - - - - - - - 
+0x20  - - - - - b d d b d d - - - - b 
+0x30  - - - - - b b b d b - - - - - b 
+0x40  - - - - - - - - - - - - - b d b 
+-------------- IO Data --------------
+0x00  - - - - - d d d d - d d d d d d 
+****************************************
+--------------- ROM Code ---------------
+    0x0000 :  JMP   0x006       
+    0x0001 :  NOP               
+    0x0002 :  NOP               
+C:\Users\daminger\OneDrive\github\project\734\wake up.c (line 47)
+  ;_asm{MOV A,0x2};
+    0x0003 :  MOV   A, 0x02     
+    0x0004 :  LJMP  0x000020    
+    0x0005 :  
+C:\Users\daminger\OneDrive\github\project\734\wake up.c (line 11)
+  ;DISI();
+    0x0006 :  DISI              
+C:\Users\daminger\OneDrive\github\project\734\wake up.c (line 12)
+  ;WDTC();
+    0x0007 :  WDTC              
+C:\Users\daminger\OneDrive\github\project\734\wake up.c (line 13)
+  ;MSR = 0X60;			//选择主频模式
+    0x0008 :  MOV   A, @0x60    
+    0x0009 :  BANK  @0x0        
+    0x000A :  MOV   0x0E, A     
+C:\Users\daminger\OneDrive\github\project\734\wake up.c (line 14)
+  ;P7CR = 0X00;		//P73设置为输出
+    0x000B :  MOV   A, @0x00    
+    0x000C :  IOW   0x7         
+C:\Users\daminger\OneDrive\github\project\734\wake up.c (line 15)
+  ;P73 = 0;			//P73输出低电平
+    0x000D :  BC    0x07, 3     
+C:\Users\daminger\OneDrive\github\project\734\wake up.c (line 17)
+  ;P6CR = 0x01;		//P60设置为输入
+    0x000E :  MOV   A, @0x01    
+    0x000F :  IOW   0x6         
+C:\Users\daminger\OneDrive\github\project\734\wake up.c (line 18)
+  ;WDTCR = 0x40;		//使能/INT外部信号输入
+    0x0010 :  MOV   A, @0x40    
+    0x0011 :  IOW   0xA         
+C:\Users\daminger\OneDrive\github\project\734\wake up.c (line 20)
+  ;MOV		A,@0x00
+    0x0012 :  MOV   A, @0x00    
+C:\Users\daminger\OneDrive\github\project\734\wake up.c (line 21)
+  ;CONTW				//外部中断信号边沿选择上升沿
+    0x0013 :  CONTW             
+C:\Users\daminger\OneDrive\github\project\734\wake up.c (line 23)
+  ;IMR1 = 0x04;		//使能EXIT中断
+    0x0014 :  MOV   A, @0x04    
+    0x0015 :  IOW   0xF         
+C:\Users\daminger\OneDrive\github\project\734\wake up.c (line 24)
+  ;PORT6 = PORT6;
+    0x0016 :  MOV   0x06, 0x06  
+C:\Users\daminger\OneDrive\github\project\734\wake up.c (line 25)
+  ;WUCR =0x10;			//使能INT脚唤醒
+    0x0017 :  MOV   A, @0x10    
+    0x0018 :  MOV   0x0A, A     
+C:\Users\daminger\OneDrive\github\project\734\wake up.c (line 26)
+  ;ENI();				//使能总中断
+    0x0019 :  ENI               
+C:\Users\daminger\OneDrive\github\project\734\wake up.c (line 27)
+  ;SLEP();				//进入睡眠
+    0x001A :  SLEP              
+C:\Users\daminger\OneDrive\github\project\734\wake up.c (line 28)
+  ;NOP();
+    0x001B :  NOP               
+C:\Users\daminger\OneDrive\github\project\734\wake up.c (line 29)
+  ;WDTC();
+    0x001C :  WDTC              
+C:\Users\daminger\OneDrive\github\project\734\wake up.c (line 30)
+  ;NOP();
+    0x001D :  NOP               
+C:\Users\daminger\OneDrive\github\project\734\wake up.c (line 31)
+  ;while(1);
+    0x001E :  JMP   0x01E       
+C:\Users\daminger\OneDrive\github\project\734\wake up.c (line 32)
+  ;}
+    0x001F :  RET               
+C:\Users\daminger\OneDrive\github\project\734\wake up.c (line 36)
+  ;switch(IntVecIdx)
+    0x0020 :  MOV   0x10, A     
+    0x0021 :  MOV   A, 0x10     
+    0x0022 :  XOR   A, @0x04    
+    0x0023 :  JBC   0x03, 2     
+    0x0024 :  JMP   0x026       
+    0x0025 :  JMP   0x02A       
+C:\Users\daminger\OneDrive\github\project\734\wake up.c (line 39)
+  ;ISR1&=0XFB;			//外部中断标志位清零
+    0x0026 :  MOV   A, @0xFB    
+    0x0027 :  BANK  @0x0        
+    0x0028 :  AND   0x0F, A     
+C:\Users\daminger\OneDrive\github\project\734\wake up.c (line 40)
+  ;P73=1;				//唤醒以后P73输出高电平
+    0x0029 :  BS    0x07, 3     
+C:\Users\daminger\OneDrive\github\project\734\wake up.c (line 43)
+  ;}
+    0x002A :  RETI              
